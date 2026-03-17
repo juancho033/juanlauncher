@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Juego</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
+        <nav>
+            <a href="index.html" class="back-btn">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <main class="detail-container">
+        <!-- Cabecera del Juego -->
+        <div class="game-header">
+            <img id="detalle-img" src="" alt="Portada">
+            <div class="game-header-info">
+                <h1 id="detalle-titulo">Cargando...</h1>
+                <p class="tag" id="detalle-genero">...</p>
+                <div class="description-box">
+                    <h3>Descripción</h3>
+                    <p id="detalle-desc">...</p>
+                </div>
+                <a href="#" id="detalle-btn" class="download-btn-mega" target="_blank">
+                    DESCARGAR AHORA <br> <small>(Mediafire)</small>
+                </a><br>
+                <p>CONTRASEÑA: juanlauncher</p>
+            </div>
+        </div>
+
+        <!-- Tráiler y Capturas -->
+        <section class="media-section">
+            <h2>Trailer:</h2>
+            
+            <!-- Contenedor del Video -->
+            <div class="video-container" id="video-wrapper">
+                <!-- El iframe se insertará aquí con JS -->
+            </div>
+
+            <h3>Capturas de pantalla</h3>
+            <div class="gallery" id="detalle-galeria">
+                <!-- Las imagenes se inyectan aquí -->
+            </div>
+        </section>
+
+        <!-- Requisitos Estilo Steam -->
+        <section class="requirements">
+            <h2>Requisitos del Sistema</h2>
+            <div class="req-grid">
+                <div class="req-column">
+                    <h4>MÍNIMOS:</h4>
+                    <p id="req-min">...</p>
+                </div>
+                <div class="req-column">
+                    <h4>RECOMENDADOS:</h4>
+                    <p id="req-rec">...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="requirements">
+            <h2>Nota del Dueño:</h2>
+            <div class="req-grid">
+                <div class="req-column">
+                    <h4>Recomendacion:</h4>
+                    <p>Si te Gusta el Juego no se te olvide Comprarlo Legalmente para apoyar al desarrollador ❤️</p>
+                    <p>IMPORTANTE: Contraseña del ZIP o RAR: juanlauncher</p>
+                    <p>Usa 7-zip para descomprimir el Juego y usa <a href="https://www.freedownloadmanager.org/es/" target="_blank">Free Download Manager (OPCIONAL)</a> para descargar el juego</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX (Visor de imagenes a pantalla completa) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="img-grande">
+    </div>
+
+
+
+    <footer>
+        <p style="text-align: center;">&copy; 2026 JuanLauncher.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

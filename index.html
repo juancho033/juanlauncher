@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuanLauncher - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">JuanLauncher</div>
+        <a href="#" class="enlace-a">Ayuda</a>
+        <a href="#" class="enlace-a">Contacto</a>
+        <div class="search-bar">
+            <input type="text" id="buscador" placeholder="Buscar juego...">
+        </div>
+        
+    </header>
+
+    <main>
+        <!-- SECCIÓN DE FILTROS -->
+        <div class="filters-container">
+            <!-- Switch Plataforma -->
+            <div class="platform-switch">
+                <button class="plat-btn active" data-plat="pc">💻 PC</button>
+                <button class="plat-btn" data-plat="android">📱 Android</button>
+            </div>
+
+            <!-- Categorías -->
+            <div class="genre-list">
+                <!-- Dentro de <div class="genre-list"> -->
+                <button class="genre-btn active" data-cat="todos">Todos</button>
+                <button class="genre-btn" data-cat="accion">Acción</button>
+                <button class="genre-btn" data-cat="aventura">Aventura</button>
+                <button class="genre-btn" data-cat="terror">Terror</button>
+                <button class="genre-btn" data-cat="supervivencia">Supervivencia</button>
+                <button class="genre-btn" data-cat="metroidvania">Metroidvania</button>
+                <!-- NUEVO BOTÓN -->
+                <button class="genre-btn" data-cat="estrategia">Estrategia</button>
+            </div>
+        </div>
+
+        <h1 id="titulo-seccion">Catálogo PC</h1>
+        <div class="games-grid" id="contenedor-juegos"></div>
+    </main>
+
+    <footer>
+        <p style="text-align: center;">&copy; 2026 JuanLauncher Hecho con ❤️.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
