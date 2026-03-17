@@ -113,7 +113,7 @@ const listaJuegos = [
         imagen: "./img/megabonk/portada.jpg",
         galeria: ["./img/megabonk/img-1.jpg", "./img/megabonk/img-2.jpg", "./img/megabonk/img-3.jpg", "./img/megabonk/img-4.jpg"],
         trailer: "https://youtu.be/PlC4_c2dcGw", // Sustituir por el link real del trailer
-        descripcion: "¡Arrasa con oleadas infinitas de enemigos y vuélvete absurdamente poderoso! Agarra loot, sube de nivel, desbloquea personajes y haz upgrades para crear builds únicas y locas mientras te enfrentas a hordas de criaturas.",
+        descripcion: "¡Arrasa con oleadas infinitas de enemigos y vuélvete absurdamente poderoso! Agarra loot, sube de nivel, desbloquea personajes y haz upgrades para crear builds únicas y locas mientras te enfrentas a hordas de criaturas. (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i3 o equivalente<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Integrados Intel HD 4000<br><strong>Almacenamiento:</strong> 2 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 11<br><strong>Procesador:</strong> Intel Core i5 o superior<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce GTX 1050<br><strong>Almacenamiento:</strong> 2 GB de espacio disponible"
@@ -130,7 +130,7 @@ const listaJuegos = [
         imagen: "./img/geometry-dash/portada.jpg",
         galeria: ["./img/geometry-dash/img-1.jpg", "./img/geometry-dash/img-2.jpg", "./img/geometry-dash/img-3.jpg", "./img/geometry-dash/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=k90y6PIzIaE",
-        descripcion: "¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo! Prepárate para un desafío casi imposible mientras empujas tus habilidades al límite.",
+        descripcion: "¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo! (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP/Vista/7/8/10/11<br><strong>Procesador:</strong> 2.0 GHz<br><strong>Memoria:</strong> 512 MB de RAM<br><strong>Gráficos:</strong> OpenGL 2.0 compatible<br><strong>Almacenamiento:</strong> 100 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Dual Core 3.0 GHz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce 8000 series<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
