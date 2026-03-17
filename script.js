@@ -120,6 +120,23 @@ const listaJuegos = [
         },
         link: "https://www.mediafire.com/"
     },
+   {
+        id: 9,
+        titulo: "Geometry Dash",
+        genero: "Ritmo / Plataformas",
+        // CATEGORIAS: RITMO, ARCADE, DIFICIL, INDIE
+        categoria: ["ritmo", "arcade", "dificil", "plataformas"],
+        plataforma: "pc",
+        imagen: "./img/geometry-dash/portada.jpg",
+        galeria: ["./img/geometry-dash/img-1.jpg", "./img/geometry-dash/img-2.jpg", "./img/geometry-dash/img-3.jpg", "./img/geometry-dash/img-4.jpg"],
+        trailer: "https://www.youtube.com/watch?v=k90y6PIzIaE",
+        descripcion: "¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo! Prepárate para un desafío casi imposible mientras empujas tus habilidades al límite.",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Windows XP/Vista/7/8/10/11<br><strong>Procesador:</strong> 2.0 GHz<br><strong>Memoria:</strong> 512 MB de RAM<br><strong>Gráficos:</strong> OpenGL 2.0 compatible<br><strong>Almacenamiento:</strong> 100 MB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Dual Core 3.0 GHz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce 8000 series<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
+        },
+        link: "https://www.mediafire.com/"
+    },
     // --- NUEVO JUEGO ANDROID: BALATRO ---
     {
         id: 3,
