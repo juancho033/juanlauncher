@@ -137,6 +137,24 @@ const listaJuegos = [
         },
         link: "https://www.mediafire.com/"
     },
+    {
+        id: 10,
+        titulo: "Hytale",
+        genero: "RPG / Sandbox",
+        // CATEGORIAS: AVENTURA, RPG, SANDBOX, MULTIJUGADOR
+        categoria: ["aventura", "supervivencia", "sandbox", "multijugador"],
+        plataforma: "pc",
+        imagen: "./img/hytale/portada.webp",
+        galeria: ["./img/hytale/img-1.jpg", "./img/hytale/img-2.jpg", "./img/hytale/img-3.png", "./img/hytale/img-4.png"],
+        trailer: "https://www.youtube.com/watch?v=o77MzDQT1cg&t=1s",
+        descripcion: "Hytale es un RPG sandbox de mundo abierto estilo voxel desarrollado por Hypixel Studios, que mezcla exploración, construcción y combate en un universo fantástico generado proceduralmente. Ofrece una experiencia centrada en la aventura con progresión RPG, jefes, mazmorras y herramientas de creación avanzadas, diseñado para ser tanto una aventura guiada como un lienzo creativo multijugador. (Creditos a thefenix010)",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Windows 7 (64-bit)<br><strong>Procesador:</strong> Intel Core i3-3225 / AMD A8-7600<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Intel HD Graphics 4000 / AMD Radeon R5<br><strong>Almacenamiento:</strong> 4 GB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Windows 10/11 (64-bit)<br><strong>Procesador:</strong> Intel Core i5-6600K / AMD Ryzen 5 1600<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 960 / AMD Radeon R9 285<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible"
+        },
+        link: "https://www.mediafire.com/file/wb6hwury090ymq3/Hytale_-_JuanLauncher_and_thefenix010.zip/file"
+    },
+
     // --- NUEVO JUEGO ANDROID: BALATRO ---
     {
         id: 3,
