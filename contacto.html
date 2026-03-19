@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuanLauncher - Contacto y Reportes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
+        <a href="ayuda.html" class="nav-link">Ayuda</a>
+        <nav>
+            <a href="index.html" class="nav-link">Volver a Inicio</a>
+            
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <h1 style="text-align: center; border: none; margin-bottom: 20px;">Contacto y Reportes</h1>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>¿Para qué sirve este formulario?</h2>
+                <ul>
+                    <li>🚨 <strong>Reportar enlaces caídos:</strong> Si un link de Mediafire o de terabox ya no funciona, avisame.</li>
+                    <li>🎮 <strong>Pedir un juego nuevo:</strong> ¿No encuentras el juego que buscas? Pídelo.</li>
+                    <li>💬 <strong>Sugerencias o dudas:</strong> Cualquier otra consulta que tengas sobre la web.</li>
+                </ul>
+                <div class="direct-email">
+                    <p>También puedes escribirme directamente a:</p>
+                    <p style="color: #00d2ff; font-size: bold;">liletgomez03@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- LE HEMOS AÑADIDO UN ID: "formulario-contacto" -->
+            <form id="formulario-contacto" action="https://formspree.io/f/mqeywvep" method="POST" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="nombre">Tu Nombre o Apodo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Player123" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Tu Correo Electrónico (Opcional):</label>
+                    <input type="email" id="email" name="email" placeholder="Para poder responderte...">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">¿Qué necesitas?</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Enlace Caido">🚨 Reportar enlace caído</option>
+                        <option value="Pedir Juego">🎮 Pedir que suban un juego</option>
+                        <option value="Sugerencia">💡 Sugerencia / Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Detalles:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí los detalles..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="btn-enviar">ENVIAR MENSAJE</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- POP-UP DE CONFIRMACIÓN (Oculto por defecto) -->
+    <div id="popup-mensaje" class="form-popup-overlay">
+        <div class="form-popup-box">
+            <div id="popup-icono" style="font-size: 50px; margin-bottom: 10px;">✅</div>
+            <h2 id="popup-titulo">¡Enviado!</h2>
+            <p id="popup-texto">Gracias por tu mensaje. Lo revisaremos pronto.</p>
+            <button class="submit-btn cerrar-popup-btn" style="width: 100%; margin-top: 20px;">Aceptar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 GamerSpace. Descargas vía Mediafire.</p>
+    </footer>
+
+    <!-- SCRIPT PARA ENVIAR SIN RECARGAR LA PÁGINA -->
+    <script>
+        const form = document.getElementById("formulario-contacto");
+        const popup = document.getElementById("popup-mensaje");
+        const btnCerrar = document.querySelector(".cerrar-popup-btn");
+        const btnEnviar = document.getElementById("btn-enviar");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); // Evita que la página te lleve a Formspree
+
+            // Cambiar el texto del botón mientras carga
+            const textoOriginal = btnEnviar.innerText;
+            btnEnviar.innerText = "Enviando...";
+            btnEnviar.disabled = true;
+
+            const data = new FormData(form);
+
+            try {
+                // Enviar los datos de forma invisible
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    // ÉXITO
+                    document.getElementById("popup-icono").innerText = "✅";
+                    document.getElementById("popup-titulo").innerText = "¡Mensaje Enviado!";
+                    document.getElementById("popup-texto").innerText = "Gracias por avisarnos. Lo revisaremos lo antes posible.";
+                    form.reset(); // Limpia los campos del formulario
+                } else {
+                    // ERROR DE FORMSPREE
+                    document.getElementById("popup-icono").innerText = "❌";
+                    document.getElementById("popup-titulo").innerText = "Hubo un problema";
+                    document.getElementById("popup-texto").innerText = "No se pudo enviar. Inténtalo de nuevo más tarde.";
+                }
+            } catch (error) {
+                // ERROR DE INTERNET
+                document.getElementById("popup-icono").innerText = "📡";
+                document.getElementById("popup-titulo").innerText = "Error de conexión";
+                document.getElementById("popup-texto").innerText = "Comprueba tu internet e inténtalo de nuevo.";
+            }
+
+            // Mostrar el Pop-up y restaurar el botón
+            popup.style.display = "flex";
+            btnEnviar.innerText = textoOriginal;
+            btnEnviar.disabled = false;
+        });
+
+        // Cerrar el popup al hacer clic en "Aceptar"
+        btnCerrar.addEventListener('click', () => {
+            popup.style.display = "none";
+        });
+
+        // Cerrar si hace clic fuera de la caja
+        window.addEventListener('click', (e) => {
+            if(e.target === popup) popup.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
