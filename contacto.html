@@ -36,8 +36,10 @@
             </div>
 
             <!-- LE HEMOS AÑADIDO UN ID: "formulario-contacto" -->
-            <form id="formulario-contacto" action="https://formspree.io/f/mqeywvep" method="POST" class="contact-form">
+            <form id="formulario-contacto" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                 
+                 <input type="hidden" name="access_key" value="79bedfec-5c6c-42b9-86d6-20b78c9c725d">
+
                 <div class="form-group">
                     <label for="nombre">Tu Nombre o Apodo:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ej: Player123" required>
@@ -79,7 +81,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 GamerSpace. Descargas vía Mediafire.</p>
+        <p style="text-align: center;">&copy; 2026 JuanLauncher. Hecho con ❤️.</p>
     </footer>
 
     <!-- SCRIPT PARA ENVIAR SIN RECARGAR LA PÁGINA -->
@@ -114,7 +116,7 @@
                     document.getElementById("popup-texto").innerText = "Gracias por avisarnos. Lo revisaremos lo antes posible.";
                     form.reset(); // Limpia los campos del formulario
                 } else {
-                    // ERROR DE FORMSPREE
+                    // ERROR DE la plataforma o que se acabo los 250 mensajes mensuales
                     document.getElementById("popup-icono").innerText = "❌";
                     document.getElementById("popup-titulo").innerText = "Hubo un problema";
                     document.getElementById("popup-texto").innerText = "No se pudo enviar. Inténtalo de nuevo más tarde.";
