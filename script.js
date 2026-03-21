@@ -118,11 +118,11 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i3 o equivalente<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Integrados Intel HD 4000<br><strong>Almacenamiento:</strong> 2 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 11<br><strong>Procesador:</strong> Intel Core i5 o superior<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce GTX 1050<br><strong>Almacenamiento:</strong> 2 GB de espacio disponible"
         },
-        link: "https://www.mediafire.com/"
+        link: "https://www.mediafire.com/file/o07d4rld1cyeo72/Megabonk_-_JuanLauncher.zip/file"
     },
    {
         id: 9,
-        titulo: "Geometry Dash",
+        titulo: "Geometry Dash (2.2081)",
         genero: "Ritmo / Plataformas",
         // CATEGORIAS: RITMO, ARCADE, DIFICIL, INDIE
         categoria: ["ritmo", "arcade", "dificil", "plataformas"],
@@ -130,12 +130,12 @@ const listaJuegos = [
         imagen: "./img/geometry-dash/portada.jpg",
         galeria: ["./img/geometry-dash/img-1.jpg", "./img/geometry-dash/img-2.jpg", "./img/geometry-dash/img-3.jpg", "./img/geometry-dash/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=k90y6PIzIaE",
-        descripcion: "¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo! (Creditos a Optiproyects)",
+        descripcion: "¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo!",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP/Vista/7/8/10/11<br><strong>Procesador:</strong> 2.0 GHz<br><strong>Memoria:</strong> 512 MB de RAM<br><strong>Gráficos:</strong> OpenGL 2.0 compatible<br><strong>Almacenamiento:</strong> 100 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Dual Core 3.0 GHz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce 8000 series<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
         },
-        link: "https://www.mediafire.com/"
+        link: "https://www.mediafire.com/file/nffdct9twywljbe/Geometry_Dash_2.2081_-_JuanLauncher.zip/file"
     },
     {
         id: 10,
