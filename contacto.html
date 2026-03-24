@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JuanLauncher - Contacto y Reportes</title>
+    <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -12,8 +13,30 @@
     <header>
         <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
         <a href="ayuda.html" class="nav-link">Ayuda</a>
+    
+            <div class="social-links">
+                <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn"
+                    title="Mi GitHub">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn"
+                    title="Mi YouTube">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+            </div>
         <nav>
-            <a href="index.html" class="nav-link">Volver a Inicio</a>
+            <a href="index.html" class="nav-link">← Volver a Inicio</a>
             
         </nav>
     </header>
@@ -35,7 +58,6 @@
                 </div>
             </div>
 
-            <!-- LE HEMOS AÑADIDO UN ID: "formulario-contacto" -->
             <form id="formulario-contacto" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                 
                  <input type="hidden" name="access_key" value="79bedfec-5c6c-42b9-86d6-20b78c9c725d">
@@ -70,7 +92,7 @@
         </div>
     </main>
 
-    <!-- POP-UP DE CONFIRMACIÓN (Oculto por defecto) -->
+    <!-- POP-PUP Oculto -->
     <div id="popup-mensaje" class="form-popup-overlay">
         <div class="form-popup-box">
             <div id="popup-icono" style="font-size: 50px; margin-bottom: 10px;">✅</div>
@@ -84,66 +106,8 @@
         <p style="text-align: center;">&copy; 2026 JuanLauncher. Hecho con ❤️.</p>
     </footer>
 
-    <!-- SCRIPT PARA ENVIAR SIN RECARGAR LA PÁGINA -->
-    <script>
-        const form = document.getElementById("formulario-contacto");
-        const popup = document.getElementById("popup-mensaje");
-        const btnCerrar = document.querySelector(".cerrar-popup-btn");
-        const btnEnviar = document.getElementById("btn-enviar");
-
-        form.addEventListener("submit", async function(event) {
-            event.preventDefault(); // Evita que la página te lleve a Formspree
-
-            // Cambiar el texto del botón mientras carga
-            const textoOriginal = btnEnviar.innerText;
-            btnEnviar.innerText = "Enviando...";
-            btnEnviar.disabled = true;
-
-            const data = new FormData(form);
-
-            try {
-                // Enviar los datos de forma invisible
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    // ÉXITO
-                    document.getElementById("popup-icono").innerText = "✅";
-                    document.getElementById("popup-titulo").innerText = "¡Mensaje Enviado!";
-                    document.getElementById("popup-texto").innerText = "Gracias por avisarnos. Lo revisaremos lo antes posible.";
-                    form.reset(); // Limpia los campos del formulario
-                } else {
-                    // ERROR DE la plataforma o que se acabo los 250 mensajes mensuales
-                    document.getElementById("popup-icono").innerText = "❌";
-                    document.getElementById("popup-titulo").innerText = "Hubo un problema";
-                    document.getElementById("popup-texto").innerText = "No se pudo enviar. Inténtalo de nuevo más tarde.";
-                }
-            } catch (error) {
-                // ERROR DE INTERNET
-                document.getElementById("popup-icono").innerText = "📡";
-                document.getElementById("popup-titulo").innerText = "Error de conexión";
-                document.getElementById("popup-texto").innerText = "Comprueba tu internet e inténtalo de nuevo.";
-            }
-
-            // Mostrar el Pop-up y restaurar el botón
-            popup.style.display = "flex";
-            btnEnviar.innerText = textoOriginal;
-            btnEnviar.disabled = false;
-        });
-
-        // Cerrar el popup al hacer clic en "Aceptar"
-        btnCerrar.addEventListener('click', () => {
-            popup.style.display = "none";
-        });
-
-        // Cerrar si hace clic fuera de la caja
-        window.addEventListener('click', (e) => {
-            if(e.target === popup) popup.style.display = "none";
-        });
-    </script>
+  
+    <script src="script.js"></script>
 
 </body>
 </html>

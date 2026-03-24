@@ -515,3 +515,64 @@ h1 { margin-bottom: 30px; border-left: 5px solid #00d2ff; padding-left: 15px; }
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
+
+
+/* --- BOTONES REDES SOCIALES (HEADER) --- */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre los enlaces del menú */
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+    padding-left: 20px;
+    border-left: 1px solid #444; /* Separador vertical */
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #252525;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+/* Colores específicos al hacer Hover */
+.github-btn:hover {
+    background-color: #333; /* Gris GitHub */
+    border-color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.youtube-btn:hover {
+    background-color: #ff0000; /* Rojo YouTube */
+    border-color: #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Ajuste Responsivo para móviles */
+@media (max-width: 768px) {
+    .social-links {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

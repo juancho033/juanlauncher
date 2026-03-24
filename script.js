@@ -353,3 +353,63 @@ if (isGame) {
         document.body.innerHTML = "<h1 style='color:white; text-align:center;'>Juego no encontrado</h1>";
     }
 }
+
+    // Script para el Contacto
+
+  const form = document.getElementById("formulario-contacto");
+        const popup = document.getElementById("popup-mensaje");
+        const btnCerrar = document.querySelector(".cerrar-popup-btn");
+        const btnEnviar = document.getElementById("btn-enviar");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); // Evita que la página te lleve a Formspree
+
+            // Cambiar el texto del botón mientras carga
+            const textoOriginal = btnEnviar.innerText;
+            btnEnviar.innerText = "Enviando...";
+            btnEnviar.disabled = true;
+
+            const data = new FormData(form);
+
+            try {
+                // Enviar los datos de forma invisible
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    // ÉXITO
+                    document.getElementById("popup-icono").innerText = "✅";
+                    document.getElementById("popup-titulo").innerText = "¡Mensaje Enviado!";
+                    document.getElementById("popup-texto").innerText = "Gracias por avisarnos. Lo revisaremos lo antes posible.";
+                    form.reset(); // Limpia los campos del formulario
+                } else {
+                    // ERROR DE la plataforma o que se acabo los 250 mensajes mensuales
+                    document.getElementById("popup-icono").innerText = "❌";
+                    document.getElementById("popup-titulo").innerText = "Hubo un problema";
+                    document.getElementById("popup-texto").innerText = "No se pudo enviar. Inténtalo de nuevo más tarde.";
+                }
+            } catch (error) {
+                // ERROR DE INTERNET
+                document.getElementById("popup-icono").innerText = "📡";
+                document.getElementById("popup-titulo").innerText = "Error de conexión";
+                document.getElementById("popup-texto").innerText = "Comprueba tu internet e inténtalo de nuevo.";
+            }
+
+            // Mostrar el Pop-up y restaurar el botón
+            popup.style.display = "flex";
+            btnEnviar.innerText = textoOriginal;
+            btnEnviar.disabled = false;
+        });
+
+        // Cerrar el popup al hacer clic en "Aceptar"
+        btnCerrar.addEventListener('click', () => {
+            popup.style.display = "none";
+        });
+
+        // Cerrar si hace clic fuera de la caja
+        window.addEventListener('click', (e) => {
+            if(e.target === popup) popup.style.display = "none";
+        });
