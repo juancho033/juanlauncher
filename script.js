@@ -50,11 +50,11 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows 7 o superior<br><strong>Procesador:</strong> 2 Ghz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 256 mb memoria de vídeo, shader model 3.0+<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> 2.5 Ghz<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 512 mb memoria de vídeo<br><strong>Almacenamiento:</strong> 1 GB de espacio disponible"
         },
-        link: "https://www.mediafire.com/"
+        link: "https://www.mediafire.com/file/bi6u9o8ona5r0q2/Stardew_valley_-_JuanLauncher.zip/file"
     },
     {
         id: 5,
-        titulo: "Five Nights at Freddy's",
+        titulo: "Five Nights at Freddy's 1 + 2 + 3",
         genero: "Survival Horror",
         // CATEGORIAS: TERROR, SUPERVIVENCIA, POINT AND CLICK
         categoria: ["terror", "supervivencia", "indie", "estrategia"],
@@ -62,12 +62,12 @@ const listaJuegos = [
         imagen: "./img/fnaf1/portada.webp",
         galeria: ["./img/fnaf1/img-1.jpg", "./img/fnaf1/img-2.jpg", "./img/fnaf1/img-3.jpg", "./img/fnaf1/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=RP4UTOek0-Y",
-        descripcion: "Bienvenido a tu nuevo trabajo de verano en Freddy Fazbear's Pizza. Desde tu pequeña oficina, debes vigilar las cámaras de seguridad con mucho cuidado. ¿Podrás sobrevivir cinco noches?",
+        descripcion: "En este Paquete viene los 3 primeros Juegos de la Famosa Saga de FNAF (Todos los creditos a Optiproyects por el Paquete)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP, 7, 8, 10<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> 1 GB de memoria de vídeo<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> 2.4 Ghz Dual Core<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 2 GB de memoria de vídeo<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible"
         },
-        link: "https://www.mediafire.com/"
+        link: "https://www.mediafire.com/file/akaszd8xyefopwe/Five_Nights_At_Freddys_-_Optiproyects_Juanlauncher.zip/file"
     },
    {
         id: 6,
@@ -79,7 +79,7 @@ const listaJuegos = [
         imagen: "./img/celeste/portada.png",
         galeria: ["./img/celeste/img-1.jpg", "./img/celeste/img-2.jpg", "./img/celeste/img-3.jpg", "./img/celeste/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=FqBj2IGg6Uw",
-        descripcion: "Ayuda a Madeline a sobrevivir a sus demonios internos en su viaje a la cima de la montaña Celeste, en este ajustadísimo plataformas de los creadores de TowerFall.",
+        descripcion: "Ayuda a Madeline a sobrevivir a sus demonios internos en su viaje a la cima de la montaña Celeste, en este ajustadísimo plataformas de los creadores de TowerFall. (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7 o superior<br><strong>Procesador:</strong> Intel Core i3 M380<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Intel HD 4000<br><strong>Almacenamiento:</strong> 1.2 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Dual Core 2.0 Ghz<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Dedicada con 512 MB de VRAM<br><strong>Almacenamiento:</strong> 1.5 GB de espacio disponible"
@@ -96,12 +96,12 @@ const listaJuegos = [
         imagen: "./img/silksong/portada.jpg",
         galeria: ["./img/silksong/img-1.jpg", "./img/silksong/img-2.jpg", "./img/silksong/img-3.jpg", "./img/silksong/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=pFAknD_9U7c",
-        descripcion: "Juega como Hornet, la princesa protectora de Hallownest, y aventúrate a través de un reino completamente nuevo donde reinan la seda y la música.",
+        descripcion: "Juega como Hornet, la princesa protectora de Hallownest, y aventúrate a través de un reino completamente nuevo donde reinan la seda y la música. (Creditos a TheFenix010)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7<br><strong>Procesador:</strong> Intel Core i3<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce GTX 460<br><strong>Almacenamiento:</strong> 9 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i5<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce GTX 560<br><strong>Almacenamiento:</strong> 9 GB de espacio disponible"
         },
-        link: "https://www.mediafire.com/"
+        link: "https://www.mediafire.com/file/uonip8ykr936n0h/HKSS.STP_-_juanlauncher.zip/file"
     },
    {
         id: 8,
