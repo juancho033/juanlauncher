@@ -145,7 +145,7 @@ const listaJuegos = [
         categoria: ["aventura", "supervivencia", "sandbox", "multijugador"],
         plataforma: "pc",
         imagen: "./img/hytale/portada.webp",
-        galeria: ["./img/hytale/img-1.jpg", "./img/hytale/img-2.jpg", "./img/hytale/img-3.png", "./img/hytale/img-4.png"],
+        galeria: ["./img/hytale/img-1.webp", "./img/hytale/img-2.webp", "./img/hytale/img-3.webp", "./img/hytale/img-4.webp"],
         trailer: "https://www.youtube.com/watch?v=o77MzDQT1cg&t=1s",
         descripcion: "Hytale es un RPG sandbox de mundo abierto estilo voxel desarrollado por Hypixel Studios, que mezcla exploración, construcción y combate en un universo fantástico generado proceduralmente. Ofrece una experiencia centrada en la aventura con progresión RPG, jefes, mazmorras y herramientas de creación avanzadas, diseñado para ser tanto una aventura guiada como un lienzo creativo multijugador. (Creditos a thefenix010)",
         requisitos: {
