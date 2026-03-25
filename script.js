@@ -155,12 +155,47 @@ const listaJuegos = [
         link: "https://www.mediafire.com/file/wb6hwury090ymq3/Hytale_-_JuanLauncher_and_thefenix010.zip/file"
     },
 
+    {
+        id: 11,
+        titulo: "Stardew Valley (Android)",
+        genero: "Simulación",
+        // CATEGORIAS: GRANJA, RELAJANTE, RPG, INDIE
+        categoria: ["granja", "aventura", "rpg", "indie"],
+        plataforma: "android",
+        imagen: "./img/stardewvalley/portada.jpg",
+        galeria: ["./img/stardew-valley2/img-1.webp", "./img/stardew-valley2/img-2.webp", "./img/stardew-valley2/img-3.webp", "./img/stardew-valley2/img-4.webp"],
+        trailer: "https://youtu.be/pHUqhYslji4",
+        descripcion: "Has heredado la vieja parcela agrícola de tu abuelo en Stardew Valley. Armado con herramientas de segunda mano y unas pocas monedas, te dispones a comenzar tu nueva vida. ¿Podrás aprender a vivir de la tierra y convertir estos campos descuidados en un hogar próspero? (Creditos a Optiproyects)",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Android 4.4 o superior<br><strong>Procesador:</strong> Quad-core 1.2 GHz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Adreno 306 o equivalente<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Android 10.0 o superior<br><strong>Procesador:</strong> Octa-core 2.0 GHz<br><strong>Memoria:</strong> 4 GB de RAM o más<br><strong>Gráficos:</strong> Mali-G72 MP3 / Adreno 610<br><strong>Almacenamiento:</strong> 1 GB de espacio disponible"
+        },
+        link: "https://www.mediafire.com/file/t334s9p1qkc7ad6/Stardew_Valley-_JuanLauncher.apk/file"
+    },
+
+    {
+        id: 12,
+        titulo: "Geometry Dash (Android, 2.207)",
+        genero: "Ritmo / Plataformas",
+        // CATEGORIAS: RITMO, ARCADE, DIFICIL, ANDROID
+        categoria: ["ritmo", "arcade", "dificil", "plataformas"],
+        plataforma: "android",
+        imagen: "./img/geometry-dash/portada.jpg",
+        galeria: ["./img/geometry-dash/img-1.jpg", "./img/geometry-dash/img-2.jpg", "./img/geometry-dash/img-3.jpg", "./img/geometry-dash/img-4.jpg"],
+        trailer: "https://www.youtube.com/watch?v=k90y6PIzIaE",
+        descripcion: "¡La experiencia completa de Geometry Dash en la palma de tu mano! Salta, vuela y ábrete paso a través de peligrosos pasajes y obstáculos puntiagudos al ritmo de la música. ¡Niveles nuevos, logros y mucha frustración divertida te esperan! (Creditos a Optiproyects)",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Android 4.0 o superior<br><strong>Procesador:</strong> Dual Core 1.2 GHz<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Adreno 305 o equivalente<br><strong>Almacenamiento:</strong> 150 MB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Android 10.0 o superior<br><strong>Procesador:</strong> Quad Core 2.0 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM o más<br><strong>Gráficos:</strong> Mali-G71 MP2 / Adreno 506<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible"
+        },
+        link: "https://www.mediafire.com/file/4v0s1tp03mgts87/GeometryDash_2.207_juanlauncher.apk/file"
+    },
+
     // --- NUEVO JUEGO ANDROID: BALATRO ---
     {
         id: 3,
         titulo: "Balatro (Android)",
         genero: "Roguelike / Cartas",
-        // CATEGORÍA ESTRATEGIA (Asegúrate de tener el botón en HTML)
         categoria: ["estrategia", "indie"],
         plataforma: "android",
         imagen: "./img/balatro/portada.webp", // Asegúrate de tener esta imagen
@@ -347,34 +382,88 @@ if (isGame) {
             if (videoWrapper) videoWrapper.style.display = 'none';
         }
 
-        // Galería Lightbox
+       // 4. Galería e Imágenes expandibles (Lightbox con Slider)
         const galeriaContenedor = document.getElementById('detalle-galeria');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('img-grande');
         const closeLightbox = document.querySelector('.close-lightbox');
+        
+        // Elementos nuevos del slider
+        const prevBtn = document.querySelector('.prev-lightbox');
+        const nextBtn = document.querySelector('.next-lightbox');
+        let indiceImagenActual = 0; // Variable para saber en qué foto estamos
 
         if (galeriaContenedor) {
             galeriaContenedor.innerHTML = '';
             if (juego.galeria && juego.galeria.length > 0) {
-                juego.galeria.forEach(imgUrl => {
+                juego.galeria.forEach((imgUrl, index) => {
                     const img = document.createElement('img');
                     img.src = imgUrl;
-                    img.alt = "Captura";
+                    img.alt = "Captura de pantalla";
+                    
+                    // Evento Click para abrir Lightbox en esa foto específica
                     img.addEventListener('click', () => {
+                        indiceImagenActual = index; // Guardamos el número de la foto
                         lightboxImg.src = imgUrl;
                         lightbox.style.display = "flex";
                     });
+
                     galeriaContenedor.appendChild(img);
                 });
             } else {
                 galeriaContenedor.innerHTML = "<p style='color:#666;'>No hay capturas disponibles.</p>";
             }
         }
+
+        // --- FUNCIONES DEL SLIDER ---
+        function cambiarImagen(direccion) {
+            if (!juego.galeria || juego.galeria.length === 0) return;
+            
+            indiceImagenActual += direccion; // Suma 1 o resta 1
+            
+            // Si llega al final, vuelve a la primera
+            if (indiceImagenActual >= juego.galeria.length) {
+                indiceImagenActual = 0; 
+            } 
+            // Si retrocede antes de la primera, va a la última
+            else if (indiceImagenActual < 0) {
+                indiceImagenActual = juego.galeria.length - 1; 
+            }
+            
+            // Cambiamos la imagen que se ve
+            lightboxImg.src = juego.galeria[indiceImagenActual];
+        }
+
+        // Click en flecha anterior (-1)
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que se cierre el Lightbox al hacer click
+                cambiarImagen(-1);
+            });
+        }
+
+        // Click en flecha siguiente (+1)
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                cambiarImagen(1);
+            });
+        }
+
+        // Evitar que al dar click a la imagen en sí, se cierre el lightbox
+        if (lightboxImg) {
+            lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+        }
+
+        // --- CERRAR LIGHTBOX ---
         if (closeLightbox) {
             closeLightbox.addEventListener('click', () => lightbox.style.display = "none");
         }
         if (lightbox) {
-            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.style.display = "none"; });
+            // Cierra solo si haces clic en el fondo oscuro
+            lightbox.addEventListener('click', (e) => { 
+                if(e.target === lightbox) lightbox.style.display = "none"; 
+            });
         }
     } else {
         document.body.innerHTML = "<h1 style='color:white; text-align:center;'>Juego no encontrado</h1>";

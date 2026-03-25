@@ -970,3 +970,43 @@ nav {
         box-shadow: 0 3px 15px rgba(122, 0, 255, 0.5);
     }
 }
+
+
+/* --- FLECHAS DEL SLIDER (LIGHTBOX) --- */
+.prev-lightbox, .next-lightbox {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.3s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    text-decoration: none;
+    z-index: 1001; /* Para que queden por encima de la foto */
+}
+
+/* Posiciones izquierda y derecha */
+.prev-lightbox { left: 0; }
+.next-lightbox { right: 0; border-radius: 5px 0 0 5px; }
+
+/* Efecto al pasar el ratón */
+.prev-lightbox:hover, .next-lightbox:hover {
+    background-color: #00d2ff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+/* Hacer flechas más pequeñas en celular */
+@media (max-width: 768px) {
+    .prev-lightbox, .next-lightbox {
+        font-size: 25px;
+        padding: 10px;
+        margin-top: -30px;
+    }
+}
