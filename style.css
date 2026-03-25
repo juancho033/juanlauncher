@@ -576,3 +576,346 @@ nav {
         margin-top: 10px;
     }
 }
+
+
+/* =========================================
+   RESPONSIVE DESIGN (TABLETS Y MÓVILES)
+   ========================================= */
+
+/* --- PARA TABLETS Y PANTALLAS MEDIANAS (hasta 768px) --- */
+@media (max-width: 768px) {
+    /* Reordenar el Header en columna */
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    /* Barra de búsqueda al 100% de ancho */
+    .search-bar {
+        width: 100%;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        max-width: 400px; /* Para que no sea ridículamente larga en tablets horizontales */
+    }
+
+    /* Centrar navegación y botones sociales */
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .social-links {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* --- PARA TELÉFONOS MÓVILES (hasta 480px) --- */
+@media (max-width: 480px) {
+    main {
+        padding: 20px 5%;
+    }
+
+    /* Ajustar título principal */
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        border-left: none; /* Quitamos la rayita azul lateral para centrarlo bien */
+        margin-bottom: 20px;
+    }
+
+    /* Ajustar botones de filtros para que no ocupen tanta pantalla */
+    .plat-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .genre-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    /* 
+       MÁGIA DE LA CUADRÍCULA: 
+       Cambiamos el tamaño mínimo de 220px a 140px. 
+       Esto hace que en un celular se vean 2 JUEGOS POR FILA, 
+       como en la Google Play Store.
+    */
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    /* Hacemos la imagen un poco más baja para que la tarjeta no sea larguísima */
+    .card img {
+        height: 200px; 
+    }
+
+    .card-info {
+        padding: 10px;
+    }
+
+    .card-info h3 {
+        font-size: 0.95rem;
+        /* Esto corta títulos muy largos con "..." en móviles */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-info p {
+        font-size: 0.75rem;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN: PÁGINA DE JUEGO
+   ========================================= */
+
+/* --- TABLETS Y PANTALLAS MEDIANAS (hasta 768px) --- */
+@media (max-width: 768px) {
+    /* Ajuste del Header (ordena los enlaces, el botón de volver y redes) */
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    header nav, header > a.nav-link {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /* Cabecera del juego: Pone la imagen ARRIBA y la info ABAJO */
+    .game-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Ajuste de la imagen de portada para que no se estire feo */
+    .game-header img {
+        width: 100%;
+        max-width: 300px; /* Tamaño máximo para que no ocupe toda la tablet */
+        height: auto;
+    }
+
+    /* Centrar la etiqueta de género (Acción, Terror, etc) */
+    .tag {
+        align-self: center;
+    }
+
+    /* El botón de descarga se expande al 100% para que sea fácil tocarlo con el dedo */
+    .download-btn-mega {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Los requisitos (Mínimos y Recomendados) pasan a estar en una sola columna vertical */
+    .req-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- TELÉFONOS MÓVILES (hasta 480px) --- */
+@media (max-width: 480px) {
+    /* Reducir márgenes laterales para ganar espacio en pantalla */
+    .detail-container {
+        padding: 20px 5%;
+    }
+
+    /* Título del juego más pequeño para que no ocupe 3 líneas */
+    .game-header-info h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Descripción alineada a la izquierda (se lee mejor en móviles) */
+    .description-box {
+        font-size: 0.9rem;
+        text-align: left; 
+    }
+
+    /* Ajuste de las capturas de pantalla para que quepan mejor */
+    .gallery img {
+        height: 120px; /* Más pequeñitas en celular */
+    }
+
+    /* Ajuste de las cajas de requisitos y notas del dueño */
+    .req-grid {
+        padding: 15px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN: PÁGINA DE AYUDA
+   ========================================= */
+
+/* --- TABLETS Y PANTALLAS MEDIANAS (hasta 768px) --- */
+@media (max-width: 768px) {
+    /* Centramos todos los elementos sueltos del header */
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 5%;
+    }
+
+    /* Ajustamos los botones de redes sociales */
+    .social-links {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /* Reducimos el espacio entre las tarjetas */
+    .help-grid {
+        gap: 20px;
+    }
+}
+
+/* --- TELÉFONOS MÓVILES (hasta 480px) --- */
+@media (max-width: 480px) {
+    .help-container {
+        padding: 20px 5%;
+    }
+
+    /* Hacemos el título principal un poco más pequeño */
+    .help-container h1 {
+        font-size: 1.6rem;
+        margin-bottom: 25px !important;
+    }
+
+    /* Forzamos que las tarjetas se pongan en una sola columna vertical */
+    .help-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    /* Reducimos el relleno interno de las tarjetas para ganar espacio */
+    .help-card {
+        padding: 20px; 
+    }
+
+    .help-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    /* Ajustamos el tamaño de los textos y preguntas frecuentes */
+    .help-card h3 { font-size: 1.2rem; }
+    .help-card h4 { font-size: 1rem; }
+    .help-card p { font-size: 0.9rem; }
+
+    /* En celulares, los nombres de los créditos se ponen uno debajo del otro */
+    .credits-names {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN: PÁGINA DE CONTACTO
+   ========================================= */
+
+/* --- TABLETS Y PANTALLAS MEDIANAS (hasta 768px) --- */
+@media (max-width: 768px) {
+    /* Centramos y ordenamos el Header (menú y redes) */
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 5%;
+    }
+
+    .social-links {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /* Apilar la info y el formulario (uno arriba, otro abajo) */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    /* Forzar a que ocupen todo el ancho de la pantalla */
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+        min-width: unset; /* Quitamos restricciones anteriores */
+    }
+}
+
+/* --- TELÉFONOS MÓVILES (hasta 480px) --- */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 20px 5%;
+    }
+
+    /* Ajustar el tamaño de los títulos principales */
+    .contact-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Reducir el relleno de las cajas para no desperdiciar pantalla */
+    .contact-wrapper {
+        padding: 20px 15px;
+    }
+
+    /* Ajustar los textos de las listas (Reportar, Pedir juego...) */
+    .contact-info ul li {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Hacer un poco más estrechos los cuadros de texto del formulario */
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste del Pop-up de "¡Enviado!" para que no se salga de la pantalla */
+    .form-popup-box {
+        padding: 20px;
+        width: 95%;
+    }
+}
