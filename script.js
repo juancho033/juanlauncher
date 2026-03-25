@@ -196,6 +196,33 @@ if (isIndex) {
 
     // Variables de estado
     let filtroPlataforma = 'pc';
+
+// --- LÓGICA DEL BOTÓN SORPRÉNDEME ---
+    const btnSorprendeme = document.getElementById('btn-sorprendeme');
+
+    if (btnSorprendeme) {
+        btnSorprendeme.addEventListener('click', () => {
+            // 1. Filtrar los juegos SOLO por la plataforma actual (PC o Android)
+            const juegosDisponibles = listaJuegos.filter(juego => juego.plataforma === filtroPlataforma);
+
+            if (juegosDisponibles.length === 0) return; // Por si acaso no hay juegos
+
+            // 2. Cambiar el diseño a "Cargando"
+            btnSorprendeme.classList.add('loading');
+            btnSorprendeme.innerHTML = '⏳ Buscando joyita...';
+
+            // 3. Esperar 1.5 segundos (animación) y redirigir
+            setTimeout(() => {
+                // Selecciona un número al azar entre 0 y el total de juegos disponibles
+                const indiceAzar = Math.floor(Math.random() * juegosDisponibles.length);
+                const juegoAzar = juegosDisponibles[indiceAzar];
+                
+                // Redirigir a la página de ese juego
+                window.location.href = `juego.html?id=${juegoAzar.id}`;
+            }, 1500); // 1500 ms = 1.5 segundos de "suspense"
+        });
+    }
+    
     let filtroCategoria = 'todos';
     let filtroBusqueda = '';
 

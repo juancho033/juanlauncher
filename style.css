@@ -919,3 +919,54 @@ nav {
         width: 95%;
     }
 }
+
+
+/* --- BOTÓN FLOTANTE SORPRÉNDEME --- */
+.surprise-btn {
+    position: fixed;   /* Esto lo ancla a la pantalla */
+    bottom: 30px;      /* Separación desde abajo */
+    right: 30px;       /* Separación desde la derecha */
+    z-index: 999;      /* Asegura que siempre esté por encima de todo */
+    background-color: #1a1a1a;
+    color: #00d2ff;
+    border: none;
+    padding: 15px 25px; /* Un poco más grande para ser flotante */
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(122, 0, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Efecto al pasar el ratón: se levanta un poquito */
+.surprise-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(82, 60, 207, 0.7);
+}
+
+/* Animación cuando se le hace clic (Cargando) */
+.surprise-btn.loading {
+    animation: pulse-surprise 0.6s infinite alternate;
+    pointer-events: none; /* Evita doble clic */
+    filter: brightness(0.8);
+}
+
+@keyframes pulse-surprise {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Ajuste para celulares (para que no estorbe tanto) */
+@media (max-width: 480px) {
+    .surprise-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        box-shadow: 0 3px 15px rgba(122, 0, 255, 0.5);
+    }
+}
