@@ -10,13 +10,13 @@ const listaJuegos = [
         imagen: "./img/terraria/portada.jpg",
         galeria: ["./img/terraria/img-1.jpg", "./img/terraria/img-2.jpg", "./img/terraria/img-3.jpg", "./img/terraria/img-4.jpg"],
         trailer: "https://youtu.be/HHNLfxBxcvo",
-         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
+         servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP, Vista, 7, 8/8.1, 10<br><strong>Procesador:</strong> 2.0 Ghz<br><strong>Memoria:</strong> 2.5 GB de RAM<br><strong>Gráficos:</strong> 128mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 7, 8/8.1, 10<br><strong>Procesador:</strong> Dual Core 3.0 Ghz<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 256mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
         },
-        link: "https://www.mediafire.com/file/ygcg47cr6cej0dw/Terraria_v1.4.5.5_Juan_Launcher.zip/file"
+        link: "https://gofile.io/d/4YTJon"
     },
     {
         id: 2,
@@ -227,16 +227,16 @@ const listaJuegos = [
         // CATEGORIAS: SUPERVIVENCIA, ZOMBIES, REALISTA, DIFICIL
         categoria: ["supervivencia", "estrategia", "accion", "aventura"],
         plataforma: "pc",
-        imagen: "./img/silksong/portada.jpg",
+        imagen: "./img/project-zomboid/portada.jpg",
         galeria: ["./img/project-zomboid/img-1.jpg", "./img/project-zomboid/img-2.jpg", "./img/project-zomboid/img-3.jpg", "./img/project-zomboid/img-4.jpg"],
-        trailer: "https://www.youtube.com/watch?v=y79h7Xm8XfI",
+        trailer: "https://youtu.be/nPbsDmzZ3Oc",
          servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Project Zomboid es la cumbre de la supervivencia zombie. Solo o en multijugador: saqueas, construyes, fabricas, luchas, cultivas y pescas en una lucha por sobrevivir. Un conjunto de habilidades de RPG incondicional, un mapa enorme y una horda que no perdona errores.",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Quad-core 2.7 GHz<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Tarjeta dedicada con 2 GB de VRAM (compatible con OpenGL 2.1)<br><strong>Almacenamiento:</strong> 5 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5/i7 o AMD Ryzen 5 o superior<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 / AMD Radeon RX 580<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible (SSD recomendado)"
         },
-        link: "https://www.mediafire.com/"
+        link: "https://gofile.io/d/zBXzdN"
     },
 
     // --- NUEVO JUEGO ANDROID: BALATRO ---
@@ -249,7 +249,7 @@ const listaJuegos = [
         imagen: "./img/balatro/portada.webp", // Asegúrate de tener esta imagen
         galeria: ["./img/balatro/img-1.jpg", "./img/balatro/img-2.jpg", "./img/balatro/img-3.jpg", "./img/balatro/img-4.jpg"],
         trailer: "https://youtu.be/VUyP21iQ_-g",
-        servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+        servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "El roguelike de póker. Balatro es un hipnótico y genial constructor de mazos donde podrás jugar manos ilegales de póker, descubrir comodines que alterarán tus partidas y activar combos impresionantes que dispararán tu adrenalina.",
         requisitos: {
             minimos: "<strong>SO:</strong> Android 7.0 o superior<br><strong>RAM:</strong> 2 GB<br><strong>Almacenamiento:</strong> 150 MB de espacio disponible",
