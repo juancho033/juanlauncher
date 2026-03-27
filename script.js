@@ -218,7 +218,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows XP/7<br><strong>Procesador:</strong> 1.4 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 32 MB compatible con DirectX 9.0c<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> 3.0 GHz o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 128 MB NVIDIA GeForce 6800 / Radeon 9800<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible"
         },
-        link: "https://buzzheavier.com/0ituoqfuafn8"
+        link: "https://gofile.io/d/zBXzdN"
     },
     {
         id: 14,
@@ -286,24 +286,30 @@ if (isIndex) {
 
     if (btnSorprendeme) {
         btnSorprendeme.addEventListener('click', () => {
-            // 1. Filtrar los juegos SOLO por la plataforma actual (PC o Android)
+            // 1. Filtrar los juegos
             const juegosDisponibles = listaJuegos.filter(juego => juego.plataforma === filtroPlataforma);
-
-            if (juegosDisponibles.length === 0) return; // Por si acaso no hay juegos
+            if (juegosDisponibles.length === 0) return;
 
             // 2. Cambiar el diseño a "Cargando"
             btnSorprendeme.classList.add('loading');
             btnSorprendeme.innerHTML = '⏳ Buscando joyita...';
 
-            // 3. Esperar 1.5 segundos (animación) y redirigir
+            // 3. Esperar 1.5 segundos y redirigir
             setTimeout(() => {
-                // Selecciona un número al azar entre 0 y el total de juegos disponibles
                 const indiceAzar = Math.floor(Math.random() * juegosDisponibles.length);
                 const juegoAzar = juegosDisponibles[indiceAzar];
                 
-                // Redirigir a la página de ese juego
                 window.location.href = `juego.html?id=${juegoAzar.id}`;
-            }, 1500); // 1500 ms = 1.5 segundos de "suspense"
+            }, 1500);
+        });
+
+        // 🛠️ REPARACIÓN: Detectar cuando el usuario vuelve con la flecha de "Atrás"
+        window.addEventListener('pageshow', (event) => {
+            // "event.persisted" significa que la página se cargó desde la memoria caché (botón atrás)
+            if (event.persisted) {
+                btnSorprendeme.classList.remove('loading');
+                btnSorprendeme.innerHTML = '🎲 Sorpréndeme';
+            }
         });
     }
     
