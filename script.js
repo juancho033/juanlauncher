@@ -223,18 +223,18 @@ const listaJuegos = [
     {
         id: 14,
         titulo: "Project Zomboid",
-        genero: "Supervivencia / RPG",
-        // CATEGORIAS: SUPERVIVENCIA, ZOMBIES, REALISTA, DIFICIL
-        categoria: ["supervivencia", "estrategia", "accion", "aventura"],
+        genero: "Supervivencia",
+        // TIENE VARIAS CATEGORIAS: SUPERVIVENCIA, ZOMBIES, REALISTA Y DIFICIL
+        categoria: ["supervivencia", "zombies", "realista", "dificil"],
         plataforma: "pc",
         imagen: "./img/project-zomboid/portada.jpg",
         galeria: ["./img/project-zomboid/img-1.jpg", "./img/project-zomboid/img-2.jpg", "./img/project-zomboid/img-3.jpg", "./img/project-zomboid/img-4.jpg"],
-        trailer: "https://youtu.be/nPbsDmzZ3Oc",
-         servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
-        descripcion: "Project Zomboid es la cumbre de la supervivencia zombie. Solo o en multijugador: saqueas, construyes, fabricas, luchas, cultivas y pescas en una lucha por sobrevivir. Un conjunto de habilidades de RPG incondicional, un mapa enorme y una horda que no perdona errores.",
+        trailer: "https://www.youtube.com/watch?v=y79h7Xm8XfI",
+        servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+        descripcion: "Project Zomboid es la cumbre de la supervivencia zombie. Solo o en multijugador: saqueas, construyes, fabricas, luchas, cultivas y pescas en una lucha por sobrevivir. Un conjunto de habilidades de RPG incondicional, un mapa enorme y una horda que no perdona errores. Creditos a TheFenix010",
         requisitos: {
-            minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Quad-core 2.7 GHz<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Tarjeta dedicada con 2 GB de VRAM (compatible con OpenGL 2.1)<br><strong>Almacenamiento:</strong> 5 GB de espacio disponible",
-            recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5/i7 o AMD Ryzen 5 o superior<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 / AMD Radeon RX 580<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible (SSD recomendado)"
+            minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Quad-core 2.7 GHz<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Tarjeta dedicada con 2 GB de VRAM<br><strong>Almacenamiento:</strong> 5 GB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5/i7 o AMD Ryzen 5<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 (6GB)<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible"
         },
         link: "https://gofile.io/d/zBXzdN"
     },
