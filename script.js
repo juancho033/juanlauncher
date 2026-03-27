@@ -213,7 +213,7 @@ const listaJuegos = [
         galeria: ["./img/nfs-most-wanted/img-1.jpg", "./img/nfs-most-wanted/img-2.jpg", "./img/nfs-most-wanted/img-3.jpg", "./img/nfs-most-wanted/img-4.jpg"],
         trailer: "https://youtu.be/ifK6ZQogJds",
          servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
-        descripcion: "Conviértete en el corredor callejero más buscado. Burla a la policía, gana carreras y escala en la Blacklist de Rockport City para recuperar tu coche y ganar reputación en el mundo del tuning.",
+        descripcion: "Conviértete en el corredor callejero más buscado. Burla a la policía, gana carreras y escala en la Blacklist de Rockport City para recuperar tu coche y ganar reputación en el mundo del tuning. (Creditos a Optiprojects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP/7<br><strong>Procesador:</strong> 1.4 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 32 MB compatible con DirectX 9.0c<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> 3.0 GHz o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 128 MB NVIDIA GeForce 6800 / Radeon 9800<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible"
