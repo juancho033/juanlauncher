@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuanLauncher - Detalles del Juego</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
+        <nav>
+            <a href="ayuda.html" class="nav-link">Ayuda</a>
+             
+        </nav>
+        <a href="contacto.html" class="nav-link">Contacto</a> 
+        <nav>
+            <a href="index.html" class="back-btn">← Volver al inicio</a>
+        </nav>
+        
+            <div class="social-links">
+                <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn"
+                    title="Mi GitHub">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn"
+                    title="Mi YouTube">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+            </div>
+
+    </header>
+
+    <main class="detail-container">
+        <div class="game-header">
+            <img id="detalle-img" src="" alt="Portada">
+            <div class="game-header-info">
+                <h1 id="detalle-titulo">Cargando...</h1>
+                <p class="tag" id="detalle-genero">...</p>
+                <div class="description-box">
+                    <h3>Descripción</h3>
+                    <p id="detalle-desc">...</p>
+                </div>
+                <a href="#" id="detalle-btn" class="download-btn-mega" target="_blank">
+                    DESCARGAR AHORA <br> <small>(Mediafire)</small>
+                </a><br>
+                <p>CONTRASEÑA: juanlauncher</p>
+            </div>
+        </div>
+
+        <section class="media-section">
+            <h2>Trailer:</h2>
+            
+            <div class="video-container" id="video-wrapper">
+                <!-- El iframe se insertará aquí con JS -->
+            </div>
+
+            <h3>Capturas de pantalla</h3>
+            <div class="gallery" id="detalle-galeria">
+                <!-- Las imagenes se inyectan aquí -->
+            </div>
+        </section>
+
+
+        <section class="requirements">
+            <h2>Requisitos del Sistema</h2>
+            <div class="req-grid">
+                <div class="req-column">
+                    <h4>MÍNIMOS:</h4>
+                    <p id="req-min">...</p>
+                </div>
+                <div class="req-column">
+                    <h4>RECOMENDADOS:</h4>
+                    <p id="req-rec">...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="requirements">
+            <h2>Nota del Dueño:</h2>
+            <div class="req-grid">
+                <div class="req-column">
+                    <h4>Recomendacion:</h4>
+                    <p>Si te Gusta el Juego no se te olvide Comprarlo Legalmente para apoyar al desarrollador ❤️</p>
+                    <p>IMPORTANTE: Contraseña del ZIP o RAR: juanlauncher</p>
+                    <p>Usa 7-zip para descomprimir el Juego y usa <a href="https://www.freedownloadmanager.org/es/" target="_blank">Free Download Manager (OPCIONAL)</a> para descargar el juego</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <a class="prev-lightbox">&#10094;</a>
+        <img class="lightbox-content" id="img-grande">
+        <a class="next-lightbox">&#10095;</a>
+    </div>
+
+
+    <footer>
+        <p style="text-align: center;">&copy; 2026 JuanLauncher.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

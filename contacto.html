@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuanLauncher - Contacto y Reportes</title>
+    <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
+        <a href="ayuda.html" class="nav-link">Ayuda</a>
+    
+            <div class="social-links">
+                <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn"
+                    title="Mi GitHub">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn"
+                    title="Mi YouTube">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+            </div>
+        <nav>
+            <a href="index.html" class="nav-link">← Volver a Inicio</a>
+            
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <h1 style="text-align: center; border: none; margin-bottom: 20px;">Contacto y Reportes</h1>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>¿Para qué sirve este formulario?</h2>
+                <ul>
+                    <li>🚨 <strong>Reportar enlaces caídos:</strong> Si un link de Mediafire o de terabox ya no funciona, avisame.</li>
+                    <li>🎮 <strong>Pedir un juego nuevo:</strong> ¿No encuentras el juego que buscas? Pídelo.</li>
+                    <li>💬 <strong>Sugerencias o dudas:</strong> Cualquier otra consulta que tengas sobre la web.</li>
+                </ul>
+                <div class="direct-email">
+                    <p>También puedes escribirme directamente a:</p>
+                    <p style="color: #00d2ff; font-size: bold;">liletgomez03@gmail.com</p>
+                </div>
+            </div>
+
+            <form id="formulario-contacto" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                
+                 <input type="hidden" name="access_key" value="79bedfec-5c6c-42b9-86d6-20b78c9c725d">
+
+                <div class="form-group">
+                    <label for="nombre">Tu Nombre o Apodo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Player123" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Tu Correo Electrónico (Opcional):</label>
+                    <input type="email" id="email" name="email" placeholder="Para poder responderte...">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">¿Qué necesitas?</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Enlace Caido">🚨 Reportar enlace caído</option>
+                        <option value="Pedir Juego">🎮 Pedir que suban un juego</option>
+                        <option value="Sugerencia">💡 Sugerencia / Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Detalles:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí los detalles..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="btn-enviar">ENVIAR MENSAJE</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- POP-PUP Oculto -->
+    <div id="popup-mensaje" class="form-popup-overlay">
+        <div class="form-popup-box">
+            <div id="popup-icono" style="font-size: 50px; margin-bottom: 10px;">✅</div>
+            <h2 id="popup-titulo">¡Enviado!</h2>
+            <p id="popup-texto">Gracias por tu mensaje. Lo revisaremos pronto.</p>
+            <button class="submit-btn cerrar-popup-btn" style="width: 100%; margin-top: 20px;">Aceptar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p style="text-align: center;">&copy; 2026 JuanLauncher. Hecho con ❤️.</p>
+    </footer>
+
+  
+    <script src="script.js"></script>
+
+</body>
+</html>
