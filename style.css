@@ -1010,3 +1010,26 @@ nav {
         margin-top: -30px;
     }
 }
+
+/* --- COLORES DINÁMICOS BOTÓN DE DESCARGA --- */
+/* Mediafire (Azul clásico) */
+.btn-mediafire {
+    background: linear-gradient(45deg, #00d2ff, #0078ff);
+    box-shadow: 0 5px 20px rgba(0, 210, 255, 0.3);
+}
+.btn-mediafire:hover { box-shadow: 0 5px 30px rgba(0, 210, 255, 0.6); }
+
+/* TeraBox (Morado / Azul oscuro) */
+.btn-terabox {
+    background: linear-gradient(45deg, #512DA8, #673AB7);
+    box-shadow: 0 5px 20px rgba(103, 58, 183, 0.3);
+}
+.btn-terabox:hover { box-shadow: 0 5px 30px rgba(103, 58, 183, 0.6); }
+
+/* Buzzheavier (Verde Neón / Oscuro) */
+.btn-buzz {
+    background: linear-gradient(45deg, #00b09b, #96c93d);
+    color: #000 !important; /* Texto negro para que resalte en verde */
+    box-shadow: 0 5px 20px rgba(150, 201, 61, 0.3);
+}
+.btn-buzz:hover { box-shadow: 0 5px 30px rgba(150, 201, 61, 0.6); }

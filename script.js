@@ -10,6 +10,7 @@ const listaJuegos = [
         imagen: "./img/terraria/portada.jpg",
         galeria: ["./img/terraria/img-1.jpg", "./img/terraria/img-2.jpg", "./img/terraria/img-3.jpg", "./img/terraria/img-4.jpg"],
         trailer: "https://youtu.be/HHNLfxBxcvo",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP, Vista, 7, 8/8.1, 10<br><strong>Procesador:</strong> 2.0 Ghz<br><strong>Memoria:</strong> 2.5 GB de RAM<br><strong>Gráficos:</strong> 128mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible",
@@ -27,6 +28,7 @@ const listaJuegos = [
         imagen: "./img/hollowknight/portada.jpg",
         galeria: ["./img/hollowknight/img-1.jpg", "./img/hollowknight/img-2.jpg", "./img/hollowknight/img-3.jpg", "./img/hollowknight/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=UAO2urG23S4",
+        servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a mano. Creditos a TheFenix010",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7 (64bit)<br><strong>Procesador:</strong> Intel Core 2 Duo E5200<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> GeForce 9800GTX+ (1GB)<br><strong>Almacenamiento:</strong> 9 GB de espacio disponible",
@@ -45,6 +47,7 @@ const listaJuegos = [
         imagen: "./img/stardewvalley/portada.jpg",
         galeria: ["./img/stardewvalley/img-1.jpg", "./img/stardewvalley/img-2.jpg", "./img/stardewvalley/img-3.jpg", "./img/stardewvalley/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=ot7uXNQskhs",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Has heredado la vieja parcela agrícola de tu abuelo. Armado con herramientas de mano y unas pocas monedas, te dispones a comenzar tu nueva vida.",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7 o superior<br><strong>Procesador:</strong> 2 Ghz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 256 mb memoria de vídeo, shader model 3.0+<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
@@ -62,6 +65,7 @@ const listaJuegos = [
         imagen: "./img/fnaf1/portada.webp",
         galeria: ["./img/fnaf1/img-1.jpg", "./img/fnaf1/img-2.jpg", "./img/fnaf1/img-3.jpg", "./img/fnaf1/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=RP4UTOek0-Y",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "En este Paquete viene los 3 primeros Juegos de la Famosa Saga de FNAF (Todos los creditos a Optiproyects por el Paquete)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP, 7, 8, 10<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> 1 GB de memoria de vídeo<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
@@ -79,6 +83,7 @@ const listaJuegos = [
         imagen: "./img/celeste/portada.png",
         galeria: ["./img/celeste/img-1.jpg", "./img/celeste/img-2.jpg", "./img/celeste/img-3.jpg", "./img/celeste/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=FqBj2IGg6Uw",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Ayuda a Madeline a sobrevivir a sus demonios internos en su viaje a la cima de la montaña Celeste, en este ajustadísimo plataformas de los creadores de TowerFall. (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7 o superior<br><strong>Procesador:</strong> Intel Core i3 M380<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Intel HD 4000<br><strong>Almacenamiento:</strong> 1.2 GB de espacio disponible",
@@ -96,6 +101,7 @@ const listaJuegos = [
         imagen: "./img/silksong/portada.jpg",
         galeria: ["./img/silksong/img-1.jpg", "./img/silksong/img-2.jpg", "./img/silksong/img-3.jpg", "./img/silksong/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=pFAknD_9U7c",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Juega como Hornet, la princesa protectora de Hallownest, y aventúrate a través de un reino completamente nuevo donde reinan la seda y la música. (Creditos a TheFenix010)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7<br><strong>Procesador:</strong> Intel Core i3<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Nvidia GeForce GTX 460<br><strong>Almacenamiento:</strong> 9 GB de espacio disponible",
@@ -113,6 +119,7 @@ const listaJuegos = [
         imagen: "./img/megabonk/portada.jpg",
         galeria: ["./img/megabonk/img-1.jpg", "./img/megabonk/img-2.jpg", "./img/megabonk/img-3.jpg", "./img/megabonk/img-4.jpg"],
         trailer: "https://youtu.be/PlC4_c2dcGw", // Sustituir por el link real del trailer
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "¡Arrasa con oleadas infinitas de enemigos y vuélvete absurdamente poderoso! Agarra loot, sube de nivel, desbloquea personajes y haz upgrades para crear builds únicas y locas mientras te enfrentas a hordas de criaturas. (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i3 o equivalente<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Integrados Intel HD 4000<br><strong>Almacenamiento:</strong> 2 GB de espacio disponible",
@@ -130,6 +137,7 @@ const listaJuegos = [
         imagen: "./img/geometry-dash/portada.jpg",
         galeria: ["./img/geometry-dash/img-1.jpg", "./img/geometry-dash/img-2.jpg", "./img/geometry-dash/img-3.jpg", "./img/geometry-dash/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=k90y6PIzIaE",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo!",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows XP/Vista/7/8/10/11<br><strong>Procesador:</strong> 2.0 GHz<br><strong>Memoria:</strong> 512 MB de RAM<br><strong>Gráficos:</strong> OpenGL 2.0 compatible<br><strong>Almacenamiento:</strong> 100 MB de espacio disponible",
@@ -147,6 +155,7 @@ const listaJuegos = [
         imagen: "./img/hytale/portada.webp",
         galeria: ["./img/hytale/img-1.webp", "./img/hytale/img-2.webp", "./img/hytale/img-3.webp", "./img/hytale/img-4.webp"],
         trailer: "https://www.youtube.com/watch?v=o77MzDQT1cg&t=1s",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Hytale es un RPG sandbox de mundo abierto estilo voxel desarrollado por Hypixel Studios, que mezcla exploración, construcción y combate en un universo fantástico generado proceduralmente. Ofrece una experiencia centrada en la aventura con progresión RPG, jefes, mazmorras y herramientas de creación avanzadas, diseñado para ser tanto una aventura guiada como un lienzo creativo multijugador. (Creditos a thefenix010)",
         requisitos: {
             minimos: "<strong>SO:</strong> Windows 7 (64-bit)<br><strong>Procesador:</strong> Intel Core i3-3225 / AMD A8-7600<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Intel HD Graphics 4000 / AMD Radeon R5<br><strong>Almacenamiento:</strong> 4 GB de espacio disponible",
@@ -165,6 +174,7 @@ const listaJuegos = [
         imagen: "./img/stardewvalley/portada.jpg",
         galeria: ["./img/stardew-valley2/img-1.webp", "./img/stardew-valley2/img-2.webp", "./img/stardew-valley2/img-3.webp", "./img/stardew-valley2/img-4.webp"],
         trailer: "https://youtu.be/pHUqhYslji4",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Has heredado la vieja parcela agrícola de tu abuelo en Stardew Valley. Armado con herramientas de segunda mano y unas pocas monedas, te dispones a comenzar tu nueva vida. ¿Podrás aprender a vivir de la tierra y convertir estos campos descuidados en un hogar próspero? (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Android 4.4 o superior<br><strong>Procesador:</strong> Quad-core 1.2 GHz<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Adreno 306 o equivalente<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
@@ -183,12 +193,50 @@ const listaJuegos = [
         imagen: "./img/geometry-dash/portada.jpg",
         galeria: ["./img/geometry-dash/img-1.jpg", "./img/geometry-dash/img-2.jpg", "./img/geometry-dash/img-3.jpg", "./img/geometry-dash/img-4.jpg"],
         trailer: "https://www.youtube.com/watch?v=k90y6PIzIaE",
+         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "¡La experiencia completa de Geometry Dash en la palma de tu mano! Salta, vuela y ábrete paso a través de peligrosos pasajes y obstáculos puntiagudos al ritmo de la música. ¡Niveles nuevos, logros y mucha frustración divertida te esperan! (Creditos a Optiproyects)",
         requisitos: {
             minimos: "<strong>SO:</strong> Android 4.0 o superior<br><strong>Procesador:</strong> Dual Core 1.2 GHz<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Adreno 305 o equivalente<br><strong>Almacenamiento:</strong> 150 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Android 10.0 o superior<br><strong>Procesador:</strong> Quad Core 2.0 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM o más<br><strong>Gráficos:</strong> Mali-G71 MP2 / Adreno 506<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible"
         },
         link: "https://www.mediafire.com/file/4v0s1tp03mgts87/GeometryDash_2.207_juanlauncher.apk/file"
+    },
+
+    {
+        id: 13,
+        titulo: "Need for Speed: Most Wanted",
+        genero: "Carreras / Mundo Abierto",
+        // CATEGORIAS: CARRERAS, ACCION, CONDUCCION, CLASICO
+        categoria: ["carreras", "accion", "conduccion", "mundo-abierto"],
+        plataforma: "pc",
+        imagen: "./img/nfs-most-wanted/portada.jpg",
+        galeria: ["./img/nfs-most-wanted/img-1.jpg", "./img/nfs-most-wanted/img-2.jpg", "./img/nfs-most-wanted/img-3.jpg", "./img/nfs-most-wanted/img-4.jpg"],
+        trailer: "https://youtu.be/ifK6ZQogJds",
+         servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+        descripcion: "Conviértete en el corredor callejero más buscado. Burla a la policía, gana carreras y escala en la Blacklist de Rockport City para recuperar tu coche y ganar reputación en el mundo del tuning.",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Windows XP/7<br><strong>Procesador:</strong> 1.4 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 32 MB compatible con DirectX 9.0c<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> 3.0 GHz o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 128 MB NVIDIA GeForce 6800 / Radeon 9800<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible"
+        },
+        link: "https://buzzheavier.com/0ituoqfuafn8"
+    },
+    {
+        id: 14,
+        titulo: "Project Zomboid",
+        genero: "Supervivencia / RPG",
+        // CATEGORIAS: SUPERVIVENCIA, ZOMBIES, REALISTA, DIFICIL
+        categoria: ["supervivencia", "estrategia", "accion", "aventura"],
+        plataforma: "pc",
+        imagen: "./img/silksong/portada.jpg",
+        galeria: ["./img/project-zomboid/img-1.jpg", "./img/project-zomboid/img-2.jpg", "./img/project-zomboid/img-3.jpg", "./img/project-zomboid/img-4.jpg"],
+        trailer: "https://www.youtube.com/watch?v=y79h7Xm8XfI",
+         servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+        descripcion: "Project Zomboid es la cumbre de la supervivencia zombie. Solo o en multijugador: saqueas, construyes, fabricas, luchas, cultivas y pescas en una lucha por sobrevivir. Un conjunto de habilidades de RPG incondicional, un mapa enorme y una horda que no perdona errores.",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Quad-core 2.7 GHz<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Tarjeta dedicada con 2 GB de VRAM (compatible con OpenGL 2.1)<br><strong>Almacenamiento:</strong> 5 GB de espacio disponible",
+            recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5/i7 o AMD Ryzen 5 o superior<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 / AMD Radeon RX 580<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible (SSD recomendado)"
+        },
+        link: "https://www.mediafire.com/"
     },
 
     // --- NUEVO JUEGO ANDROID: BALATRO ---
@@ -201,6 +249,7 @@ const listaJuegos = [
         imagen: "./img/balatro/portada.webp", // Asegúrate de tener esta imagen
         galeria: ["./img/balatro/img-1.jpg", "./img/balatro/img-2.jpg", "./img/balatro/img-3.jpg", "./img/balatro/img-4.jpg"],
         trailer: "https://youtu.be/VUyP21iQ_-g",
+        servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "El roguelike de póker. Balatro es un hipnótico y genial constructor de mazos donde podrás jugar manos ilegales de póker, descubrir comodines que alterarán tus partidas y activar combos impresionantes que dispararán tu adrenalina.",
         requisitos: {
             minimos: "<strong>SO:</strong> Android 7.0 o superior<br><strong>RAM:</strong> 2 GB<br><strong>Almacenamiento:</strong> 150 MB de espacio disponible",
@@ -368,7 +417,28 @@ if (isGame) {
         document.getElementById('detalle-titulo').innerText = juego.titulo;
         document.getElementById('detalle-genero').innerText = juego.genero;
         document.getElementById('detalle-desc').innerText = juego.descripcion;
-        document.getElementById('detalle-btn').href = juego.link;
+        // --- CONFIGURAR BOTÓN DE DESCARGA SEGÚN SERVIDOR ---
+        const btnDescarga = document.getElementById('detalle-btn');
+        btnDescarga.href = juego.link;
+
+        // Valores por defecto (por si se te olvida ponerlo en la base de datos)
+        let nombreServidor = "Mediafire";
+        let claseServidor = "btn-mediafire";
+
+        if (juego.servidor) {
+            const serv = juego.servidor.toLowerCase();
+            if (serv === "terabox") {
+                nombreServidor = "TeraBox";
+                claseServidor = "btn-terabox";
+            } else if (serv === "gofile") {
+                nombreServidor = "Gofile";
+                claseServidor = "btn-buzz";
+            }
+        }
+
+        // Aplicamos la clase de color y cambiamos el texto
+        btnDescarga.className = `download-btn-mega ${claseServidor}`;
+        btnDescarga.innerHTML = `DESCARGAR AHORA <br> <small>(vía ${nombreServidor})</small>`;
 
         // Requisitos
         document.getElementById('req-min').innerHTML = juego.requisitos.minimos;
