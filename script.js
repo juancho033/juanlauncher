@@ -357,7 +357,9 @@ if (isIndex) {
             const card = document.createElement('div');
             card.classList.add('card');
             card.innerHTML = `
-                <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg'">
+                <div class="card-img-wrapper">
+                    <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg'">
+                </div>
                 <div class="card-info">
                     <h3>${juego.titulo}</h3>
                     <p>${juego.genero}</p>

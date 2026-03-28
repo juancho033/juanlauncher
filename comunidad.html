@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - JuanLauncher</title>
+    <meta name="description" content="Únete a la comunidad de JuanLauncher. Discusiones, foros y ayuda mutua.">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Muro de seguridad (Auth Gate)
+        if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="social-links">
+            <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn" title="Mi GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn" title="Mi YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+            </a>
+        </div>
+
+        <div class="nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
+            <nav>
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="ayuda.html" class="nav-link">Ayuda</a>
+                <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
+                <a href="comunidad.html" class="nav-link" style="color: #00d2ff;">Comunidad</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Iniciar Sesión</a>
+            </div>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar discusiones...">
+        </div>
+    </header>
+
+    <main class="chat-main">
+        <div class="chat-wrapper">
+            <!-- Sidebar: Usuarios y Grupos -->
+            <aside class="chat-sidebar">
+                <div class="sidebar-header">
+                    <h3>Chat Global 🌍</h3>
+                    <p id="user-count">Activos: 128</p>
+                </div>
+                <div class="user-list">
+                    <div class="user-item active">
+                        <div class="avatar online"></div>
+                        <span>General</span>
+                    </div>
+                    <div class="user-item">
+                        <div class="avatar online"></div>
+                        <span>Admin Juan</span>
+                    </div>
+                    <div class="user-item">
+                        <div class="avatar online"></div>
+                        <span>Moderador_X</span>
+                    </div>
+                    <!-- Simulación de más usuarios -->
+                    <div class="user-item offline">
+                        <div class="avatar"></div>
+                        <span>ZeroKnight</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área de Chat -->
+            <section class="chat-area">
+                <div class="chat-header">
+                    <div class="header-info">
+                        <h2># Sala-General</h2>
+                        <span>Bienvenido al chat oficial de JuanLauncher.</span>
+                    </div>
+                    <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+                </div>
+
+                <div class="messages-container" id="chat-messages">
+                    <!-- Mensaje del sistema -->
+                    <div class="msg-system">Te has unido a la sala #General. Bienvenido, <span id="current-username-display"></span>!</div>
+                    
+                    <!-- Simulación de mensajes previos -->
+                    <div class="msg-box">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=f44336&color=fff" alt="Admin" class="msg-avatar">
+                        <div class="msg-content">
+                            <span class="msg-author">Admin Juan</span>
+                            <p>¡Bienvenidos a la nueva zona de chat! Recuerden seguir las reglas y disfrutar de la comunidad.</p>
+                            <span class="msg-time">Hace 10m</span>
+                        </div>
+                    </div>
+
+                    <div class="msg-box">
+                        <img src="https://ui-avatars.com/api/?name=Zero&background=333&color=fff" alt="Zero" class="msg-avatar">
+                        <div class="msg-content">
+                            <span class="msg-author">ZeroKnight</span>
+                            <p>¡Esto se ve increíble! ¿Alguien sabe cuándo sale la nueva versión de JuanLauncher?</p>
+                            <span class="msg-time">Hace 2m</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <form id="chat-form">
+                        <input type="text" id="chat-input" placeholder="Escribe un mensaje aquí..." autocomplete="off">
+                        <button type="submit" id="send-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polyline points="22 2 15 22 11 13 2 9 22 2"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const chatForm = document.getElementById("chat-form");
+        const chatInput = document.getElementById("chat-input");
+        const messagesContainer = document.getElementById("chat-messages");
+        const userName = localStorage.getItem("userName") || "GamerPro";
+
+        // Mostrar nombre actual
+        document.getElementById('current-username-display').textContent = userName;
+
+        function scrollBottom() {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function createMessage(text, author = "Tú", isSelf = true) {
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const msgHtml = `
+                <div class="msg-box ${isSelf ? 'msg-self' : ''}">
+                    <img src="https://ui-avatars.com/api/?name=${author}&background=${isSelf ? '00f0ff' : '444'}&color=fff" class="msg-avatar">
+                    <div class="msg-content">
+                        <span class="msg-author">${author}</span>
+                        <p>${text}</p>
+                        <span class="msg-time">${time}</span>
+                    </div>
+                </div>
+            `;
+            messagesContainer.insertAdjacentHTML('beforeend', msgHtml);
+            scrollBottom();
+        }
+
+        chatForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (text) {
+                createMessage(text, userName, true);
+                chatInput.value = "";
+                
+                // Simulación de respuesta bot
+                setTimeout(() => {
+                    const replies = ["¡Genial!", "Opino lo mismo gamer.", "😂😂😂", "F", "¡Interesante!", "Mira el catálogo de juegos, hay novedades."];
+                    const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                    createMessage(randomReply, "System-Bot", false);
+                }, 1500);
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("userName");
+            window.location.href = "login.html";
+        }
+        
+        scrollBottom();
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>JuanLauncher</h3>
+                <p>El mejor lugar para descubrir, probar y disfrutar tus juegos favoritos de PC y Android. Software libre de virus y descargas rápidas.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ayuda.html">Ayuda y Soporte</a></li>
+                    <li><a href="compatibilidad.html">¿Corre en mi PC?</a></li>
+                    <li><a href="comunidad.html">Comunidad</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JuanLauncher. Hecho con ❤️ para la comunidad gamer.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

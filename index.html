@@ -7,7 +7,7 @@
     <title>JuanLauncher - Inicio</title>
     <meta name="description" content="Página oficial de JuanLauncher. El mejor lugar para probar juegos de pc y descargar.">
     <meta name="keywords" content="JuanLauncher, Juancho, web development, software games pc, juegos, mediafire">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -39,12 +39,16 @@
         </div>
 
         <div class="nav-container">
-            <div class="logo">JuanLauncher</div>
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
             <nav>
+                <a href="index.html" class="nav-link">Inicio</a>
                 <a href="ayuda.html" class="nav-link">Ayuda</a>
                 <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="comunidad.html" class="nav-link">Comunidad</a>
             </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Iniciar Sesión</a>
+            </div>
         </div>
         
         <div class="search-bar">
@@ -53,6 +57,39 @@
     </header>
 
     <main>
+        <!-- HERO CAROUSEL -->
+        <div class="hero-carousel">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');">
+                <div class="hero-overlay">
+                    <h2>Descubre Nuevos Mundos</h2>
+                    <p>Los mejores juegos de PC y Android en un solo lugar. Descargas rápidas y seguras.</p>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop');">
+                <div class="hero-overlay">
+                    <h2>Foro de la Comunidad</h2>
+                    <p>Comparte tus mods, trucos y tutoriales con miles de jugadores.</p>
+                </div>
+            </div>
+            
+            <div class="hero-indicators">
+                <span class="hero-dot active" onclick="changeSlide(0)"></span>
+                <span class="hero-dot" onclick="changeSlide(1)"></span>
+            </div>
+        </div>
+        
+        <script>
+            let cIndex = 0;
+            const s = document.querySelectorAll('.hero-slide');
+            const d = document.querySelectorAll('.hero-dot');
+            function changeSlide(n) {
+                s[cIndex].classList.remove('active'); d[cIndex].classList.remove('active');
+                cIndex = n !== undefined ? n : (cIndex + 1) % s.length;
+                s[cIndex].classList.add('active'); d[cIndex].classList.add('active');
+            }
+            setInterval(changeSlide, 6000);
+        </script>
+
         <!-- SECCIÓN DE FILTROS -->
         <div class="filters-container">
             <div class="platform-switch">
@@ -93,6 +130,7 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="ayuda.html">Ayuda y Soporte</a></li>
                     <li><a href="compatibilidad.html">¿Corre en mi PC?</a></li>
+                    <li><a href="comunidad.html">Comunidad</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -102,7 +140,24 @@
         </div>
     </footer>
 
+    <!-- Botón Subir Arriba -->
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Ir arriba">▲</button>
+
     <script src="script.js"></script>
+    <script>
+        // Lógica del botón subir
+        const scrollBtn = document.getElementById("scrollTopBtn");
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.classList.add("visible");
+            } else {
+                scrollBtn.classList.remove("visible");
+            }
+        });
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html>
