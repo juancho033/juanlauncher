@@ -358,7 +358,8 @@ if (isIndex) {
             card.classList.add('card');
             card.innerHTML = `
                 <div class="card-img-wrapper">
-                    <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg'">
+                    <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg' loading="lazy" 
+                     decoding="async">">
                 </div>
                 <div class="card-info">
                     <h3>${juego.titulo}</h3>

@@ -74,10 +74,24 @@ h1 { margin-bottom: 30px; border-left: 5px solid var(--accent); padding-left: 15
 .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px; }
 .card {
     background: var(--surface); border-radius: 12px; overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; 
+    
     border: 1px solid var(--border-glass);
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     position: relative;
+    content-visibility: auto; 
+    /* Le decimos al navegador cuánto mide aprox. para que no salte el scroll */
+    contain-intrinsic-size: 320px; 
+     /* 1. Solo animamos lo estrictamente necesario, NUNCA usar "all" */
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    
+    /* 2. Le decimos a la GPU que prepare memoria para esto */
+    will-change: transform, box-shadow;
+    
+    /* 3. Forzamos la aceleración por hardware (Capa 3D) */
+    transform: translateZ(0); 
+    
+    content-visibility: auto; 
+    contain-intrinsic-size: 320px; 
 }
 .card::before {
     content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
@@ -89,6 +103,11 @@ h1 { margin-bottom: 30px; border-left: 5px solid var(--accent); padding-left: 15
     transform: translateY(-8px) scale(1.02); 
     border-color: rgba(0, 240, 255, 0.4);
     box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 20px var(--accent-glow);
+
+    transform: translateY(-5px) translateZ(0); 
+    border-color: #00d2ff;
+    /* Reducimos un poco la complejidad de la sombra para aliviar cálculos */
+    box-shadow: 0 8px 20px rgba(0, 210, 255, 0.15); 
 }
 .card-img-wrapper { width: 100%; height: 300px; overflow: hidden; }
 .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -1377,24 +1396,6 @@ form { width: 100%; max-width: 100%; } /* Asegura que el formulario interno llen
 .auth-back { text-align: center; display: block; margin-top: 20px; color: #888; text-decoration: none; font-size: 0.85rem;}
 .auth-back:hover { color: #fff; text-decoration: underline; }
 
-/* Ajustes Responsive Nav y UI general */
-@media (max-width: 900px) {
-    header { flex-wrap: wrap; justify-content: center; gap: 15px; }
-    .nav-container { flex-wrap: wrap; justify-content: center; gap: 15px; }
-    .nav-container nav { order: 3; width: 100%; justify-content: center; }
-    .auth-buttons { order: 2; margin-left: auto; }
-    .logo { order: 1; }
-}
-
-@media (max-width: 768px) {
-    .auth-wrapper { padding: 0 0 20px 0; width: 100%; }
-    .auth-form { padding: 30px 20px 0 20px; }
-    .hero-carousel { height: 300px; }
-    .hero-overlay { padding: 40px 20px 20px; }
-    .hero-overlay h2 { font-size: 1.5rem; }
-    .hero-overlay p { font-size: 0.95rem; }
-    .auth-title { font-size: 1.5rem; }
-}
 
 /* --- SISTEMA DE CHAT PREMIUM --- */
 .chat-main {
@@ -1567,4 +1568,103 @@ form { width: 100%; max-width: 100%; } /* Asegura que el formulario interno llen
 @media (max-width: 768px) {
     .chat-sidebar { display: none; }
     .chat-main { padding: 10px; height: 90vh; }
+}
+
+
+/* =========================================
+   HEADER PERFECTO PARA MÓVILES Y TABLETS
+   ========================================= */
+@media (max-width: 850px) {
+    /* 1. Contenedor principal del Header */
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+
+    /* Ocultamos las redes sociales arriba para no saturar la pantalla */
+    .social-links { 
+        display: none; 
+    }
+
+    /* 2. Contenedor del Logo y Login */
+    .nav-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 15px;
+    }
+
+    /* El Logo toma el espacio izquierdo */
+    .nav-container .logo {
+        flex: 1;
+    }
+
+    /* El botón Login se queda a la derecha */
+    .auth-buttons {
+        flex-shrink: 0;
+    }
+
+    /* 3. Barra de búsqueda (Fila 2) */
+    .search-bar {
+        width: 100%;
+        order: 2; /* Lo forzamos a ir debajo del logo/login */
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 12px; /* Un poco más grande para tocar fácil en móvil */
+    }
+
+    /* 4. Menú de enlaces (Fila 3) - Deslizable (Swipe) */
+    nav {
+        width: 100%;
+        order: 3; /* Lo forzamos a ir al final del Header */
+        display: flex;
+        gap: 20px;
+        overflow-x: auto; /* Permite deslizar horizontalmente */
+        white-space: nowrap; /* Evita que el texto baje a otra línea */
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS/Android */
+    }
+
+    /* Ocultar la barrita gris fea de scroll del menú */
+    nav::-webkit-scrollbar {
+        height: 0px;
+        background: transparent;
+    }
+
+    /* Reducir altura del carrusel en móvil para que se vean los juegos */
+    .hero-carousel {
+        height: 220px;
+        margin-bottom: 25px;
+    }
+
+    .hero-overlay h2 {
+        font-size: 1.5rem;
+    }
+}
+
+header {
+    /* Aseguramos que las transiciones las haga la Tarjeta Gráfica */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+
+/* En PC no ocultamos el header, solo en Móvil y Tablet (máx 850px) */
+@media (max-width: 850px) {
+    /* Esta clase se añadirá con JavaScript al hacer scroll hacia abajo */
+    .header-hidden {
+        transform: translateY(-100%); /* Esconde el header hacia arriba */
+        box-shadow: none;
+    }
+}
+
+/* 4. Clase mágica que anula el hover mientras haces scroll */
+body.is-scrolling .card {
+    pointer-events: none !important; 
 }

@@ -45,6 +45,7 @@
                 <a href="ayuda.html" class="nav-link">Ayuda</a>
                 <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
                 <a href="comunidad.html" class="nav-link">Comunidad</a>
+                 <a href="contacto.html" class="nav-link">Contacto</a>
             </nav>
             <div class="auth-buttons">
                 <a href="login.html" class="login-btn">Iniciar Sesión</a>
@@ -144,16 +145,52 @@
     <button id="scrollTopBtn" class="scroll-top-btn" title="Ir arriba">▲</button>
 
     <script src="script.js"></script>
-    <script>
-        // Lógica del botón subir
+        <script>
         const scrollBtn = document.getElementById("scrollTopBtn");
+        const header = document.querySelector("header");
+        
+        let ticking = false;
+        let lastScrollY = window.scrollY;
+        
+        // VARIABLE NUEVA PARA EL HOVER
+        let scrollTimeout; 
+
         window.addEventListener("scroll", () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollBtn.classList.add("visible");
-            } else {
-                scrollBtn.classList.remove("visible");
+            // TRUCO PRO: Desactivar los Hovers al instante cuando mueves la rueda
+            document.body.classList.add('is-scrolling');
+            
+            // Volver a activar los Hovers 150 milisegundos después de que dejes de hacer scroll
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                document.body.classList.remove('is-scrolling');
+            }, 150);
+
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+
+                    // Lógica del Header Inteligente
+                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                        header.classList.add("header-hidden");
+                    } else {
+                        header.classList.remove("header-hidden");
+                    }
+
+                    // Lógica del Botón de Subir
+                    if (currentScrollY > 300) {
+                        scrollBtn.classList.add("visible");
+                    } else {
+                        scrollBtn.classList.remove("visible");
+                    }
+
+                    lastScrollY = currentScrollY;
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
+
+        // Click en el botón de subir
         scrollBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
