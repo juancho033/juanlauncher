@@ -2549,7 +2549,7 @@ header {
 }
 
 main {
-    margin-top: 300px; /* 👈 ajusta según altura real de tu header */
+    margin-top: 150px; /* 👈 ajusta según altura real de tu header */
 }
 
 .header-hidden {
