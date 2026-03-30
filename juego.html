@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css?v=4">
     <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* 1. Quitamos el comportamiento de "Fijo / Sticky" solo en esta página */
+        header {
+            position: relative !important;
+        }
+
+        /* 2. Le damos nivel "Dios" al Lightbox para que NADA lo pueda tapar */
+        .lightbox {
+            z-index: 99999 !important; 
+        }
+    </style>
 </head>
 <body>
 
@@ -135,14 +146,24 @@
 
     <script src="script.js"></script>
     <script>
+       // Lógica del botón subir (OPTIMIZADA ANTI-LAG)
         const scrollBtn = document.getElementById("scrollTopBtn");
+        let ticking = false;
+
         window.addEventListener("scroll", () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollBtn.classList.add("visible");
-            } else {
-                scrollBtn.classList.remove("visible");
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 300) {
+                        scrollBtn.classList.add("visible");
+                    } else {
+                        scrollBtn.classList.remove("visible");
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
+
         scrollBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });

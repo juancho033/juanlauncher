@@ -229,7 +229,7 @@ const listaJuegos = [
         plataforma: "pc",
         imagen: "./img/project-zomboid/portada.jpg",
         galeria: ["./img/project-zomboid/img-1.jpg", "./img/project-zomboid/img-2.jpg", "./img/project-zomboid/img-3.jpg", "./img/project-zomboid/img-4.jpg"],
-        trailer: "https://www.youtube.com/watch?v=y79h7Xm8XfI",
+        trailer: "https://youtu.be/nPbsDmzZ3Oc",
         servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
         descripcion: "Project Zomboid es la cumbre de la supervivencia zombie. Solo o en multijugador: saqueas, construyes, fabricas, luchas, cultivas y pescas en una lucha por sobrevivir. Un conjunto de habilidades de RPG incondicional, un mapa enorme y una horda que no perdona errores. Creditos a TheFenix010",
         requisitos: {
@@ -277,6 +277,8 @@ if (isIndex) {
     const contenedor = document.getElementById('contenedor-juegos');
     const buscador = document.getElementById('buscador');
     const tituloSeccion = document.getElementById('titulo-seccion');
+    let filtroServidorActual = 'todos'; // NUEVA VARIABLE
+    const selectorServidor = document.getElementById('filtro-servidor'); // NUEVO ELEMENTO
 
     // Variables de estado
     let filtroPlataforma = 'pc';
@@ -323,21 +325,25 @@ if (isIndex) {
     // Función principal de filtrado
     function aplicarFiltros() {
         const juegosFiltrados = listaJuegos.filter(juego => {
-            // 1. Coincidir plataforma
+            // 1. Plataforma
             const coincidePlataforma = juego.plataforma === filtroPlataforma;
-
-            // 2. Coincidir categoria (LOGICA CAMBIADA PARA ARRAYS)
-            // Si el filtro es 'todos' O la lista de categorias del juego INCLUYE la categoria seleccionada
+            
+            // 2. Categoría
             const coincideCategoria = filtroCategoria === 'todos' || juego.categoria.includes(filtroCategoria);
-
-            // 3. Coincidir busqueda
+            
+            // 3. Búsqueda
             const coincideBusqueda = juego.titulo.toLowerCase().includes(filtroBusqueda.toLowerCase());
 
-            return coincidePlataforma && coincideCategoria && coincideBusqueda;
+            // 4. SERVIDOR (NUEVO)
+            // Si en la base de datos se te olvidó poner el servidor, asume que es mediafire por defecto
+            const servDelJuego = juego.servidor ? juego.servidor.toLowerCase() : 'mediafire';
+            const coincideServidor = filtroServidorActual === 'todos' || servDelJuego === filtroServidorActual;
+
+            return coincidePlataforma && coincideCategoria && coincideBusqueda && coincideServidor;
         });
 
         cargarJuegos(juegosFiltrados);
-
+        
         // Actualizar título
         const catNombre = filtroCategoria.charAt(0).toUpperCase() + filtroCategoria.slice(1);
         tituloSeccion.innerText = `Catálogo ${filtroPlataforma.toUpperCase()} ${filtroCategoria !== 'todos' ? '- ' + catNombre : ''}`;
@@ -359,7 +365,7 @@ if (isIndex) {
             card.innerHTML = `
                 <div class="card-img-wrapper">
                     <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg' loading="lazy" 
-                     decoding="async">">
+                     decoding="async" id="detalle-img">
                 </div>
                 <div class="card-info">
                     <h3>${juego.titulo}</h3>
@@ -397,6 +403,13 @@ if (isIndex) {
     if (buscador) {
         buscador.addEventListener('input', (e) => {
             filtroBusqueda = e.target.value;
+            aplicarFiltros();
+        });
+    }
+    // Evento Selector Servidor (NUEVO)
+    if (selectorServidor) {
+        selectorServidor.addEventListener('change', (e) => {
+            filtroServidorActual = e.target.value;
             aplicarFiltros();
         });
     }
