@@ -238,6 +238,24 @@ const listaJuegos = [
         },
         link: "https://gofile.io/d/zBXzdN"
     },
+    {
+        id: 15,
+        titulo: "Super Mario 64",
+        genero: "Plataformas 3D",
+        categoria: ["aventura"],
+        plataforma: "consola",       // <--- ESTO ES VITAL
+        consolaFiltro: "n64",        // <--- ESTO ES LO QUE LEE EL NUEVO FILTRO
+        servidor: "mediafire",
+        imagen: "./img/mario64/portada.jpg",
+        galeria: ["./img/mario64/img-1.jpg","./img/mario64/img-2.jpg","./img/mario64/img-3.jpg","./img/mario64/img-4.jpg"],
+        trailer: "https://youtu.be/8Fk5sRwbEWI",
+        descripcion: "El clásico de Nintendo 64. ¡Requiere emulador de n64 para jugarse!",
+        requisitos: {
+            minimos: "Cualquier PC corre esto",
+            recomendados: "Mando para mejor experiencia"
+        },
+        link: "https://www.mediafire.com/file/o5h6cd6hug506rc/SM64%2528COPY%2529.7z/file"
+    },
 
     // --- NUEVO JUEGO ANDROID: BALATRO ---
     {
@@ -272,18 +290,25 @@ const path = window.location.pathname;
 const isIndex = path.includes('index.html') || path === '/' || path.endsWith('/') || !path.includes('.html');
 const isGame = path.includes('juego.html');
 
-// --- LÓGICA PÁGINA DE INICIO (FILTROS ACTUALIZADA) ---
+// --- LÓGICA PÁGINA DE INICIO (FILTROS COMPLETOS) ---
 if (isIndex) {
     const contenedor = document.getElementById('contenedor-juegos');
     const buscador = document.getElementById('buscador');
     const tituloSeccion = document.getElementById('titulo-seccion');
-    let filtroServidorActual = 'todos'; // NUEVA VARIABLE
-    const selectorServidor = document.getElementById('filtro-servidor'); // NUEVO ELEMENTO
+    
+    // Elementos Selectores
+    const selectorServidor = document.getElementById('filtro-servidor'); 
+    const selectorConsola = document.getElementById('filtro-tipo-consola'); // NUEVO
+    const contenedorFiltroConsola = document.getElementById('filtro-consola-container'); // NUEVO
 
     // Variables de estado
     let filtroPlataforma = 'pc';
+    let filtroCategoria = 'todos';
+    let filtroBusqueda = '';
+    let filtroServidorActual = 'todos'; 
+    let filtroConsolaActual = 'todos'; // NUEVA VARIABLE CONSOLAS
 
-// --- LÓGICA DEL BOTÓN SORPRÉNDEME ---
+    // --- LÓGICA DEL BOTÓN SORPRÉNDEME ---
     const btnSorprendeme = document.getElementById('btn-sorprendeme');
 
     if (btnSorprendeme) {
@@ -307,16 +332,12 @@ if (isIndex) {
 
         // 🛠️ REPARACIÓN: Detectar cuando el usuario vuelve con la flecha de "Atrás"
         window.addEventListener('pageshow', (event) => {
-            // "event.persisted" significa que la página se cargó desde la memoria caché (botón atrás)
             if (event.persisted) {
                 btnSorprendeme.classList.remove('loading');
                 btnSorprendeme.innerHTML = '🎲 Sorpréndeme';
             }
         });
     }
-    
-    let filtroCategoria = 'todos';
-    let filtroBusqueda = '';
 
     // Botones del DOM
     const btnsPlataforma = document.querySelectorAll('.plat-btn');
@@ -325,28 +346,37 @@ if (isIndex) {
     // Función principal de filtrado
     function aplicarFiltros() {
         const juegosFiltrados = listaJuegos.filter(juego => {
-            // 1. Plataforma
+            // 1. Plataforma (PC, Android, Consola)
             const coincidePlataforma = juego.plataforma === filtroPlataforma;
             
-            // 2. Categoría
-            const coincideCategoria = filtroCategoria === 'todos' || juego.categoria.includes(filtroCategoria);
+            // 2. Categoría (Array)
+            const coincideCategoria = filtroCategoria === 'todos' || (juego.categoria && juego.categoria.includes(filtroCategoria));
             
             // 3. Búsqueda
             const coincideBusqueda = juego.titulo.toLowerCase().includes(filtroBusqueda.toLowerCase());
 
-            // 4. SERVIDOR (NUEVO)
-            // Si en la base de datos se te olvidó poner el servidor, asume que es mediafire por defecto
+            // 4. SERVIDOR
             const servDelJuego = juego.servidor ? juego.servidor.toLowerCase() : 'mediafire';
             const coincideServidor = filtroServidorActual === 'todos' || servDelJuego === filtroServidorActual;
 
-            return coincidePlataforma && coincideCategoria && coincideBusqueda && coincideServidor;
+            // 5. TIPO DE CONSOLA (Solo aplica si estamos en la pestaña "consola")
+            let coincideTipoConsola = true;
+            if (filtroPlataforma === 'consola') {
+                const consolaDelJuego = juego.consolaFiltro ? juego.consolaFiltro.toLowerCase() : 'todos';
+                coincideTipoConsola = filtroConsolaActual === 'todos' || consolaDelJuego === filtroConsolaActual;
+            }
+
+            return coincidePlataforma && coincideCategoria && coincideBusqueda && coincideServidor && coincideTipoConsola;
         });
 
         cargarJuegos(juegosFiltrados);
         
-        // Actualizar título
+        // Actualizar título (Si es consola, pone el texto de BETA)
         const catNombre = filtroCategoria.charAt(0).toUpperCase() + filtroCategoria.slice(1);
-        tituloSeccion.innerText = `Catálogo ${filtroPlataforma.toUpperCase()} ${filtroCategoria !== 'todos' ? '- ' + catNombre : ''}`;
+        let textoTitulo = `Catálogo ${filtroPlataforma.toUpperCase()}`;
+        if (filtroPlataforma === 'consola') textoTitulo = "Catálogo Retro (BETA)";
+        
+        tituloSeccion.innerText = `${textoTitulo} ${filtroCategoria !== 'todos' ? '- ' + catNombre : ''}`;
     }
 
     // Renderizar tarjetas
@@ -362,10 +392,11 @@ if (isIndex) {
         juegos.forEach(juego => {
             const card = document.createElement('div');
             card.classList.add('card');
+            
+            // ¡Corregida la falta de comilla en onerror!
             card.innerHTML = `
                 <div class="card-img-wrapper">
-                    <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg' loading="lazy" 
-                     decoding="async" id="detalle-img">
+                    <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg'" loading="lazy" decoding="async">
                 </div>
                 <div class="card-info">
                     <h3>${juego.titulo}</h3>
@@ -385,6 +416,16 @@ if (isIndex) {
             btnsPlataforma.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             filtroPlataforma = btn.dataset.plat;
+
+            // Mostrar u ocultar el filtro de consolas dependiendo de la pestaña
+            if (contenedorFiltroConsola) {
+                if (filtroPlataforma === 'consola') {
+                    contenedorFiltroConsola.style.display = 'inline-flex';
+                } else {
+                    contenedorFiltroConsola.style.display = 'none';
+                }
+            }
+
             aplicarFiltros();
         });
     });
@@ -406,10 +447,19 @@ if (isIndex) {
             aplicarFiltros();
         });
     }
-    // Evento Selector Servidor (NUEVO)
+    
+    // Evento Selector Servidor
     if (selectorServidor) {
         selectorServidor.addEventListener('change', (e) => {
             filtroServidorActual = e.target.value;
+            aplicarFiltros();
+        });
+    }
+
+    // Evento Selector Consola (NUEVO)
+    if (selectorConsola) {
+        selectorConsola.addEventListener('change', (e) => {
+            filtroConsolaActual = e.target.value;
             aplicarFiltros();
         });
     }

@@ -153,6 +153,18 @@
             .result-card-info h3 { font-size: 0.9rem; }
             .picker-label { font-size: 0.75rem; }
         }
+
+    
+        /* 1. Quitamos el comportamiento de "Fijo / Sticky" solo en esta página */
+        header {
+            position: relative !important;
+        }
+
+        /* 2. Le damos nivel "Dios" al Lightbox para que NADA lo pueda tapar */
+        .lightbox {
+            z-index: 99999 !important; 
+        }
+    
     </style>
 </head>
 
