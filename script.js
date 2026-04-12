@@ -16,7 +16,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows XP, Vista, 7, 8/8.1, 10<br><strong>Procesador:</strong> 2.0 Ghz<br><strong>Memoria:</strong> 2.5 GB de RAM<br><strong>Gráficos:</strong> 128mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 7, 8/8.1, 10<br><strong>Procesador:</strong> Dual Core 3.0 Ghz<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 256mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
         },
-        link: "https://gofile.io/d/4YTJon"
+        link: "https://gofile.io/d/4sWs5u"
     },
     {
         id: 2,
