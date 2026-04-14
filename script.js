@@ -236,7 +236,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Quad-core 2.7 GHz<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Tarjeta dedicada con 2 GB de VRAM<br><strong>Almacenamiento:</strong> 5 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5/i7 o AMD Ryzen 5<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 (6GB)<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible"
         },
-        link: "https://gofile.io/d/zBXzdN"
+        link: "https://gofile.io/d/AqTeAt"
     },
     {
         id: 15,
