@@ -69,66 +69,141 @@
     </header>
 
     <main>
-        <!-- HERO CAROUSEL OPTIMIZADO -->
-        <div class="hero-carousel">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=70&w=1280&auto=format&fit=crop');">
-                <div class="hero-overlay">
-                    <h2>Descubre Nuevos Mundos</h2>
-                    <p>Los mejores juegos de PC y Android en un solo lugar. Descargas rápidas y seguras.</p>
-                </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=70&w=1280&auto=format&fit=crop');">
-                <div class="hero-overlay">
-                    <h2>Foro de la Comunidad</h2>
-                    <p>Comparte tus mods, trucos y tutoriales con miles de jugadores.</p>
-                </div>
-            </div>
+    <div class="custom-slider-container">
+        <!-- La pista que contiene todas las imágenes -->
+        <div class="slider-track" id="slider-track">
             
-            <div class="hero-indicators">
-                <span class="hero-dot active" onclick="changeSlide(0)"></span>
-                <span class="hero-dot" onclick="changeSlide(1)"></span>
+            <!-- Slide 1 -->
+            <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=70&w=1280&auto=format&fit=crop');">
+                <div class="slide-info">
+                    <h2>Descubre Nuevos Mundos</h2>
+                    <p>Los mejores juegos de PC y Android en un solo lugar.</p>
+                </div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=70&w=1280&auto=format&fit=crop');">
+                <div class="slide-info">
+                    <h2>Foro de la Comunidad</h2>
+                    <p>Comparte tus mods, trucos y tutoriales.</p>
+                </div>
+            </div>
+
+            <div class="slide-item" style="background-image: url('https://plus.unsplash.com/premium_photo-1687672031135-fc2074fd7207?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                <div class="slide-info">
+                    <h2>Juegos Retro</h2>
+                    <p>todos los Juegos de consolas Retro Disponibles.</p>
+                </div>
+            </div>
+
+            <div class="slide-item" style="background-image: url('https://plus.unsplash.com/premium_photo-1740363268539-cd9093c3b5d1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                <div class="slide-info">
+                    <h2>Los Mejores Servers de Descarga</h2>
+                    <p>Tenemos Servidores de Mediafire, Gofile y Terabox para almacenar los Juegos</p>
+                </div>
+            </div>
+
+            <div class="slide-item" style="background-image: url('https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                <div class="slide-info">
+                    <h2>Proyecto Totalmente Open-Source</h2>
+                    <p>Todo el codigo de JuanLauncher esta en Github</p>
+                </div>
+            </div>
+
         </div>
-        
-        <script>
-            let cIndex = 0;
-            const s = document.querySelectorAll('.hero-slide');
-            const d = document.querySelectorAll('.hero-dot');
-            let slideTimer;
 
-            function changeSlide(n) {
-        
-                s[cIndex].classList.remove('active'); 
-                d[cIndex].classList.remove('active');
-                
-                
-                cIndex = n !== undefined ? n : (cIndex + 1) % s.length;
-                
-               
-                s[cIndex].classList.add('active'); 
-                d[cIndex].classList.add('active');
+        <!-- Controles: Flechas (Solo visibles en PC) -->
+        <button class="slider-arrow prev-arrow" id="btn-prev">&#10094;</button>
+        <button class="slider-arrow next-arrow" id="btn-next">&#10095;</button>
 
-                if (n !== undefined) {
-                    clearInterval(slideTimer);
-                    startCarousel();
-                }
-            }
+        <!-- Controles: Puntos (Se generan solos por JS) -->
+        <div class="slider-dots" id="slider-dots"></div>
+    </div>
 
-            function startCarousel() {
-                slideTimer = setInterval(() => changeSlide(), 6000);
-            }
- 
-            startCarousel();
+    <script>
+    // ==========================================
+    // LÓGICA DEL SLIDER CUSTOM (ANTI-LAG Y TÁCTIL)
+    // ==========================================
+    const track = document.getElementById('slider-track');
+    const slides = document.querySelectorAll('.slide-item');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const dotsContainer = document.getElementById('slider-dots');
+    
+    let currentIndex = 0;
+    let slideTimer;
+    let startX = 0;
+    let isDragging = false;
 
-            // Pausar el carrusel si el usuario minimiza el navegador o cambia de pestaña
-            document.addEventListener("visibilitychange", () => {
-                if (document.hidden) {
-                    clearInterval(slideTimer); // Ahorra batería y RAM
-                } else {
-                    startCarousel(); // Vuelve a arrancar al volver
-                }
-            });
-        </script>
+    // 1. Crear puntitos dinámicamente
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+    const dots = document.querySelectorAll('.dot');
+
+    // 2. Función principal (Mueve la pista completa)
+    function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Actualizar colores de puntitos
+        dots.forEach(d => d.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+
+        resetTimer();
+    }
+
+    // 3. Eventos de flechas
+    if(btnNext) btnNext.addEventListener('click', () => goToSlide(currentIndex + 1));
+    if(btnPrev) btnPrev.addEventListener('click', () => goToSlide(currentIndex - 1));
+
+    // 4. Soporte Táctil (Swipe en celulares)
+    if(track) {
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            clearInterval(slideTimer); // Pausa mientras el usuario tiene el dedo pegado
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+
+            // Si el dedo arrastró más de 50 píxeles, pasamos imagen
+            if (diffX > 50) goToSlide(currentIndex + 1); 
+            else if (diffX < -50) goToSlide(currentIndex - 1); 
+            
+            isDragging = false;
+            startTimer(); // Reanudar autoPlay
+        });
+    }
+
+    // 5. Autoplay (Cambia cada 5 segundos)
+    function startTimer() {
+        slideTimer = setInterval(() => goToSlide(currentIndex + 1), 5000);
+    }
+    function resetTimer() {
+        clearInterval(slideTimer);
+        startTimer();
+    }
+
+    // 6. Apagar slider si el usuario minimiza el navegador
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) clearInterval(slideTimer);
+        else startTimer();
+    });
+
+    // Arrancar la primera vez
+    startTimer();
+</script>
 
         <!-- SECCIÓN DE FILTROS -->
         <div class="filters-container">
