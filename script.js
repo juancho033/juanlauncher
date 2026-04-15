@@ -671,3 +671,27 @@ if (isGame) {
         window.addEventListener('click', (e) => {
             if(e.target === popup) popup.style.display = "none";
         });
+
+
+// LÓGICA DEL MENÚ HAMBURGUESA (MÓVILES)
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (hamburgerBtn && mobileMenu) {
+        // Abrir/Cerrar menú al tocar la hamburguesa
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Opcional: Cerrar el menú automáticamente si el usuario hace clic en un enlace
+        const navLinks = mobileMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            });
+        });
+    }
+});

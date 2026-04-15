@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuanLauncher - Actualizaciones</title>
+    <!-- Importamos el CSS base para el header y footer -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- ESTILOS EXCLUSIVOS DEL CHANGELOG -->
+    <style>
+        .changelog-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+
+        .changelog-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #fff;
+            font-size: 2.2rem;
+            border: none;
+        }
+
+        /* La Tarjeta de cada actualización */
+        .cl-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #00d2ff;
+            transition: transform 0.2s;
+        }
+
+        .cl-card:hover {
+            border-color: #00d2ff;
+        }
+
+        /* Cabecera (Versión y Fecha) */
+        .cl-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+
+        .cl-version {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #00d2ff;
+        }
+
+        .cl-date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Contenido del texto */
+        .cl-content {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            /* Limitar altura para textos largos */
+            max-height: 120px; 
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.4s ease;
+        }
+
+        /* Efecto de degradado negro cuando está oculto */
+        .cl-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 40px;
+            background: linear-gradient(transparent, #1a1a1a);
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        /* Clase cuando se expande el texto */
+        .cl-content.expanded {
+            max-height: 2000px; /* Un valor muy alto para que quepa todo */
+        }
+        
+        /* Ocultar el degradado cuando está expandido */
+        .cl-content.expanded::after {
+            opacity: 0;
+        }
+
+        .cl-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .cl-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Botón de Ver Más */
+        .btn-read-more {
+            background: transparent;
+            border: 1px solid #00d2ff;
+            color: #00d2ff;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: 0.3s;
+            display: none; /* Se oculta por defecto, JS lo muestra si hace falta */
+        }
+
+        .btn-read-more:hover {
+            background: #00d2ff;
+            color: #000;
+        }
+
+        @media (max-width: 480px) {
+            .cl-header { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .cl-card { padding: 20px 15px; }
+        }
+
+
+        /* 1. Quitamos el comportamiento de "Fijo / Sticky" solo en esta página */
+        header {
+            position: relative !important;
+        }
+
+        /* 2. Le damos nivel "Dios" al Lightbox para que NADA lo pueda tapar */
+        .lightbox {
+            z-index: 99999 !important; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
+            <nav>
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="ayuda.html" class="nav-link">Ayuda</a>
+                <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
+                <a href="comunidad.html" class="nav-link">Comunidad</a>
+                 <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Botones de redes sociales a la izquierda -->
+        <div class="social-links">
+            <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn"
+                title="Mi GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn"
+                title="Mi YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                    </path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+            </a>
+        </div>
+
+    </header>
+
+    <main class="changelog-container">
+        <h1 class="changelog-title">Registro de Actualizaciones</h1>
+
+        <!-- CONTENEDOR PRINCIPAL DE LOS CHANGELOGS -->
+        <div id="lista-changelogs">
+
+            <!-- ==========================================
+                 COPIA Y PEGA ESTE BLOQUE PARA AÑADIR NUEVOS 
+                 Siempre pégalo ARRIBA del anterior para que sea el primero.
+                 ========================================== -->
+            <div class="cl-card">
+                <div class="cl-header">
+                    <span class="cl-version">v1.2.0 - Actualización Mayor</span>
+                    <span class="cl-date">28 de Marzo, 2026</span>
+                </div>
+                <div class="cl-content">
+                    <p>En esta actualización hemos reescrito gran parte del código para mejorar la velocidad de la página. Estas son las notas del parche:</p>
+                    <ul>
+                        <li><strong>Nuevo:</strong> Añadido el sistema de compatibilidad "¿Corre en mi PC?".</li>
+                        <li><strong>Nuevo:</strong> Sección de consolas retro (BETA) con filtros dinámicos.</li>
+                        <li><strong>Mejora:</strong> El carrusel principal ahora está 100% optimizado y permite hacer swipe en móviles.</li>
+                        <li><strong>Mejora:</strong> Reparado el lag extremo al hacer scroll en la lista de juegos. El rendimiento sube a 60 FPS fijos.</li>
+                        <li><strong>Bugfix:</strong> Corregido el espacio negro que aparecía debajo de las imágenes en las tarjetas de la versión móvil.</li>
+                        <li><strong>Bugfix:</strong> El header inteligente ya no causa conflictos de capa (Z-index) con el visor de imágenes (Lightbox) en la página de juegos.</li>
+                        <li>Y muchos más cambios internos para prepararnos para futuras versiones.</li>
+                    </ul>
+                </div>
+                <button class="btn-read-more">Ver más</button>
+            </div>
+            <!-- FIN DEL BLOQUE -->
+
+            <!-- BLOQUE ANTIGUO DE EJEMPLO -->
+            <div class="cl-card">
+                <div class="cl-header">
+                    <span class="cl-version">v1.1.0</span>
+                    <span class="cl-date">20 de Febrero, 2026</span>
+                </div>
+                <div class="cl-content">
+                    <p>Pequeña actualización de mantenimiento:</p>
+                    <ul>
+                        <li>Añadidos 10 juegos nuevos al catálogo.</li>
+                        <li>Se agregó la función del botón "Sorpréndeme" con juegos aleatorios.</li>
+                        <li>Pequeños ajustes visuales en el botón de descarga.</li>
+                    </ul>
+                </div>
+                <button class="btn-read-more">Ver más</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 JuanLauncher. Hecho con ❤️ para la comunidad gamer.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT EXCLUSIVO DEL CHANGELOG (Lógica del Botón Ver Más) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.cl-card');
+
+            cards.forEach(card => {
+                const content = card.querySelector('.cl-content');
+                const btn = card.querySelector('.btn-read-more');
+
+                // Si el texto es más alto que 120px (que es el límite que le pusimos en CSS)
+                if (content.scrollHeight > 120) {
+                    // Mostramos el botón
+                    btn.style.display = 'inline-block';
+
+                    // Le damos funcionalidad al clic
+                    btn.addEventListener('click', () => {
+                        content.classList.toggle('expanded');
+                        
+                        if (content.classList.contains('expanded')) {
+                            btn.innerText = 'Ver menos';
+                        } else {
+                            btn.innerText = 'Ver más';
+                        }
+                    });
+                } else {
+                    // Si el texto es cortito, le quitamos el efecto negro de abajo
+                    content.classList.add('expanded');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

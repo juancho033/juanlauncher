@@ -9,7 +9,17 @@
     <meta name="keywords" content="JuanLauncher, Juancho, web development, software games pc, juegos, mediafire">
     <link rel="stylesheet" href="style.css?v=5">
     <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/juanlauncher/logo-favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "JuanLauncher",
+        "url": "https://juancho033.github.io/juanlauncher/"
+        }
+    </script>
+
       <style>
         /* 1. Quitamos el comportamiento de "Fijo / Sticky" solo en esta página */
         header {
@@ -25,9 +35,27 @@
 
 <body>
 
-    <header>
-        <!-- Botones de redes sociales a la izquierda -->
-        <div class="social-links">
+   <header>
+        <!-- 1. LOGO -->
+        <div class="logo">
+            <a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a>
+        </div>
+
+
+        <!-- 2. NAVEGACIÓN CENTRAL (Ahora con ID "mobile-menu") -->
+        <nav id="mobile-menu">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="ayuda.html" class="nav-link">Ayuda</a>
+            <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
+            <a href="comunidad.html" class="nav-link">Comunidad</a>
+            <a href="changelog.html" class="nav-link">Actualizaciones</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+        </nav>
+
+        <!-- 3. ACCIONES A LA DERECHA -->
+        <div class="header-actions">
+            
+           <div class="social-links">
             <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn"
                 title="Mi GitHub">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
@@ -49,22 +77,9 @@
             </a>
         </div>
 
-        <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
-            <nav>
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="ayuda.html" class="nav-link">Ayuda</a>
-                <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
-                <a href="comunidad.html" class="nav-link">Comunidad</a>
-                 <a href="contacto.html" class="nav-link">Contacto</a>
-            </nav>
             <div class="auth-buttons">
                 <a href="login.html" class="login-btn">Iniciar Sesión</a>
             </div>
-        </div>
-        
-        <div class="search-bar">
-            <input type="text" id="buscador" placeholder="Buscar juego...">
         </div>
     </header>
 
@@ -186,14 +201,6 @@
         });
     }
 
-    // 5. Autoplay (Cambia cada 5 segundos)
-    function startTimer() {
-        slideTimer = setInterval(() => goToSlide(currentIndex + 1), 5000);
-    }
-    function resetTimer() {
-        clearInterval(slideTimer);
-        startTimer();
-    }
 
     // 6. Apagar slider si el usuario minimiza el navegador
     document.addEventListener("visibilitychange", () => {
@@ -244,6 +251,11 @@
                 </div>
 
             </div>
+
+            <div class="search-bar">
+                <input type="text" id="buscador" placeholder="Buscar juego..." style="width: 350px;">
+            </div>
+            
 
             <!-- Categorías -->
             <div class="genre-list">

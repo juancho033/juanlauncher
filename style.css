@@ -1625,7 +1625,8 @@ nav {
 .login-btn {
     background: linear-gradient(45deg, var(--accent), var(--secondary));
     color: white;
-    padding: 10px 22px;
+    width: 200px;
+    padding: 15px 22px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 700;
@@ -2684,4 +2685,97 @@ header {
     .slide-info p { font-size: 0.9rem; }
     /* En celular ocultamos las flechas (usaremos el dedo para arrastrar) */
     .slider-arrow { display: none; } 
+}
+
+
+
+
+/* =========================================
+   HEADER PERFECTO (PC, LAPTOP Y MÓVIL)
+   ========================================= */
+
+/* --- 1. ESCRITORIO (Pantallas Grandes) --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+    padding: 15px 4%;
+    display: flex;
+    justify-content: space-between; /* Separa los 3 bloques */
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex: 1; /* Permite que el menú se centre en la pantalla */
+    justify-content: center;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar input {
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #252525;
+    color: white;
+    transition: width 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input:focus {
+    width: 240px; /* Se estira elegante al darle clic */
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+.auth-buttons .login-btn {
+    background: #00d2ff;
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap; /* Evita que el texto se rompa en 2 líneas */
+}
+
+.auth-buttons .login-btn:hover {
+    background: #00a8cc;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+
+/* --- MÓVILES Y TABLETS (Hasta 850px) --- */
+
+/* --- 2. LAPTOPS (Pantallas Medianas, hasta 1200px) --- */
+@media (max-width: 1200px) {
+    nav { gap: 12px; }
+    .nav-link { font-size: 0.85rem; }
+    
+    .header-actions { gap: 10px; }
+    .search-bar input { width: 140px; font-size: 0.85rem; }
+    .search-bar input:focus { width: 170px; }
+    
+    /* En laptops ocultamos los SVGs de YouTube y GitHub (están en el pie de página) para que quepa todo */
+    .social-links { display: none; }
+}
+
+
+
+/* Clase para ocultar el header al hacer scroll hacia abajo (Smart Header) */
+.header-hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
 }
