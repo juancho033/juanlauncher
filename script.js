@@ -218,7 +218,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows XP/7<br><strong>Procesador:</strong> 1.4 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 32 MB compatible con DirectX 9.0c<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> 3.0 GHz o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 128 MB NVIDIA GeForce 6800 / Radeon 9800<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible"
         },
-        link: "https://gofile.io/d/zBXzdN"
+        link: "https://gofile.io/d/Ch0Brs"
     },
     {
         id: 14,
@@ -256,6 +256,43 @@ const listaJuegos = [
         },
         link: "https://www.mediafire.com/file/o5h6cd6hug506rc/SM64%2528COPY%2529.7z/file"
     },
+    {
+    id: 16,
+    titulo: "Cuphead",
+    genero: "Acción / Run and Gun",
+    // TIENE VARIAS CATEGORIAS: INDIE, DIFICIL Y PLATAFORMAS
+    categoria: ["indie", "dificil", "plataformas"],
+    plataforma: "pc",
+    imagen: "https://store-images.s-microsoft.com/image/apps.37905.13670972585585116.7f29dc82-c969-4e89-aaf9-7c0e3f52d890.2e5a9c92-cf00-4c10-ae28-264c564478c3",
+    galeria: ["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/ss_615455299355eaf552c638c7ea5b24a8b46e02dd.1920x1080.jpg?t=1709068852", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/ss_483fb089be0093beeef03525276803a9ca4f66a1.1920x1080.jpg?t=1709068852", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/ss_48477e4a865827aa0be6a44f00944d8d2a3e5eb9.1920x1080.jpg?t=1709068852", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/ss_380296effbf1073bbedfd480e50cf246eb542b66.1920x1080.jpg?t=1709068852"],
+    trailer: "https://youtu.be/81zM_vg96VY",
+    servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+    descripcion: "Cuphead es un juego de acción clásico de 'corre y dispara' centrado en batallas contra jefes. Inspirado en los dibujos animados de los años 30, el aspecto visual y sonoro se creó meticulosamente con las mismas técnicas de la época: animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 7<br><strong>Procesador:</strong> Intel Core2 Duo E8400<br><strong>Memoria:</strong> 3 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce 9600 GT o superior<br><strong>Almacenamiento:</strong> 4 GB de espacio disponible",
+        recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i3<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1050 o superior<br><strong>Almacenamiento:</strong> 4 GB de espacio disponible"
+    },
+    link: "https://gofile.io/d/xSbyuZ"
+    },
+    {
+    id: 17,
+    titulo: "Dead Cells",
+    genero: "Acción / Roguelite",
+    // TIENE VARIAS CATEGORIAS: INDIE, DIFICIL, PIXEL ART Y METROIDVANIA
+    categoria: ["indie", "dificil", "pixel art", "metroidvania"],
+    plataforma: "pc",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/1/1f/Dead_cells_cover_art.png",
+    galeria: ["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1772726488", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_7bde51ea6c8f6289e85ea1d8c1c941e1f8bfee91.1920x1080.jpg?t=1772726488", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_e87e72a247918d8493892e035d5e1b4b84470d2f.1920x1080.jpg?t=1772726488", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_a099416b9f3e09d47c42f87667e6ad6f394ba652.1920x1080.jpg?t=1772726488"],
+    trailer: "https://youtu.be/RvGaSPTcTxc",
+    servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+    descripcion: "Dead Cells es un roguelite de acción de inspiración metroidvania. Explorarás un castillo en constante cambio y expansión... asumiendo que seas capaz de abrirte paso entre sus guardianes en combates en 2D al estilo souls-lite. Sin puntos de control. Mata, muere, aprende, repite.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 7+ (64bit)<br><strong>Procesador:</strong> Intel i5 o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Nvidia 450 GTS / Radeon HD 5750<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
+        recomendados: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel i5 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Nvidia GTX 460 / Radeon HD 7800<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible"
+    },
+    link: "https://gofile.io/d/n9KvB4"
+    },
+
 
     // --- NUEVO JUEGO ANDROID: BALATRO ---
     {
