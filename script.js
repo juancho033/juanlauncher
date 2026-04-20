@@ -292,6 +292,32 @@ const listaJuegos = [
     },
     link: "https://gofile.io/d/n9KvB4"
     },
+    {
+    id: 18,
+    titulo: "Cyberpunk 2077 (AAA)",
+    genero: "Acción / RPG",
+    // TIENE VARIAS CATEGORIAS: MUNDO ABIERTO, FUTURISTA, ADULTOS Y DIFICIL
+    categoria: ["accion", "aventura", "rpg", "supervivencia"],
+    plataforma: "pc",
+    
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, // Aparece de primero con la etiqueta especial
+    links: {
+        gofile: "https://gofile.io/d/5RbV8M",
+        buzzheavier: "https://buzzheavier.com/tfvh7k025oxp",
+        "1fichier": "https://1fichier.com/?ziye61w96t9rz47q4gz2"
+        },
+        // -------------------------
+
+        imagen: "./img/cyberpunk-2077/portada.jpg",
+        galeria: ["./img/cyberpunk-2077/img-1.jpg", "./img/cyberpunk-2077/img-2.jpg", "./img/cyberpunk-2077/img-3.jpg", "./img/cyberpunk-2077/img-4.jpg"],
+        trailer: "https://youtu.be/Z8_JEaoYcOs",
+        descripcion: "Cyberpunk 2077 es un RPG de aventura y acción de mundo abierto ambientado en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Te pones en la piel de V, un mercenario que busca un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego de tu personaje para explorar una ciudad enorme donde tus decisiones marcan el curso de la historia.",
+        requisitos: {
+            minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Core i7-6700 o AMD Ryzen 5 1600<br><strong>Memoria:</strong> 12 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 (6GB) o Radeon RX 580<br><strong>Almacenamiento:</strong> 150 GB de espacio disponible (SSD Recomendado)",
+            recomendados: "<strong>SO:</strong> Windows 10/11 (64bit)<br><strong>Procesador:</strong> Intel Core i7-12700 o AMD Ryzen 7 7800X3D<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 3060 o Radeon RX 6700 XT<br><strong>Almacenamiento:</strong> 150+ GB de espacio disponible (SSD)"
+        }
+    },
 
 
     // --- NUEVO JUEGO ANDROID: BALATRO ---
@@ -383,20 +409,21 @@ if (isIndex) {
     // Función principal de filtrado
     function aplicarFiltros() {
         const juegosFiltrados = listaJuegos.filter(juego => {
-            // 1. Plataforma (PC, Android, Consola)
             const coincidePlataforma = juego.plataforma === filtroPlataforma;
-            
-            // 2. Categoría (Array)
             const coincideCategoria = filtroCategoria === 'todos' || (juego.categoria && juego.categoria.includes(filtroCategoria));
-            
-            // 3. Búsqueda
             const coincideBusqueda = juego.titulo.toLowerCase().includes(filtroBusqueda.toLowerCase());
+            
+            // Si el juego es AAA (tiene links múltiples), el filtro de servidor único lo ignoramos o lo ajustamos, 
+            // pero para simplificar, si tiene "links", lo mostramos siempre.
+            let coincideServidor = true;
+            if (!juego.links) {
+                const servDelJuego = juego.servidor ? juego.servidor.toLowerCase() : 'mediafire';
+                coincideServidor = filtroServidorActual === 'todos' || servDelJuego === filtroServidorActual;
+            } else {
+                coincideServidor = filtroServidorActual === 'todos'; // Si filtra por mediafire, ocultamos los AAA que son Gofile/Buzzheavier (opcional)
+            }
 
-            // 4. SERVIDOR
-            const servDelJuego = juego.servidor ? juego.servidor.toLowerCase() : 'mediafire';
-            const coincideServidor = filtroServidorActual === 'todos' || servDelJuego === filtroServidorActual;
-
-            // 5. TIPO DE CONSOLA (Solo aplica si estamos en la pestaña "consola")
+            // Consola
             let coincideTipoConsola = true;
             if (filtroPlataforma === 'consola') {
                 const consolaDelJuego = juego.consolaFiltro ? juego.consolaFiltro.toLowerCase() : 'todos';
@@ -406,13 +433,18 @@ if (isIndex) {
             return coincidePlataforma && coincideCategoria && coincideBusqueda && coincideServidor && coincideTipoConsola;
         });
 
+        // --- MAGIA HOT: Ordenar para que los HOT salgan de primero ---
+        juegosFiltrados.sort((a, b) => {
+            if (a.hot && !b.hot) return -1; // A va primero
+            if (!a.hot && b.hot) return 1;  // B va primero
+            return 0; // Si ambos son hot o ambos normales, se quedan igual
+        });
+
         cargarJuegos(juegosFiltrados);
         
-        // Actualizar título (Si es consola, pone el texto de BETA)
         const catNombre = filtroCategoria.charAt(0).toUpperCase() + filtroCategoria.slice(1);
         let textoTitulo = `Catálogo ${filtroPlataforma.toUpperCase()}`;
         if (filtroPlataforma === 'consola') textoTitulo = "Catálogo Retro (BETA)";
-        
         tituloSeccion.innerText = `${textoTitulo} ${filtroCategoria !== 'todos' ? '- ' + catNombre : ''}`;
     }
 
@@ -426,9 +458,27 @@ if (isIndex) {
             return;
         }
 
+
+
+
+            // Dentro de cargarJuegos...
         juegos.forEach(juego => {
-            const card = document.createElement('div');
-            card.classList.add('card');
+        const card = document.createElement('div');
+        card.classList.add('card');
+        
+        // Comprobamos si el juego es HOT
+        const etiquetaHot = juego.hot ? `<span class="hot-badge">🔥 HOT</span>` : '';
+
+        card.innerHTML = `
+            <div class="card-img-wrapper">
+                ${etiquetaHot}
+                <img src="${juego.imagen}" alt="${juego.titulo}" onerror="this.src='./img/error.jpg'" loading="lazy" decoding="async">
+            </div>
+            <div class="card-info">
+                <h3>${juego.titulo}</h3>
+                <p>${juego.genero}</p>
+            </div>
+        `;
             
             // ¡Corregida la falta de comilla en onerror!
             card.innerHTML = `
@@ -522,28 +572,47 @@ if (isGame) {
         document.getElementById('detalle-titulo').innerText = juego.titulo;
         document.getElementById('detalle-genero').innerText = juego.genero;
         document.getElementById('detalle-desc').innerText = juego.descripcion;
-        // --- CONFIGURAR BOTÓN DE DESCARGA SEGÚN SERVIDOR ---
-        const btnDescarga = document.getElementById('detalle-btn');
-        btnDescarga.href = juego.link;
+       // --- CONFIGURAR BOTÓN DE DESCARGA (NORMAL O MULTIPLE AAA) ---
+        const btnDescargaOriginal = document.getElementById('detalle-btn');
+        const contenedorPadre = btnDescargaOriginal.parentElement;
 
-        // Valores por defecto (por si se te olvida ponerlo en la base de datos)
-        let nombreServidor = "Mediafire";
-        let claseServidor = "btn-mediafire";
+        if (juego.links) {
+            // ES UN JUEGO AAA CON VARIOS ENLACES
+            btnDescargaOriginal.style.display = 'none'; // Ocultamos el botón normal
+            
+            // Creamos un contenedor para los 3 botones
+            const boxLinks = document.createElement('div');
+            boxLinks.className = 'multi-download-box';
 
-        if (juego.servidor) {
-            const serv = juego.servidor.toLowerCase();
-            if (serv === "terabox") {
-                nombreServidor = "TeraBox";
-                claseServidor = "btn-terabox";
-            } else if (serv === "gofile") {
-                nombreServidor = "Gofile";
-                claseServidor = "btn-buzz";
+            if (juego.links.gofile) {
+                boxLinks.innerHTML += `<a href="${juego.links.gofile}" class="download-btn-mega btn-gofile" target="_blank">DESCARGAR (GOFILE) <br><small>Recomendado</small></a>`;
             }
-        }
+            if (juego.links.buzzheavier) {
+                boxLinks.innerHTML += `<a href="${juego.links.buzzheavier}" class="download-btn-mega btn-buzz" target="_blank">DESCARGAR (BUZZHEAVIER) <br><small>Rápido</small></a>`;
+            }
+            if (juego.links["1fichier"]) {
+                boxLinks.innerHTML += `<a href="${juego.links["1fichier"]}" class="download-btn-mega btn-1fichier" target="_blank">DESCARGAR (1FICHIER) <br><small>Alternativo</small></a>`;
+            }
 
-        // Aplicamos la clase de color y cambiamos el texto
-        btnDescarga.className = `download-btn-mega ${claseServidor}`;
-        btnDescarga.innerHTML = `DESCARGAR AHORA <br> <small>(vía ${nombreServidor})</small>`;
+            // Insertamos la caja donde estaba el botón viejo
+            contenedorPadre.insertBefore(boxLinks, btnDescargaOriginal);
+
+        } else {
+            // ES UN JUEGO NORMAL CON 1 SOLO ENLACE
+            btnDescargaOriginal.href = juego.link;
+            let nombreServidor = "Mediafire";
+            let claseServidor = "btn-mediafire";
+
+            if (juego.servidor) {
+                const serv = juego.servidor.toLowerCase();
+                if (serv === "terabox") { nombreServidor = "TeraBox"; claseServidor = "btn-terabox"; } 
+                else if (serv === "buzzheavier") { nombreServidor = "Buzzheavier"; claseServidor = "btn-buzz"; }
+                else if (serv === "gofile") { nombreServidor = "Gofile"; claseServidor = "btn-gofile"; }
+            }
+
+            btnDescargaOriginal.className = `download-btn-mega ${claseServidor}`;
+            btnDescargaOriginal.innerHTML = `DESCARGAR AHORA <br> <small>(vía ${nombreServidor})</small>`;
+        }
 
         // Requisitos
         document.getElementById('req-min').innerHTML = juego.requisitos.minimos;

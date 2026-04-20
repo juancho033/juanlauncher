@@ -2779,3 +2779,50 @@ nav {
     transform: translateY(-100%);
     box-shadow: none;
 }
+
+/* Etiqueta HOT en las tarjetas */
+.card-img-wrapper {
+    position: relative; /* Necesario para que la etiqueta se quede dentro de la imagen */
+}
+
+.hot-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+    animation: pulse-hot 2s infinite;
+}
+
+@keyframes pulse-hot {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 4px 15px rgba(255, 115, 0, 0.6); }
+    100% { transform: scale(1); }
+}
+
+/* Colores para los nuevos botones de descarga AAA */
+.btn-gofile {
+    background: linear-gradient(45deg, #0052D4, #4364F7);
+    color: white;
+    box-shadow: 0 5px 20px rgba(67, 100, 247, 0.3);
+}
+
+.btn-1fichier {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 65, 108, 0.3);
+}
+
+/* Contenedor cuando hay múltiples botones */
+.multi-download-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
