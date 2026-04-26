@@ -56,22 +56,22 @@ const listaJuegos = [
         link: "https://www.mediafire.com/file/bi6u9o8ona5r0q2/Stardew_valley_-_JuanLauncher.zip/file"
     },
     {
-        id: 5,
-        titulo: "Five Nights at Freddy's 1 + 2 + 3",
-        genero: "Survival Horror",
-        // CATEGORIAS: TERROR, SUPERVIVENCIA, POINT AND CLICK
-        categoria: ["terror", "supervivencia", "indie", "estrategia"],
-        plataforma: "pc",
-        imagen: "./img/fnaf1/portada.webp",
-        galeria: ["./img/fnaf1/img-1.jpg", "./img/fnaf1/img-2.jpg", "./img/fnaf1/img-3.jpg", "./img/fnaf1/img-4.jpg"],
-        trailer: "https://www.youtube.com/watch?v=RP4UTOek0-Y",
-         servidor: "mediafire", // PUEDE SER: "mediafire", "terabox" o "gofile"
-        descripcion: "En este Paquete viene los 3 primeros Juegos de la Famosa Saga de FNAF (Todos los creditos a Optiproyects por el Paquete)",
-        requisitos: {
-            minimos: "<strong>SO:</strong> Windows XP, 7, 8, 10<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> 1 GB de memoria de vídeo<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
-            recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> 2.4 Ghz Dual Core<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 2 GB de memoria de vídeo<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible"
-        },
-        link: "https://www.mediafire.com/file/akaszd8xyefopwe/Five_Nights_At_Freddys_-_Optiproyects_Juanlauncher.zip/file"
+    id: 5,
+    titulo: "Five Nights at Freddy's",
+    genero: "Survival Horror / Point and Click",
+    // TIENE VARIAS CATEGORIAS: TERROR, INDIE, SUPERVIVENCIA Y ESTRATEGIA
+    categoria: ["terror", "indie", "supervivencia", "estrategia"],
+    plataforma: "pc",
+    imagen: "./img/fnaf1/portada.webp",
+    galeria: ["./img/fnaf1/img-1.jpg", "./img/fnaf1/img-2.jpg", "./img/fnaf1/img-3.jpg", "./img/fnaf1/img-4.jpg"],
+    trailer: "https://youtu.be/RP4UTOek0-Y",
+    servidor: "buzzheavier", // PUEDE SER: "mediafire", "terabox", "buzzheavier" o "gofile"
+    descripcion: "Bienvenido a tu nuevo trabajo de verano en Freddy Fazbear's Pizza, donde niños y padres por igual vienen por entretenimiento y comida. La atracción principal es Freddy Fazbear, por supuesto; y sus amigos. Son robots animatrónicos, programados para complacer a las multitudes, pero su comportamiento por la noche se vuelve algo impredecible.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows XP / Vista / 7<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Tarjeta con 1 GB de VRAM<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
+        recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Intel Core i3 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 460 o superior<br><strong>Almacenamiento:</strong> 1 GB de espacio disponible"
+    },
+    link: "https://gofile.io/d/fnaf1_original"
     },
    {
         id: 6,
@@ -318,6 +318,32 @@ const listaJuegos = [
             recomendados: "<strong>SO:</strong> Windows 10/11 (64bit)<br><strong>Procesador:</strong> Intel Core i7-12700 o AMD Ryzen 7 7800X3D<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 3060 o Radeon RX 6700 XT<br><strong>Almacenamiento:</strong> 150+ GB de espacio disponible (SSD)"
         }
     },
+    {
+    id: 19,
+    titulo: "Resident Evil 9: Requiem (AAA)",
+    genero: "Survival Horror / Acción",
+    // TIENE VARIAS CATEGORIAS: ZOMBIES, TERROR, GORE Y DIFICIL
+    categoria: ["accion", "terror", "supervivencia", "dificil"],
+    plataforma: "pc",
+
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, // Prioridad máxima en el catálogo
+    links: {
+        gofile: "https://gofile.io/d/KpCjUe",
+        buzzheavier: "https://bzzhr.to/an2jlvvr9vne",
+    },
+    // -------------------------
+
+    imagen: "./img/re9/portada.jpg",
+    galeria: ["./img/re9/img-1.jpg", "./img/re9/img-2.jpg", "./img/re9/img-3.jpg", "./img/re9/img-4.jpg"],
+    trailer: "https://youtu.be/YoFXs6Ifna8",
+    descripcion: "Resident Evil 9: Requiem marca el regreso de Leon S. Kennedy a una Raccoon City devastada. Tras años de los incidentes originales, nuevos misterios surgen de las cenizas de Umbrella. Con una atmósfera opresiva y mecánicas de supervivencia clásicas mezcladas con acción moderna, es la entrega más ambiciosa de la saga hasta la fecha. (en gofile el filename es: asdj8aslkdjwiajslkmdaoiwe8aksdzx7.rar)",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5-8500 o AMD Ryzen 5 3500<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1660 (6GB) o AMD Radeon RX 5500 XT<br><strong>Almacenamiento:</strong> 75 GB de espacio disponible (SSD Obligatorio)",
+        recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i7-8700 o AMD Ryzen 5 5500<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 2060 Super o AMD Radeon RX 6600<br><strong>Almacenamiento:</strong> 75 GB de espacio disponible (SSD NVMe)"
+    }
+    },
+    
 
 
     // --- NUEVO JUEGO ANDROID: BALATRO ---
