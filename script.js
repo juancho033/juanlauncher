@@ -16,7 +16,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows XP, Vista, 7, 8/8.1, 10<br><strong>Procesador:</strong> 2.0 Ghz<br><strong>Memoria:</strong> 2.5 GB de RAM<br><strong>Gráficos:</strong> 128mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 7, 8/8.1, 10<br><strong>Procesador:</strong> Dual Core 3.0 Ghz<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 256mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
         },
-        link: "https://gofile.io/d/4sWs5u"
+        link: "https://gofile.io/d/1dI0ic"
     },
     {
         id: 2,
@@ -218,7 +218,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows XP/7<br><strong>Procesador:</strong> 1.4 GHz o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> 32 MB compatible con DirectX 9.0c<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> 3.0 GHz o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 128 MB NVIDIA GeForce 6800 / Radeon 9800<br><strong>Almacenamiento:</strong> 3 GB de espacio disponible"
         },
-        link: "https://gofile.io/d/Ch0Brs"
+        link: "https://gofile.io/d/gwdk41"
     },
     {
         id: 14,
@@ -236,7 +236,7 @@ const listaJuegos = [
             minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Quad-core 2.7 GHz<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Tarjeta dedicada con 2 GB de VRAM<br><strong>Almacenamiento:</strong> 5 GB de espacio disponible",
             recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5/i7 o AMD Ryzen 5<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 (6GB)<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible"
         },
-        link: "https://gofile.io/d/AqTeAt"
+        link: "https://gofile.io/d/q8Prkt"
     },
     {
         id: 15,
@@ -272,7 +272,7 @@ const listaJuegos = [
         minimos: "<strong>SO:</strong> Windows 7<br><strong>Procesador:</strong> Intel Core2 Duo E8400<br><strong>Memoria:</strong> 3 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce 9600 GT o superior<br><strong>Almacenamiento:</strong> 4 GB de espacio disponible",
         recomendados: "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i3<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1050 o superior<br><strong>Almacenamiento:</strong> 4 GB de espacio disponible"
     },
-    link: "https://gofile.io/d/xSbyuZ"
+    link: "https://gofile.io/d/djY1qI"
     },
     {
     id: 17,
@@ -284,13 +284,13 @@ const listaJuegos = [
     imagen: "https://upload.wikimedia.org/wikipedia/en/1/1f/Dead_cells_cover_art.png",
     galeria: ["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1772726488", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_7bde51ea6c8f6289e85ea1d8c1c941e1f8bfee91.1920x1080.jpg?t=1772726488", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_e87e72a247918d8493892e035d5e1b4b84470d2f.1920x1080.jpg?t=1772726488", "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_a099416b9f3e09d47c42f87667e6ad6f394ba652.1920x1080.jpg?t=1772726488"],
     trailer: "https://youtu.be/RvGaSPTcTxc",
-    servidor: "gofile", // PUEDE SER: "mediafire", "terabox" o "gofile"
+    servidor: "buzzheavier", // PUEDE SER: "mediafire", "terabox" o "gofile"
     descripcion: "Dead Cells es un roguelite de acción de inspiración metroidvania. Explorarás un castillo en constante cambio y expansión... asumiendo que seas capaz de abrirte paso entre sus guardianes en combates en 2D al estilo souls-lite. Sin puntos de control. Mata, muere, aprende, repite.",
     requisitos: {
         minimos: "<strong>SO:</strong> Windows 7+ (64bit)<br><strong>Procesador:</strong> Intel i5 o superior<br><strong>Memoria:</strong> 2 GB de RAM<br><strong>Gráficos:</strong> Nvidia 450 GTS / Radeon HD 5750<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
         recomendados: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel i5 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Nvidia GTX 460 / Radeon HD 7800<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible"
     },
-    link: "https://gofile.io/d/n9KvB4"
+    link: "https://bzzhr.to/91n3a5paeo6p"
     },
     {
     id: 18,
