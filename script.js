@@ -71,7 +71,7 @@ const listaJuegos = [
         minimos: "<strong>SO:</strong> Windows XP / Vista / 7<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Tarjeta con 1 GB de VRAM<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
         recomendados: "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Intel Core i3 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 460 o superior<br><strong>Almacenamiento:</strong> 1 GB de espacio disponible"
     },
-    link: "https://gofile.io/d/fnaf1_original"
+    link: "https://bzzhr.to/itrfnxmeffp3"
     },
    {
         id: 6,
@@ -341,6 +341,156 @@ const listaJuegos = [
     requisitos: {
         minimos: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i5-8500 o AMD Ryzen 5 3500<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1660 (6GB) o AMD Radeon RX 5500 XT<br><strong>Almacenamiento:</strong> 75 GB de espacio disponible (SSD Obligatorio)",
         recomendados: "<strong>SO:</strong> Windows 11 (64bit)<br><strong>Procesador:</strong> Intel Core i7-8700 o AMD Ryzen 5 5500<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 2060 Super o AMD Radeon RX 6600<br><strong>Almacenamiento:</strong> 75 GB de espacio disponible (SSD NVMe)"
+    }
+    },
+    {
+    id: 20,
+    titulo: "Detroit: Become Human (AAA)",
+    genero: "Aventura / Drama Interactivo",
+    // TIENE VARIAS CATEGORIAS: NARRATIVO, DECISIONES, FUTURISTA Y CIENCIA FICCION
+    categoria: ["aventura", "accion", "estrategia", "ciencia ficcion"],
+    plataforma: "pc",
+
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, // Destacado en la parte superior
+    links: {
+        gofile: "https://gofile.io/d/6Ix9sO",
+        buzzheavier: "https://bzzhr.to/jm9rg8ae8koj",
+        "1fichier": "https://1fichier.com/?8fihg2yacfc780ccz2n4"
+    },
+    // -------------------------
+
+    imagen: "./img/detroit-become-human/portada.jpg",
+    galeria: [
+        "./img/detroit-become-human/img-1.jpg", 
+        "./img/detroit-become-human/img-2.jpg", 
+        "./img/detroit-become-human/img-3.jpg", 
+        "./img/detroit-become-human/img-4.jpg"
+    ],
+    trailer: "https://youtu.be/8a-EObAhYrg",
+    descripcion: "Detroit: Become Human pone el destino de la humanidad y los androides en tus manos. En un futuro cercano, las máquinas se han vuelto más inteligentes que los humanos. Cada decisión que tomes alterará drásticamente la narrativa ramificada del juego, llevando a uno de los múltiples finales posibles. ¿Qué significa ser humano?",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Core i5-2300 o AMD Ryzen 3 1200<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 780 o AMD Radeon HD 7950<br><strong>Almacenamiento:</strong> 55 GB de espacio disponible",
+        recomendados: "<strong>SO:</strong> Windows 10/11 (64bit)<br><strong>Procesador:</strong> Intel Core i5-6600 o AMD Ryzen 3 1300X<br><strong>Memoria:</strong> 12 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1060 (6GB) o AMD Radeon RX 580<br><strong>Almacenamiento:</strong> 55 GB de espacio disponible (SSD)"
+    }
+    },
+    {
+    id: 21,
+    titulo: "The Last of Us Part I (AAA)",
+    genero: "Acción / Aventura / Supervivencia",
+    // TIENE VARIAS CATEGORIAS: POST-APOCALIPTICO, NARRATIVO, ZOMBIES Y TERROR
+    categoria: ["aventura", "supervivencia", "aventura", "terror"],
+    plataforma: "pc",
+
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, // Destacado con prioridad
+    links: {
+        gofile: "https://gofile.io/d/ydrhpd",
+        buzzheavier: "https://bzzhr.to/z409lxi8ia60",
+    },
+    // -------------------------
+
+    imagen: "./img/the-last-of-us-part-1/portada.jpg",
+    galeria: [
+        "./img/the-last-of-us-part-1/img-1.jpg", 
+        "./img/the-last-of-us-part-1/img-2.jpg", 
+        "./img/the-last-of-us-part-1/img-3.jpg", 
+        "./img/the-last-of-us-part-1/img-4.jpg"
+    ],
+    trailer: "https://youtu.be/CxVyuE2Nn_w",
+    descripcion: "Disfruta de la emotiva historia y los inolvidables personajes de The Last of Us, ganador de más de 200 premios de Juego del Año. En una civilización devastada, donde los infectados y los supervivientes campan a sus anchas, Joel, un protagonista agotado, es contratado para sacar a escondidas a Ellie, una niña de 14 años, de una zona militar en cuarentena.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 10 (64bit) v1909 o superior<br><strong>Procesador:</strong> Intel Core i7-4770K o AMD Ryzen 5 1500X<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1050 Ti (4GB) o AMD Radeon RX 470 (4GB)<br><strong>Almacenamiento:</strong> 100 GB de espacio disponible (SSD)",
+        recomendados: "<strong>SO:</strong> Windows 10/11 (64bit)<br><strong>Procesador:</strong> Intel Core i5-12600K o AMD Ryzen 5 5600X<br><strong>Memoria:</strong> 32 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 3060 (12GB) o AMD Radeon RX 6700 XT (12GB)<br><strong>Almacenamiento:</strong> 100 GB de espacio disponible (SSD)"
+    }
+    },
+    {
+    id: 22,
+    titulo: "The Last of Us Part II Remastered (AAA)",
+    genero: "Acción / Aventura / Supervivencia",
+    categoria: ["aventura", "supervivencia", "aventura", "terror"],
+    plataforma: "pc",
+
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, 
+    links: {
+        gofile: "https://gofile.io/d/gotpPY",
+        buzzheavier: "https://bzzhr.to/yvpgw1jjxnu4",
+    },
+    // -------------------------
+
+    imagen: "./img/the-last-of-us-part-2/portada.webp",
+    galeria: [
+        "./img/the-last-of-us-part-2/img-1.jpg", 
+        "./img/the-last-of-us-part-2/img-2.jpg", 
+        "./img/the-last-of-us-part-2/img-3.jpg", 
+        "./img/the-last-of-us-part-2/img-4.jpg"
+    ],
+    trailer: "https://youtu.be/O6MdexNSy3o",
+    descripcion: "Cinco años después de su peligroso viaje por unos Estados Unidos postapocalípticos, Ellie y Joel se han asentado en Jackson, Wyoming. Sin embargo, un evento violento interrumpe esa paz, y Ellie se embarca en un viaje implacable para hacer justicia y pasar página. Una experiencia cruda que cuestiona los límites de la venganza.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Core i7-8700 o AMD Ryzen 5 3600X<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 2060 o AMD Radeon RX 5700<br><strong>Almacenamiento:</strong> 120 GB de espacio disponible (SSD)",
+        recomendados: "<strong>SO:</strong> Windows 10/11 (64bit)<br><strong>Procesador:</strong> Intel Core i5-12600 o AMD Ryzen 7 5800X<br><strong>Memoria:</strong> 32 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 3070 o AMD Radeon RX 6800 XT<br><strong>Almacenamiento:</strong> 120 GB de espacio disponible (SSD NVMe)"
+    }
+    },
+    {
+    id: 23,
+    titulo: "Wolfenstein: The New Order (AAA)",
+    genero: "Acción / FPS",
+    // TIENE VARIAS CATEGORIAS: ACCION, DISPAROS, HISTORIA Y ADULTOS
+    categoria: ["accion", "aventura", "historia", "terror"],
+    plataforma: "pc",
+
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, 
+    links: {
+        gofile: "https://gofile.io/d/alZGf5",
+        buzzheavier: "https://bzzhr.to/ysyarkzjojfn",
+        "1fichier": "https://1fichier.com/?3bp506x3jcep996v5jb2"
+    },
+    // -------------------------
+
+    imagen: "./img/wolfenstein-the-new-order/portada.jpg",
+    galeria: [
+        "./img/wolfenstein-the-new-order/img-1.jpg", 
+        "./img/wolfenstein-the-new-order/img-2.jpg", 
+        "./img/wolfenstein-the-new-order/img-3.jpg", 
+        "./img/wolfenstein-the-new-order/img-4.jpg"
+    ],
+    trailer: "https://youtu.be/Pht8Bsq8Cno",
+    descripcion: "Wolfenstein: The New Order revive la serie que creó el género de los disparos en primera persona. En una versión alternativa de los años 60, el Círculo de resistance se enfrenta a una fuerza que ha conquistado el mundo entero. Deberás infiltrarte en instalaciones de máxima seguridad y luchar contra legiones de enemigos tecnológicamente avanzados.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 7/8 de 64 bits<br><strong>Procesador:</strong> Core i7 o equivalente en AMD<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> GeForce 460, ATI Radeon HD 6850<br><strong>Almacenamiento:</strong> 50 GB de espacio disponible",
+        recomendados: "<strong>SO:</strong> Windows 10 (64bit)<br><strong>Procesador:</strong> Intel Core i7 o AMD Ryzen 5<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> GeForce GTX 660 o superior<br><strong>Almacenamiento:</strong> 50 GB de espacio disponible"
+    }
+    },
+    {
+    id: 24,
+    titulo: "Wolfenstein II: The New Colossus (AAA)",
+    genero: "Acción / FPS",
+    // TIENE VARIAS CATEGORIAS: ACCION, DISPAROS, HISTORIA Y GORE
+    categoria: ["accion", "disparos", "historia", "gore"],
+    plataforma: "pc",
+
+    // --- CONFIGURACIÓN AAA ---
+    hot: true, 
+    links: {
+        gofile: "https://gofile.io/d/L3JUyg",
+    },
+    // -------------------------
+
+    imagen: "./img/wolfenstein-2/portada.jpg",
+    galeria: [
+        "./img/wolfenstein-2/img-1.jpg", 
+        "./img/wolfenstein-2/img-2.jpg", 
+        "./img/wolfenstein-2/img-3.jpg", 
+        "./img/wolfenstein-2/img-4.jpg"
+    ],
+    trailer: "https://youtu.be/LUtH0fve3vU",
+    descripcion: "The New Colossus transporta la acción a unos Estados Unidos bajo control enemigo. En el papel de B. J. Blazkowicz, deberás reunir a los líderes de la resistencia que queden para luchar contra el imperio en lugares emblemáticos. Equípate con un arsenal de armas brutales y desata nuevas habilidades para abrirte paso a tiros.",
+    requisitos: {
+        minimos: "<strong>SO:</strong> Windows 7, 8.1, o 10 (64-bit)<br><strong>Procesador:</strong> AMD FX-8350/Ryzen 5 1400 o Intel Core i5-3570/i7-3770<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Nvidia GTX 770 4GB / AMD Radeon R9 290 4GB<br><strong>Almacenamiento:</strong> 55 GB de espacio disponible",
+        recomendados: "<strong>SO:</strong> Windows 7, 8.1, o 10 (64-bit)<br><strong>Procesador:</strong> AMD FX-9370/Ryzen 5 1600X o Intel Core i7-4770<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> Nvidia GTX 1060 6GB / AMD Radeon RX 470 4GB<br><strong>Almacenamiento:</strong> 55 GB de espacio disponible"
     }
     },
     
