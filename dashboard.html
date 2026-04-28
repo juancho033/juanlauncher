@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JuanLauncher</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- SEGURIDAD: Expulsar si no viene del Login -->
+    <script>
+        if (sessionStorage.getItem('admin_token') !== 'autorizado_juanlauncher_2026') {
+            window.location.replace('index.html');
+        }
+    </script>
+
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: 'Poppins', sans-serif; }
+        .dash-container { max-width: 1000px; margin: 40px auto; padding: 30px; background: #1a1a1a; border-radius: 10px; border: 1px solid #00d2ff; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .dash-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .dash-header h2 { color: #00d2ff; margin: 0; }
+        
+        .form-section { background: #222; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
+        .form-section h3 { margin-top: 0; color: #fff; border-bottom: 1px dashed #444; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.1rem; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .full-width { grid-column: 1 / -1; }
+        
+        .form-group label { display: block; color: #aaa; font-size: 0.85rem; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; background: #151515; border: 1px solid #444; color: white; border-radius: 5px; font-family: 'Poppins', sans-serif; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #00d2ff; outline: none; }
+        
+        /* Checkbox HOT Switch */
+        .hot-switch-wrapper { display: flex; align-items: center; gap: 10px; background: #2a1515; padding: 10px; border-radius: 5px; border: 1px solid #ff416c; }
+        .hot-switch-wrapper input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: #ff416c; }
+        .hot-switch-wrapper label { margin: 0; color: #ff416c; font-size: 1rem; cursor: pointer; }
+
+        /* Botones */
+        .btn-add { background: #00d2ff; color: #000; border: none; padding: 12px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; }
+        .btn-add:hover { background: #00a8cc; }
+        
+        .action-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; background: #111; padding: 20px; border-radius: 8px; border: 1px dashed #00d2ff; }
+        .stats { font-size: 1.1rem; color: #ccc; }
+        .stats span { color: #00d2ff; font-weight: bold; font-size: 1.3rem; }
+        
+        .btn-save { background: #4caf50; color: white; border: none; padding: 15px 30px; font-size: 1.1rem; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4); }
+        .btn-save:hover { background: #45a049; transform: translateY(-2px); }
+        .btn-logout { background: #f44336; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-logout:hover { background: #d32f2f; }
+
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .action-bar { flex-direction: column; gap: 15px; text-align: center; }
+            .btn-save { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dash-container">
+        <div class="dash-header">
+            <h2>⚙️ Creador de Juegos</h2>
+            <button class="btn-logout" id="btn-cerrar">Cerrar Sesión</button>
+        </div>
+
+        <!-- 1. INFO BÁSICA -->
+        <div class="form-section">
+            <h3>1. Información Básica</h3>
+            <div class="form-grid">
+                <div class="form-group"><label>Título del Juego *</label><input type="text" id="g-titulo" placeholder="Ej: Super Mario 64" required></div>
+                <div class="form-group"><label>Género (Texto visible) *</label><input type="text" id="g-genero" placeholder="Ej: Plataformas 3D"></div>
+                
+                <div class="form-group"><label>Categoría Interna (Filtro separado por comas)</label><input type="text" id="g-categoria" placeholder="Ej: aventura, accion, terror"></div>
+                
+                <div class="form-group">
+                    <label>Plataforma *</label>
+                    <select id="g-plataforma">
+                        <option value="pc">PC</option>
+                        <option value="android">Android</option>
+                        <option value="consola">Consola Retro</option>
+                    </select>
+                </div>
+
+                <!-- SELECTOR DE CONSOLA (Oculto por defecto) -->
+                <div class="form-group" id="box-consola" style="display: none;">
+                    <label>¿Qué consola es? *</label>
+                    <select id="g-consola">
+                        <option value="ps1">PlayStation 1 (PS1)</option>
+                        <option value="n64">Nintendo 64 (N64)</option>
+                        <option value="snes">Super Nintendo (SNES)</option>
+                        <option value="nes">Nintendo (NES)</option>
+                        <option value="gba">GameBoy Advance (GBA)</option>
+                        <option value="gbc">GameBoy / Color (GBC)</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width hot-switch-wrapper">
+                    <input type="checkbox" id="g-hot">
+                    <label for="g-hot">🔥 Marcar como Juego HOT (Saldrá primero en la página AAA)</label>
+                </div>
+                
+                <div class="form-group full-width"><label>Descripción</label><textarea id="g-desc" rows="3" placeholder="Resumen del juego..."></textarea></div>
+            </div>
+        </div>
+
+        <!-- 2. MULTIMEDIA -->
+        <div class="form-section">
+            <h3>2. Multimedia (Imágenes y Tráiler)</h3>
+            <div class="form-grid">
+                <div class="form-group full-width"><label>Portada Principal (Obligatoria) *</label><input type="text" id="g-portada" placeholder="./img/juego/portada.jpg"></div>
+                <div class="form-group full-width"><label>Tráiler (YouTube URL)</label><input type="text" id="g-trailer" placeholder="https://www.youtube.com/watch?v=..."></div>
+                <div class="form-group"><label>Gameplay 1 (Opcional)</label><input type="text" id="g-cap1" placeholder="./img/juego/img-1.jpg"></div>
+                <div class="form-group"><label>Gameplay 2 (Opcional)</label><input type="text" id="g-cap2" placeholder="./img/juego/img-2.jpg"></div>
+                <div class="form-group"><label>Gameplay 3 (Opcional)</label><input type="text" id="g-cap3" placeholder="./img/juego/img-3.jpg"></div>
+                <div class="form-group"><label>Gameplay 4 (Opcional)</label><input type="text" id="g-cap4" placeholder="./img/juego/img-4.jpg"></div>
+            </div>
+        </div>
+
+        <!-- 3. ENLACES DE DESCARGA -->
+        <div class="form-section">
+            <h3>3. Enlaces de Descarga (1 = Normal | Varios = AAA)</h3>
+            <div class="form-grid">
+                <div class="form-group"><label>🔥 Mediafire</label><input type="text" id="l-mediafire" placeholder="https://mediafire.com/..."></div>
+                <div class="form-group"><label>☁️ TeraBox</label><input type="text" id="l-terabox" placeholder="https://terabox.com/..."></div>
+                <div class="form-group"><label>📁 Gofile</label><input type="text" id="l-gofile" placeholder="https://gofile.io/..."></div>
+                <div class="form-group"><label>🐝 Buzzheavier</label><input type="text" id="l-buzz" placeholder="https://buzzheavier.com/..."></div>
+                <div class="form-group full-width"><label>🔴 1Fichier</label><input type="text" id="l-1fichier" placeholder="https://1fichier.com/..."></div>
+            </div>
+        </div>
+
+        <!-- 4. REQUISITOS (TEXTO VISUAL PARA JUEGO.HTML) -->
+        <div class="form-section">
+            <h3>4. Requisitos Visuales (Texto en página de descarga)</h3>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Mínimos (Usa etiquetas &lt;strong&gt; y &lt;br&gt;)</label>
+                    <textarea id="req-txt-min" rows="2" placeholder="<strong>SO:</strong> Windows 10<br><strong>RAM:</strong> 4GB..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label>Recomendados (Usa etiquetas &lt;strong&gt; y &lt;br&gt;)</label>
+                    <textarea id="req-txt-rec" rows="2" placeholder="<strong>SO:</strong> Windows 11<br><strong>RAM:</strong> 8GB..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. REQUISITOS (NÚMEROS PARA SCANNER DE COMPATIBILIDAD) -->
+        <div class="form-section">
+            <h3>5. Requisitos Internos (Números para "¿Corre en mi PC?")</h3>
+            <div class="form-grid">
+                <div class="form-group"><label>RAM Mínima (GB)</label><input type="number" id="r-ram" value="4"></div>
+                <div class="form-group"><label>Espacio Libre (GB)</label><input type="number" id="r-hdd" value="2"></div>
+                <div class="form-group"><label>Windows Mínimo (7, 8, 10, 11)</label><input type="number" id="r-os" value="10"></div>
+                <div class="form-group">
+                    <label>Gráfica Mínima</label>
+                    <select id="r-gpu">
+                        <option value="integrated">Integrada</option>
+                        <option value="1gb">1GB VRAM</option>
+                        <option value="2gb">2GB VRAM</option>
+                        <option value="4gb">4GB VRAM</option>
+                        <option value="6gb">6GB VRAM</option>
+                        <option value="8gb">8GB+ VRAM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÓN AÑADIR A LA COLA -->
+        <button class="btn-add" id="btn-add">➕ Añadir este juego a la lista temporal</button>
+
+        <!-- BARRA DE ACCIÓN FINAL -->
+        <div class="action-bar">
+            <div class="stats">Juegos en la base de datos actual: <span id="contador-juegos">0</span></div>
+            <button class="btn-save" id="btn-descargar">📥 Descargar juegos.js actualizado</button>
+        </div>
+    </div>
+
+    <!-- CARGAMOS TU BASE DE DATOS ACTUAL PARA LEERLA Y AÑADIRLE ENCIMA -->
+    <script src="juegos.js"></script> 
+
+    <script>
+        // 0. Inicializar el contador
+        document.getElementById('contador-juegos').innerText = listaJuegos.length;
+
+        // 1. LÓGICA DE CERRAR SESIÓN
+        document.getElementById('btn-cerrar').addEventListener('click', () => {
+            sessionStorage.removeItem('admin_token');
+            window.location.replace('index.html');
+        });
+
+        // 2. MOSTRAR/OCULTAR SELECTOR DE CONSOLA
+        const platSelect = document.getElementById('g-plataforma');
+        const boxConsola = document.getElementById('box-consola');
+        
+        platSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'consola') boxConsola.style.display = 'block';
+            else boxConsola.style.display = 'none';
+        });
+
+        // 3. AÑADIR JUEGO A LA LISTA TEMPORAL
+        document.getElementById('btn-add').addEventListener('click', () => {
+            
+            const titulo = document.getElementById('g-titulo').value;
+            const portada = document.getElementById('g-portada').value;
+            if(!titulo || !portada) { alert("¡Error! El Título y la Portada son obligatorios."); return; }
+
+            let maxId = 0;
+            listaJuegos.forEach(j => { if(j.id > maxId) maxId = j.id; });
+            const nuevoId = maxId + 1;
+
+            let galeriaArr = [];
+            for(let i=1; i<=4; i++) {
+                let cap = document.getElementById('g-cap'+i).value;
+                if(cap) galeriaArr.push(cap);
+            }
+
+            let linksDict = {};
+            let countLinks = 0;
+            let lastServerName = "";
+            let lastServerUrl = "";
+
+            const m = document.getElementById('l-mediafire').value; if(m){ linksDict.mediafire = m; countLinks++; lastServerName="mediafire"; lastServerUrl=m; }
+            const t = document.getElementById('l-terabox').value; if(t){ linksDict.terabox = t; countLinks++; lastServerName="terabox"; lastServerUrl=t; }
+            const g = document.getElementById('l-gofile').value; if(g){ linksDict.gofile = g; countLinks++; lastServerName="gofile"; lastServerUrl=g; }
+            const b = document.getElementById('l-buzz').value; if(b){ linksDict.buzzheavier = b; countLinks++; lastServerName="buzzheavier"; lastServerUrl=b; }
+            const f = document.getElementById('l-1fichier').value; if(f){ linksDict["1fichier"] = f; countLinks++; lastServerName="1fichier"; lastServerUrl=f; }
+
+            if(countLinks === 0) { alert("¡Error! Debes poner al menos 1 enlace de descarga."); return; }
+
+            const isConsola = platSelect.value === 'consola';
+            
+            // CONSTRUIR EL OBJETO COMPLETO
+            const nuevoJuego = {
+                id: nuevoId,
+                titulo: titulo,
+                genero: document.getElementById('g-genero').value || "No especificado",
+                categoria: document.getElementById('g-categoria').value.split(',').map(s => s.trim().toLowerCase()),
+                plataforma: platSelect.value,
+                hot: document.getElementById('g-hot').checked,
+                imagen: portada,
+                galeria: galeriaArr,
+                trailer: document.getElementById('g-trailer').value || "", // <- AQUÍ SE GUARDA EL TRAILER
+                descripcion: document.getElementById('g-desc').value || "Sin descripción.",
+                
+                // <- AQUÍ SE GUARDAN LOS TEXTOS HTML DE LOS REQUISITOS (juego.html)
+                requisitos: {
+                    minimos: document.getElementById('req-txt-min').value || "No especificado",
+                    recomendados: document.getElementById('req-txt-rec').value || "No especificado"
+                },
+                
+                // <- AQUÍ SE GUARDAN LOS NÚMEROS (compatibilidad.html)
+                sysReqs: {
+                    ramMin: parseInt(document.getElementById('r-ram').value),
+                    ramRec: parseInt(document.getElementById('r-ram').value) * 2, 
+                    storage: parseInt(document.getElementById('r-hdd').value),
+                    osMin: document.getElementById('r-os').value,
+                    gpuMin: document.getElementById('r-gpu').value
+                }
+            };
+
+            if (isConsola) nuevoJuego.consolaFiltro = document.getElementById('g-consola').value;
+
+            if (countLinks === 1) {
+                nuevoJuego.servidor = lastServerName;
+                nuevoJuego.link = lastServerUrl;
+            } else {
+                nuevoJuego.links = linksDict;
+            }
+
+            listaJuegos.push(nuevoJuego);
+            document.getElementById('contador-juegos').innerText = listaJuegos.length;
+            
+            // Limpiar todo el formulario
+            document.querySelectorAll('input[type="text"], input[type="url"], input[type="number"], textarea').forEach(i => i.value = '');
+            document.getElementById('g-hot').checked = false;
+            
+            alert(`¡"${titulo}" añadido a la lista temporal!\nJuegos listos para guardar: ${listaJuegos.length}`);
+        });
+
+        // 4. DESCARGAR LA BASE DE DATOS FINAL
+        document.getElementById('btn-descargar').addEventListener('click', () => {
+            const jsCode = "const listaJuegos = " + JSON.stringify(listaJuegos, null, 4) + ";";
+            const blob = new Blob([jsCode], { type: "text/javascript" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "juegos.js";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            alert("✅ ¡juegos.js descargado con éxito!\nReemplázalo en tu carpeta del proyecto.");
+        });
+    </script>
+</body>
+</html>
