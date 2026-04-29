@@ -696,5 +696,38 @@ const listaJuegos = [
             "gofile": "https://gofile.io/d/5J7mkE",
             "buzzheavier": "https://bzzhr.to/u4w8cunxkbrz"
         }
+    },
+    {
+        "id": 26,
+        "titulo": "Raft",
+        "genero": "Aventura/Supervivencia",
+        "categoria": [
+            "aventura",
+            "supervivencia"
+        ],
+        "plataforma": "pc",
+        "hot": false,
+        "imagen": "https://m.media-amazon.com/images/M/MV5BZGY0NzU1NjktZDI0Yy00MDk5LWE1MGEtYTdjNGRmOTdjYTI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/ss_c22b2ff5ba5609f74e61b5feaa5b7a1d7fd1dbd3.1920x1080.jpg?t=1727184011",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/ss_2adb248f4d501cf58344d9af1d8a9e56c74647ee.1920x1080.jpg?t=1727184011",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/ss_56914c026da8c8411974bd0e2e8cb81a0331ba99.1920x1080.jpg?t=1727184011",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/ss_ef26440dc87e4d571139f5c64a22035d86723442.1920x1080.jpg?t=1727184011"
+        ],
+        "trailer": "https://youtu.be/giNIi__FutU",
+        "descripcion": "¡Raft™ te lanza a ti y a tus amigos a una aventura oceánica épica! ¡Solo o juntos, los jugadores luchan por sobrevivir a un peligroso viaje a través de un vasto mar! Reúne escombros, busca arrecifes y construye tu propia casa flotante, ¡pero ten cuidado con los tiburones devoradores de hombres!",
+        "requisitos": {
+            "minimos": "<strong>Mínimo:</strong><br>\nRequiere un procesador y un sistema operativo de 64 bits<br>\n<strong>SO *:</strong> Windows 7 or later<br>\n<strong>Procesador:</strong> Intel Core i5 2.6GHz or similar<br>\n<strong>Memoria:</strong> 6 GB de RAM<br>\n<strong>Gráficos:</strong> GeForce GTX 700 series or similar<br>\n<strong>DirectX:</strong> Versión 11<br>\n<strong>Red:</strong> Conexión de banda ancha a Internet<br>\n<strong>Almacenamiento:</strong> 10 GB de espacio disponible<br>",
+            "recomendados": "<strong>Recomendado:</strong><br>\nRequiere un procesador y un sistema operativo de 64 bits<br>\n<strong>SO *:</strong> Windows 7 or later<br>\n<strong>Procesador:</strong> Intel Core i5-6600 3.3GHz or similar<br>\n<strong>Memoria:</strong> 8 GB de RAM<br>\n<strong>Gráficos:</strong> GeForce GTX 1050 series or similar<br>\n<strong>DirectX:</strong> Versión 11<br>\n<strong>Red:</strong> Conexión de banda ancha a Internet<br>\n<strong>Almacenamiento:</strong> 10 GB de espacio disponible<br>"
+        },
+        "sysReqs": {
+            "ramMin": 6,
+            "ramRec": 12,
+            "storage": 10,
+            "osMin": "7",
+            "gpuMin": "4gb"
+        },
+        "servidor": "gofile",
+        "link": "https://gofile.io/d/IaGGix"
     }
 ];
