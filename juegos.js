@@ -729,5 +729,38 @@ const listaJuegos = [
         },
         "servidor": "gofile",
         "link": "https://gofile.io/d/IaGGix"
+    },
+    {
+    
+        "id": 27,
+        "titulo": "Gambonanza",
+        "genero": "Ajedrez",
+        "categoria": [
+            "estrategia"
+        ],
+        "plataforma": "android",
+        "hot": false,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxXiICAMNtFBLTJ3rqcvJfBWXLgiXXAZTO8BsETfTxQ8Mt-iqxfPLuU7e&s=10",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/a0646405f3eb92e2dcd5580bcb9000da9e450f4a/ss_a0646405f3eb92e2dcd5580bcb9000da9e450f4a.1920x1080.jpg?t=1777641170",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/c4cb998d559f4669f19c71eaf57513a6311b5dfa/ss_c4cb998d559f4669f19c71eaf57513a6311b5dfa.1920x1080.jpg?t=1777641170",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/8f671f5e6ab2b7a473d1d1b6740d40eddfdc0224/ss_8f671f5e6ab2b7a473d1d1b6740d40eddfdc0224.1920x1080.jpg?t=1777641170",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/ef75bdd37170a8b88294322364502640f6bccd9c/ss_ef75bdd37170a8b88294322364502640f6bccd9c.1920x1080.jpg?t=1777641170"
+        ],
+        "trailer": "https://youtu.be/9X5Uy214Sgo?si=maGgczPmu9MBi1Yp",
+        "descripcion": "Gambonanza es un roguelike de ajedrez por turnos que se juega en un tablero diminuto donde hay muchÃ­simo en juego. Domina giros tÃ¡cticos, invierte tus ganancias y descubre gambitos capaces de cambiar las normas, casillas con modificaciones y combinaciones de piezas que rompen las reglas. Â¡EnfrÃ©ntate a los desafiantes jefes y sumÃ©rgete en las mil maneras de revolucionar el ajedrez tradicional!",
+        "requisitos": {
+            "minimos": "<strong>MÃ­nimo:</strong><br>\nRequiere un procesador y un sistema operativo de 64 bits<br>\n<strong>SO:</strong> Android 5.0 o posterior<br>\n<strong>Procesador:</strong> Quad-core 1.5 GHz o similar<br>\n<strong>Memoria:</strong> 2 GB de RAM<br>\n<strong>GrÃ¡ficos:</strong> Soporte para OpenGL ES 3.0<br>\n<strong>Almacenamiento:</strong> 500 MB de espacio disponible<br>\n<strong>Notas adicionales:</strong> Se recomienda una pantalla de al menos 5 pulgadas para mejor visibilidad del tablero.<br>",
+            "recomendados": "<strong>Recomendado:</strong><br>\nRequiere un procesador y un sistema operativo de 64 bits<br>\n<strong>SO:</strong> Android 10.0 o posterior<br>\n<strong>Procesador:</strong> Octa-core 2.0 GHz o superior<br>\n<strong>Memoria:</strong> 4 GB de RAM<br>\n<strong>GrÃ¡ficos:</strong> Soporte para OpenGL ES 3.1 o Vulkan<br>\n<strong>Almacenamiento:</strong> 500 MB de espacio disponible<br>\n<strong>Notas adicionales:</strong> Optimizado para dispositivos con altas tasas de refresco.<br>"
+        },
+        "sysReqs": {
+            "ramMin": 4,
+            "ramRec": 8,
+            "storage": 2,
+            "osMin": "10",
+            "gpuMin": "integrated"
+        },
+        "servidor": "mediafire",
+        "link": "https://www.mediafire.com/file/napf5vnmiv61rid/Gambonanza-v1.0.16-full-apkvision.apk/file"
     }
 ];
