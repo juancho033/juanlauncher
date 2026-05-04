@@ -731,7 +731,6 @@ const listaJuegos = [
         "link": "https://gofile.io/d/IaGGix"
     },
     {
-    
         "id": 27,
         "titulo": "Gambonanza",
         "genero": "Ajedrez",
@@ -762,5 +761,37 @@ const listaJuegos = [
         },
         "servidor": "mediafire",
         "link": "https://www.mediafire.com/file/napf5vnmiv61rid/Gambonanza-v1.0.16-full-apkvision.apk/file"
+    },
+    {
+        "id": 28,
+        "titulo": "Gambonanza",
+        "genero": "Ajedrez",
+        "categoria": [
+            "estrategia"
+        ],
+        "plataforma": "pc",
+        "hot": false,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxXiICAMNtFBLTJ3rqcvJfBWXLgiXXAZTO8BsETfTxQ8Mt-iqxfPLuU7e&s=10",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/a0646405f3eb92e2dcd5580bcb9000da9e450f4a/ss_a0646405f3eb92e2dcd5580bcb9000da9e450f4a.1920x1080.jpg?t=1777641170",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/c4cb998d559f4669f19c71eaf57513a6311b5dfa/ss_c4cb998d559f4669f19c71eaf57513a6311b5dfa.1920x1080.jpg?t=1777641170",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/8f671f5e6ab2b7a473d1d1b6740d40eddfdc0224/ss_8f671f5e6ab2b7a473d1d1b6740d40eddfdc0224.1920x1080.jpg?t=1777641170",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/ef75bdd37170a8b88294322364502640f6bccd9c/ss_ef75bdd37170a8b88294322364502640f6bccd9c.1920x1080.jpg?t=1777641170"
+        ],
+        "trailer": "https://youtu.be/9X5Uy214Sgo?si=M92gy1wuumUxNy_V",
+        "descripcion": "Gambonanza es un roguelike de ajedrez por turnos que se juega en un tablero diminuto. Domina giros tácticos, invierte tus ganancias y descubre nuevos gambitos, casillas y combinaciones de piezas. ¡Enfréntate a los jefes y sumérgete en las mil maneras de revolucionar el ajedrez tradicional!",
+        "requisitos": {
+            "minimos": "<strong>Mínimo:</strong><br>\n<strong>SO:</strong> Microsoft® Windows® 10<br>\n<strong>Procesador:</strong> Intel Core i3-3240 (2 * 3400); AMD FX-4300 (4 * 3800)<br>\n<strong>Memoria:</strong> 4 GB de RAM<br>\n<strong>Gráficos:</strong> GeForce GTX 560 Ti (1024 VRAM); Radeon HD 7750 (1024 VRAM)<br>\n<strong>DirectX:</strong> Versión 10<br>\n<strong>Almacenamiento:</strong> 450 MB de espacio disponible<br>",
+            "recomendados": "No especificado"
+        },
+        "sysReqs": {
+            "ramMin": 4,
+            "ramRec": 8,
+            "storage": 1,
+            "osMin": "10",
+            "gpuMin": "1gb"
+        },
+        "servidor": "mediafire",
+        "link": "https://www.mediafire.com/file/9n2j0bmwvtysftc/Gambonanza_pc_juanlauncher.zip/file"
     }
 ];
