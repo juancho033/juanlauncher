@@ -9,6 +9,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/terraria/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_hero.jpg",
         "galeria": [
             "./img/terraria/img-1.jpg",
             "./img/terraria/img-2.jpg",
@@ -16,13 +17,13 @@ const listaJuegos = [
             "./img/terraria/img-4.jpg"
         ],
         "trailer": "https://youtu.be/HHNLfxBxcvo",
-        "servidor": "gofile",
+        "servidor": "mediafire",
         "descripcion": "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
         "requisitos": {
             "minimos": "<strong>SO:</strong> Windows XP, Vista, 7, 8/8.1, 10<br><strong>Procesador:</strong> 2.0 Ghz<br><strong>Memoria:</strong> 2.5 GB de RAM<br><strong>Gráficos:</strong> 128mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible",
             "recomendados": "<strong>SO:</strong> Windows 7, 8/8.1, 10<br><strong>Procesador:</strong> Dual Core 3.0 Ghz<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> 256mb Video Memory, capaz de Shader Model 2.0+<br><strong>Almacenamiento:</strong> 200 MB de espacio disponible"
         },
-        "link": "https://gofile.io/d/1dI0ic"
+        "link": "https://www.mediafire.com/file/3pkcg8udycbdymo/game-terraria-%252889298%2529.rar/file"
     },
     {
         "id": 2,
@@ -35,6 +36,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/hollowknight/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/library_hero.jpg",
         "galeria": [
             "./img/hollowknight/img-1.jpg",
             "./img/hollowknight/img-2.jpg",
@@ -62,6 +64,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/stardewvalley/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_hero.jpg",
         "galeria": [
             "./img/stardewvalley/img-1.jpg",
             "./img/stardewvalley/img-2.jpg",
@@ -88,12 +91,13 @@ const listaJuegos = [
             "estrategia"
         ],
         "plataforma": "pc",
-        "imagen": "./img/fnaf1/portada.webp",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_616x353.jpg",
         "galeria": [
-            "./img/fnaf1/img-1.jpg",
-            "./img/fnaf1/img-2.jpg",
-            "./img/fnaf1/img-3.jpg",
-            "./img/fnaf1/img-4.jpg"
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_616x353.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/header.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_467x181.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_231x87.jpg"
         ],
         "trailer": "https://youtu.be/RP4UTOek0-Y",
         "servidor": "buzzheavier",
@@ -116,6 +120,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/celeste/portada.png",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/library_hero.jpg",
         "galeria": [
             "./img/celeste/img-1.jpg",
             "./img/celeste/img-2.jpg",
@@ -143,6 +148,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/silksong/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1030300/library_hero.jpg",
         "galeria": [
             "./img/silksong/img-1.jpg",
             "./img/silksong/img-2.jpg",
@@ -170,6 +176,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/megabonk/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3405340/library_hero.jpg",
         "galeria": [
             "./img/megabonk/img-1.jpg",
             "./img/megabonk/img-2.jpg",
@@ -197,6 +204,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/geometry-dash/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322170/library_hero.jpg",
         "galeria": [
             "./img/geometry-dash/img-1.jpg",
             "./img/geometry-dash/img-2.jpg",
@@ -224,6 +232,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/hytale/portada.webp",
+        "banner": "https://upload.wikimedia.org/wikipedia/en/b/ba/Hytale_logo.png",
         "galeria": [
             "./img/hytale/img-1.webp",
             "./img/hytale/img-2.webp",
@@ -251,6 +260,7 @@ const listaJuegos = [
         ],
         "plataforma": "android",
         "imagen": "./img/stardewvalley/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_hero.jpg",
         "galeria": [
             "./img/stardew-valley2/img-1.webp",
             "./img/stardew-valley2/img-2.webp",
@@ -278,6 +288,7 @@ const listaJuegos = [
         ],
         "plataforma": "android",
         "imagen": "./img/geometry-dash/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322170/library_hero.jpg",
         "galeria": [
             "./img/geometry-dash/img-1.jpg",
             "./img/geometry-dash/img-2.jpg",
@@ -305,6 +316,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/nfs-most-wanted/portada.jpg",
+        "banner": "https://upload.wikimedia.org/wikipedia/en/8/8e/Need_for_Speed_Most_Wanted_Box_Art.jpg",
         "galeria": [
             "./img/nfs-most-wanted/img-1.jpg",
             "./img/nfs-most-wanted/img-2.jpg",
@@ -332,6 +344,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "./img/project-zomboid/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/library_hero.jpg",
         "galeria": [
             "./img/project-zomboid/img-1.jpg",
             "./img/project-zomboid/img-2.jpg",
@@ -358,6 +371,7 @@ const listaJuegos = [
         "consolaFiltro": "n64",
         "servidor": "mediafire",
         "imagen": "./img/mario64/portada.jpg",
+        "banner": "https://mario.wiki.gallery/images/3/37/Mario_and_Bowser_Fire_Artwork_-_Super_Mario_64.png",
         "galeria": [
             "./img/mario64/img-1.jpg",
             "./img/mario64/img-2.jpg",
@@ -383,6 +397,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "https://store-images.s-microsoft.com/image/apps.37905.13670972585585116.7f29dc82-c969-4e89-aaf9-7c0e3f52d890.2e5a9c92-cf00-4c10-ae28-264c564478c3",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/library_hero.jpg",
         "galeria": [
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/ss_615455299355eaf552c638c7ea5b24a8b46e02dd.1920x1080.jpg?t=1709068852",
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/ss_483fb089be0093beeef03525276803a9ca4f66a1.1920x1080.jpg?t=1709068852",
@@ -410,6 +425,7 @@ const listaJuegos = [
         ],
         "plataforma": "pc",
         "imagen": "https://upload.wikimedia.org/wikipedia/en/1/1f/Dead_cells_cover_art.png",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/library_hero.jpg",
         "galeria": [
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1772726488",
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_7bde51ea6c8f6289e85ea1d8c1c941e1f8bfee91.1920x1080.jpg?t=1772726488",
@@ -438,11 +454,10 @@ const listaJuegos = [
         "plataforma": "pc",
         "hot": true,
         "links": {
-            "gofile": "https://gofile.io/d/5RbV8M",
-            "buzzheavier": "https://buzzheavier.com/tfvh7k025oxp",
-            "1fichier": "https://1fichier.com/?ziye61w96t9rz47q4gz2"
+            "buzzheavier": "https://bzzhr.to/u33dxmmaozb6",
         },
         "imagen": "./img/cyberpunk-2077/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_hero.jpg",
         "galeria": [
             "./img/cyberpunk-2077/img-1.jpg",
             "./img/cyberpunk-2077/img-2.jpg",
@@ -473,6 +488,7 @@ const listaJuegos = [
             "buzzheavier": "https://bzzhr.to/an2jlvvr9vne"
         },
         "imagen": "./img/re9/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/library_hero.jpg",
         "galeria": [
             "./img/re9/img-1.jpg",
             "./img/re9/img-2.jpg",
@@ -504,6 +520,7 @@ const listaJuegos = [
             "1fichier": "https://1fichier.com/?8fihg2yacfc780ccz2n4"
         },
         "imagen": "./img/detroit-become-human/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222140/library_hero.jpg",
         "galeria": [
             "./img/detroit-become-human/img-1.jpg",
             "./img/detroit-become-human/img-2.jpg",
@@ -534,6 +551,7 @@ const listaJuegos = [
             "buzzheavier": "https://bzzhr.to/z409lxi8ia60"
         },
         "imagen": "./img/the-last-of-us-part-1/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/library_hero.jpg",
         "galeria": [
             "./img/the-last-of-us-part-1/img-1.jpg",
             "./img/the-last-of-us-part-1/img-2.jpg",
@@ -564,6 +582,7 @@ const listaJuegos = [
             "buzzheavier": "https://bzzhr.to/yvpgw1jjxnu4"
         },
         "imagen": "./img/the-last-of-us-part-2/portada.webp",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/library_hero.jpg",
         "galeria": [
             "./img/the-last-of-us-part-2/img-1.jpg",
             "./img/the-last-of-us-part-2/img-2.jpg",
@@ -595,6 +614,7 @@ const listaJuegos = [
             "1fichier": "https://1fichier.com/?3bp506x3jcep996v5jb2"
         },
         "imagen": "./img/wolfenstein-the-new-order/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/201810/library_hero.jpg",
         "galeria": [
             "./img/wolfenstein-the-new-order/img-1.jpg",
             "./img/wolfenstein-the-new-order/img-2.jpg",
@@ -624,6 +644,7 @@ const listaJuegos = [
             "gofile": "https://gofile.io/d/L3JUyg"
         },
         "imagen": "./img/wolfenstein-2/portada.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/612880/library_hero.jpg",
         "galeria": [
             "./img/wolfenstein-2/img-1.jpg",
             "./img/wolfenstein-2/img-2.jpg",
@@ -647,6 +668,7 @@ const listaJuegos = [
         ],
         "plataforma": "android",
         "imagen": "./img/balatro/portada.webp",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/library_hero.jpg",
         "galeria": [
             "./img/balatro/img-1.jpg",
             "./img/balatro/img-2.jpg",
@@ -673,6 +695,7 @@ const listaJuegos = [
         "plataforma": "pc",
         "hot": true,
         "imagen": "https://i.pinimg.com/736x/56/2e/31/562e311c3db929a33e6919832120b6c7.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_hero.jpg",
         "galeria": [
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.1920x1080.jpg?t=1767883716",
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_dcdac9e4b26ac0ee5248bfd2967d764fd00cdb42.1920x1080.jpg?t=1767883716",
@@ -693,7 +716,7 @@ const listaJuegos = [
             "gpuMin": "4gb"
         },
         "links": {
-            "gofile": "https://gofile.io/d/5J7mkE",
+            "1fichier": "https://1fichier.com/?q2dvt3eajfxun4glvln5",
             "buzzheavier": "https://bzzhr.to/u4w8cunxkbrz"
         }
     },
@@ -708,6 +731,7 @@ const listaJuegos = [
         "plataforma": "pc",
         "hot": false,
         "imagen": "https://m.media-amazon.com/images/M/MV5BZGY0NzU1NjktZDI0Yy00MDk5LWE1MGEtYTdjNGRmOTdjYTI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/library_hero.jpg",
         "galeria": [
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/ss_c22b2ff5ba5609f74e61b5feaa5b7a1d7fd1dbd3.1920x1080.jpg?t=1727184011",
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/ss_2adb248f4d501cf58344d9af1d8a9e56c74647ee.1920x1080.jpg?t=1727184011",
@@ -740,6 +764,7 @@ const listaJuegos = [
         "plataforma": "android",
         "hot": false,
         "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxXiICAMNtFBLTJ3rqcvJfBWXLgiXXAZTO8BsETfTxQ8Mt-iqxfPLuU7e&s=10",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/library_hero.jpg",
         "galeria": [
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/a0646405f3eb92e2dcd5580bcb9000da9e450f4a/ss_a0646405f3eb92e2dcd5580bcb9000da9e450f4a.1920x1080.jpg?t=1777641170",
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/c4cb998d559f4669f19c71eaf57513a6311b5dfa/ss_c4cb998d559f4669f19c71eaf57513a6311b5dfa.1920x1080.jpg?t=1777641170",
@@ -772,6 +797,7 @@ const listaJuegos = [
         "plataforma": "pc",
         "hot": false,
         "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxXiICAMNtFBLTJ3rqcvJfBWXLgiXXAZTO8BsETfTxQ8Mt-iqxfPLuU7e&s=10",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/library_hero.jpg",
         "galeria": [
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/a0646405f3eb92e2dcd5580bcb9000da9e450f4a/ss_a0646405f3eb92e2dcd5580bcb9000da9e450f4a.1920x1080.jpg?t=1777641170",
             "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3509230/c4cb998d559f4669f19c71eaf57513a6311b5dfa/ss_c4cb998d559f4669f19c71eaf57513a6311b5dfa.1920x1080.jpg?t=1777641170",
@@ -793,5 +819,403 @@ const listaJuegos = [
         },
         "servidor": "mediafire",
         "link": "https://www.mediafire.com/file/9n2j0bmwvtysftc/Gambonanza_pc_juanlauncher.zip/file"
+    },
+    {
+        "id": 29,
+        "titulo": "Counter-Strike 1.6",
+        "genero": "Acción / FPS",
+        "categoria": [
+            "accion",
+            "fps",
+            "multijugador"
+        ],
+        "plataforma": "pc",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/library_600x900.jpg?t=1745368572",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/library_hero.jpg",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/0000000132.1920x1080.jpg?t=1745368572",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/0000000133.1920x1080.jpg?t=1745368572",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/0000000134.1920x1080.jpg?t=1745368572",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/10/0000000135.1920x1080.jpg?t=1745368572"
+        ],
+        "trailer": "https://youtu.be/j71GvZ26H6c",
+        "servidor": "mediafire",
+        "descripcion": "Counter-Strike 1.6 es un juego de disparos en primera persona (FPS) táctico por equipos. Únete a los terroristas o a los antiterroristas en emocionantes combates. El clásico que definió el género de los juegos de disparos competitivos en PC.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 95/98/ME/2000/XP/Vista/7/8/10/11<br><strong>Procesador:</strong> 500 MHz processor<br><strong>Memoria:</strong> 96 MB de RAM<br><strong>Gráficos:</strong> 16 MB de VRAM<br><strong>Almacenamiento:</strong> 1.2 GB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows XP/Vista/7/8/10/11<br><strong>Procesador:</strong> 1 GHz processor<br><strong>Memoria:</strong> 128 MB de RAM<br><strong>Gráficos:</strong> 32 MB de VRAM<br><strong>Almacenamiento:</strong> 1.5 GB de espacio disponible"
+        },
+        "sysReqs": {
+            "ramMin": 0.096,
+            "ramRec": 0.128,
+            "storage": 1.2,
+            "osMin": "95",
+            "gpuMin": "integrated"
+        },
+        "link": "https://www.mediafire.com/file/ag28b7eumf10go2"
+    },
+    {
+        "id": 32,
+        "titulo": "Five Nights at Freddy's 2",
+        "genero": "Survival Horror / Point and Click",
+        "categoria": [
+            "terror",
+            "indie",
+            "supervivencia",
+            "estrategia"
+        ],
+        "plataforma": "pc",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332800/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332800/capsule_616x353.jpg",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/332800/ss_49915306285cd7c567620c1c10e300a068089e35.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/332800/ss_ed9a7e583267f5d9ff58a34ab5ff2f1735fb7346.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/332800/ss_f42e7f094cab8a39322ddb0f14df824ad15865bf.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/332800/ss_10c3872339fc465663b4fcccca575da6c42f0a80.1920x1080.jpg"
+        ],
+        "trailer": "https://youtu.be/DtefHvkDTdA",
+        "servidor": "buzzheavier",
+        "descripcion": "Bienvenido de nuevo a Freddy Fazbear's Pizza, esta vez como guardia de seguridad nocturno en la nueva y mejorada ubicación. Con nuevos animatrónicos, nuevas mecánicas y una máscara para engañarlos, deberás sobrevivir 5 noches mientras descubres los oscuros secretos que esconde el establecimiento. ¿Podrás mantener la calma cuando las luces se apaguen?",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows XP/Vista/7<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Tarjeta con 1 GB de VRAM<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Intel Core i3 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 460 o superior<br><strong>Almacenamiento:</strong> 2 GB de espacio disponible"
+        },
+        "link": "https://bzzhr.to/42bimyrou6i9"
+    },
+    {
+        "id": 33,
+        "titulo": "Five Nights at Freddy's 3",
+        "genero": "Survival Horror / Point and Click",
+        "categoria": [
+            "terror",
+            "indie",
+            "supervivencia",
+            "estrategia"
+        ],
+        "plataforma": "pc",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/354140/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/354140/capsule_616x353.jpg",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/354140/ss_ffcb2ebf7e91f0285666e13d5015ff93284071e7.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/354140/ss_94e21b748afa40e7eed04b31ecf1e60c23465289.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/354140/ss_985912dc2b527e1c7671135ab04a4864621a3c4d.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/354140/ss_9974db810cc8358a7be91b39b8a43b0fc29d5807.1920x1080.jpg"
+        ],
+        "trailer": "https://youtu.be/3N6GegOCz1o",
+        "servidor": "buzzheavier",
+        "descripcion": "Treinta años después de los terroríficos sucesos de Freddy Fazbear's Pizza, una nueva atracción temática llamada 'Fazbear's Fright' abre sus puertas. Como nuevo guardia de seguridad nocturno, deberás enfrentarte a un único y aterrador animatrónico: Springtrap. Con sistemas de vigilancia rotos y alucinaciones por todos lados, esta será tu noche más larga.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows XP/Vista/7<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Tarjeta con 1 GB de VRAM<br><strong>Almacenamiento:</strong> 500 MB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Intel Core i3 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 460 o superior<br><strong>Almacenamiento:</strong> 1 GB de espacio disponible"
+        },
+        "link": "https://bzzhr.to/roi2xso831jy"
+    },
+    {
+        "id": 34,
+        "titulo": "Five Nights at Freddy's 4",
+        "genero": "Survival Horror / Point and Click",
+        "categoria": [
+            "terror",
+            "indie",
+            "supervivencia",
+            "estrategia"
+        ],
+        "plataforma": "pc",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388090/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388090/capsule_616x353.jpg",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/388090/ss_ed133c092449015276842c83a347fcd1f544fd1e.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/388090/ss_f2024ef4e66e17d89f9c0af8f2ec33c9f873accb.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/388090/ss_65dcdae9afd884f985827dc591ce18be1f574617.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/388090/ss_32592700ad0ba14371f8237155a31d8c92bec7c1.1920x1080.jpg"
+        ],
+        "trailer": "https://youtu.be/9hJZ1M_IkFw",
+        "servidor": "buzzheavier",
+        "descripcion": "Esta vez el terror no está en una pizzería, sino en tu propia casa. En esta entrega de la saga, te enfrentarás a pesadillas animatrónicas desde la seguridad de tu habitación. Escucha atentamente sus pasos, cierra las puertas a tiempo y sobrevive hasta el amanecer. Con una atmósfera opresiva y sustos inesperados, esta es la entrega más aterradora de la serie.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows XP/Vista/7<br><strong>Procesador:</strong> 2 GHz Intel Pentium 4 o AMD Athlon<br><strong>Memoria:</strong> 1 GB de RAM<br><strong>Gráficos:</strong> Tarjeta con 1 GB de VRAM<br><strong>Almacenamiento:</strong> 250 MB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows 10/11<br><strong>Procesador:</strong> Intel Core i3 o superior<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 460 o superior<br><strong>Almacenamiento:</strong> 1 GB de espacio disponible"
+        },
+        "link": "https://bzzhr.to/h2ondlv2r9ij"
+    },
+    {
+        "id": 30,
+        "titulo": "Hello Neighbor Collection",
+        "genero": "Colección / Sigilo",
+        "categoria": ["aventura", "coleccion"],
+        "plataforma": "colecciones",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/521890/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/521890/header.jpg",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/521890/capsule_616x353.jpg",
+            "",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/521890/header.jpg",
+            ""
+        ],
+        "trailer": "https://youtu.be/gAg3fLHfKL0",
+        "descripcion": "¡La colección completa de Hello Neighbor! Incluye Hello Neighbor 1 y Hello Neighbor 2. Escapa de las trampas de tu vecino y descubre los secretos que esconde su casa.",
+        "coleccion": [
+            {
+                "titulo": "Hello Neighbor",
+                "link": "https://www.mediafire.com/file/example_hn1",
+                "servidor": "mediafire",
+                "descripcion": "Múdate a un nuevo barrio y descubre que tu vecino esconde algo en el sótano."
+            },
+            {
+                "titulo": "Hello Neighbor 2",
+                "link": "https://www.mediafire.com/file/example_hn2",
+                "servidor": "mediafire",
+                "descripcion": "La secuela. Investiga los misterios de Raven Brooks y enfréntate a nuevos vecinos."
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "titulo": "Five Nights at Freddy's Saga",
+        "genero": "Colección / Survival Horror",
+        "categoria": ["terror", "coleccion"],
+        "plataforma": "colecciones",
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_616x353.jpg",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/capsule_616x353.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332800/capsule_616x353.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/354140/capsule_616x353.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388090/capsule_616x353.jpg"
+        ],
+        "trailer": "https://youtu.be/RP4UTOek0-Y",
+        "descripcion": "La saga completa de Five Nights at Freddy's. Cuatro noches de terror en Freddy Fazbear's Pizza. Sobrevive a los animatrónicos y descubre la oscura verdad detrás de la pizzería.",
+        "coleccion": [
+            {
+                "titulo": "Five Nights at Freddy's 1",
+                "link": "https://bzzhr.to/itrfnxmeffp3",
+                "servidor": "buzzheavier",
+                "descripcion": "La primera noche. Cuida a los animatrónicos en tu primer turno de vigilancia."
+            },
+            {
+                "titulo": "Five Nights at Freddy's 2",
+                "link": "https://bzzhr.to/42bimyrou6i9",
+                "servidor": "buzzheavier",
+                "descripcion": "Nuevos animatrónicos y más peligro. Usa la máscara para sobrevivir."
+            },
+            {
+                "titulo": "Five Nights at Freddy's 3",
+                "link": "https://bzzhr.to/roi2xso831jy",
+                "servidor": "buzzheavier",
+                "descripcion": "Treinta años después. Una nueva atracción basada en leyendas urbanas."
+            },
+            {
+                "titulo": "Five Nights at Freddy's 4",
+                "link": "https://bzzhr.to/h2ondlv2r9ij",
+                "servidor": "buzzheavier",
+                "descripcion": "El terror en tu propia casa. Escucha y sobrevive a las pesadillas."
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "titulo": "Death Stranding 2: On The Beach (AAA)",
+        "genero": "Acción / Aventura",
+        "categoria": [
+            "aventura",
+            "accion",
+            "supervivencia"
+        ],
+        "plataforma": "pc",
+        "hot": true,
+        "links": {
+            "gofile": "https://gofile.io/d/MfE1Cg",
+            "buzzheavier": "https://bzzhr.to/sl6geanimmhi"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3280350/6270c77b0729e2df0a17d660286eeddfd9169386/header.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3280350/6270c77b0729e2df0a17d660286eeddfd9169386/header.jpg?t=1774022345",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/702c9ed8dc25f26be07539cd5cfb9f08046d210a/ss_702c9ed8dc25f26be07539cd5cfb9f08046d210a.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/9732214efafbe68e6618806556cd448578217a04/ss_9732214efafbe68e6618806556cd448578217a04.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/1a78ae746ca46713e3c2cb2e5c4f197fea72fe50/ss_1a78ae746ca46713e3c2cb2e5c4f197fea72fe50.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/f8c42434fe7d51fdb3f039ca06a99f5f18518a31/ss_f8c42434fe7d51fdb3f039ca06a99f5f18518a31.1920x1080.jpg"
+        ],
+        "trailer": "https://youtu.be/4b6hcN5vZsw",
+        "servidor": "gofile",
+        "descripcion": "Del legendario creador de juegos Hideo Kojima llega una evolución cargada de emoción de esta experiencia que desafía los géneros. Once meses después de los eventos del DEATH STRANDING original, Sam y sus compañeros se embarcan en un nuevo viaje para salvar a la humanidad de la extinción y descubrir la respuesta a esta inquietante pregunta: ¿Deberíamos habernos conectado? Atraviesa un vasto mundo abierto en Australia, enfréntate a enemigos de otro mundo y construye infraestructura para conectar la Red Quiral.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 10/11 Version 1909 o superior<br><strong>Procesador:</strong> Intel Core i3-10100 o AMD Ryzen 3 3100<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 1660 o AMD Radeon RX 5500 XT 8GB<br><strong>Almacenamiento:</strong> 150 GB de espacio disponible (SSD)",
+            "recomendados": "<strong>SO:</strong> Windows 10/11 Version 1909 o superior<br><strong>Procesador:</strong> Intel Core i7-11700 o AMD Ryzen 7 5700X<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 3070 o AMD Radeon RX 6800<br><strong>Almacenamiento:</strong> 150 GB de espacio disponible (SSD)"
+        }
+    },
+    {
+        "id": 36,
+        "titulo": "Death Stranding (AAA)",
+        "genero": "Acción / Aventura",
+        "categoria": [
+            "aventura",
+            "accion"
+        ],
+        "plataforma": "pc",
+        "hot": true,
+        "links": {
+            "buzzheavier": "https://bzzhr.to/plti1lbpecg2"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1190460/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1190460/header.jpg?t=1766014863",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190460/ss_ac7c64c8d10bb5786694891e4a22b07a5da7dd6f.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190460/ss_4370916476e44c78b50bfee175f1d82285f6bfd7.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190460/ss_39f107106c83eb3717a1061fa1da0f2f4bdf3993.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190460/ss_c1d15216b7e8ccbcb73f462c4eaf6ef564679c94.1920x1080.jpg"
+        ],
+        "trailer": "https://youtu.be/tCI396HyhbQ",
+        "servidor": "buzzheavier",
+        "descripcion": "Del legendario creador de juegos Hideo Kojima llega una experiencia innovadora que desafía los géneros. Sam Bridges debe enfrentarse a un mundo completamente transformado por el Death Stranding. Cargando con los restos desconectados de nuestro futuro en sus manos, se embarca en un viaje para reconectar el mundo destrozado paso a paso. Con la colaboración de Norman Reedus, Mads Mikkelsen, Léa Seydoux y Lindsay Wagner.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i5-3470 o AMD Ryzen 3 1200<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> GeForce GTX 1050 3 GB o AMD Radeon RX 560 4 GB<br><strong>Almacenamiento:</strong> 80 GB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i7-3770 o AMD Ryzen 5 1600<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> GeForce GTX 1060 6 GB o AMD Radeon RX 590<br><strong>Almacenamiento:</strong> 80 GB de espacio disponible"
+        }
+    },
+    {
+        "id": 37,
+        "titulo": "Stray",
+        "genero": "Aventura / Indie",
+        "categoria": [
+            "aventura",
+            "indie"
+        ],
+        "plataforma": "pc",
+        "links": {
+            "gofile": "https://gofile.io/d/FmkF5V"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1332010/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1332010/71daca1910d664d31240b9623a495e0c0828807f/header.jpg?t=1779927784",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_88e209a90c2039fa76bca6fa08c641365be38d50.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_e8f0cbd5efdba352e89c4cfcee3fe991a1e1be8a.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_2221af260c64362fdc835a9dca65f6f1d1192b25.1920x1080.jpg",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_3fdd04a5418293864bf82d33c75f833121e63804.1920x1080.jpg"
+        ],
+        "trailer": "https://youtu.be/vBDQEkfAcnc",
+        "servidor": "gofile",
+        "descripcion": "Perdido, solo y separado de su familia, un gato callejero debe desentrañar un antiguo misterio para escapar de una ciudad cyberpunk olvidada. Stray es un juego de aventura en tercera persona ambientado en los callejones detallados e iluminados con neón de una ciudad cyberpunk en decadencia. Ve el mundo a través de los ojos de un gato y defiéndete de amenazas imprevistas mientras resuelves los misterios de este inhóspito lugar habitado por droides curiosos y criaturas peligrosas.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i5-2300 o AMD FX-6350<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 650 Ti 2 GB o AMD Radeon R7 360 2 GB<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows 10<br><strong>Procesador:</strong> Intel Core i5-8400 o AMD Ryzen 5 2600<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce GTX 780 3 GB o AMD Radeon R9 290X 4 GB<br><strong>Almacenamiento:</strong> 10 GB de espacio disponible"
+        }
+    },
+    {
+        "id": 38,
+        "titulo": "007 First Light",
+        "genero": "Acción / Espionaje",
+        "categoria": [
+            "accion",
+            "aventura"
+        ],
+        "plataforma": "pc",
+        "links": {
+            "gofile": "https://gofile.io/d/lrITJ8",
+            "buzzheavier": "https://bzzhr.to/rcby3xmpgwb4"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/dbe86ebd2edb4c77d113e9e2feefeb90189fabc9/header.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/dbe86ebd2edb4c77d113e9e2feefeb90189fabc9/header.jpg?t=1780990824",
+        "galeria": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/828b106be4010c1b80170cad792aaa6f1417a101/ss_828b106be4010c1b80170cad792aaa6f1417a101.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/c5e19e3879ed6da308e952d1e8d7bdc4cd835b4c/ss_c5e19e3879ed6da308e952d1e8d7bdc4cd835b4c.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/6ad4e419c1eb043e3a12b9cc37166cdf204725c1/ss_6ad4e419c1eb043e3a12b9cc37166cdf204725c1.jpg",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/d076a739da6136dc4da2c48750eb6f780d4f826d/ss_d076a739da6136dc4da2c48750eb6f780d4f826d.jpg"
+        ],
+        "trailer": "https://youtu.be/gDvbGANDH4E",
+        "servidor": "buzzheavier",
+        "descripcion": "Conviértete en James Bond en 007 First Light. Un shooter en primera persona que combina acción de espionaje clásica con una historia original ambientada en el universo de James Bond. Infíltrate en bases enemigas, utiliza gadgets de alta tecnología y vive la emoción del espionaje internacional con misiones alrededor del mundo.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 10 (64 bits)<br><strong>Procesador:</strong> Intel Core i5-9600K o AMD Ryzen 5 3600<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 3060 o AMD Radeon RX 6600 XT<br><strong>Almacenamiento:</strong> 80 GB de espacio disponible (SSD)",
+            "recomendados": "<strong>SO:</strong> Windows 10/11 (64 bits)<br><strong>Procesador:</strong> Intel Core i7-12700K o AMD Ryzen 7 7800X3D<br><strong>Memoria:</strong> 32 GB de RAM<br><strong>Gráficos:</strong> NVIDIA GeForce RTX 4080 o AMD Radeon RX 7900 XT<br><strong>Almacenamiento:</strong> 80 GB de espacio disponible (SSD)"
+        }
+    },
+    {
+        "id": 39,
+        "titulo": "Subnautica",
+        "genero": "Supervivencia / Aventura",
+        "categoria": [
+            "supervivencia",
+            "aventura"
+        ],
+        "plataforma": "pc",
+        "links": {
+            "buzzheavier": "https://bzzhr.to/9nk0jogdqmz2",
+            "gofile": "https://gofile.io/d/XXUKgO"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/264710/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/264710/header.jpg?t=1777456112",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_e182b6b20bb797500f9f63c561586d920d44e37c.1920x1080.jpg?t=1777456112",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_970a13f246e33e0df26d93baf9f8e975732adb4b.1920x1080.jpg?t=1777456112",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_5f2f2ea498cdc632cbffd6cf37c1a09670eb3272.1920x1080.jpg?t=1777456112",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_cebc378d2f7bc78978c21db4e3c5e12ccd067349.1920x1080.jpg?t=1777456112"
+        ],
+        "trailer": "https://youtu.be/16mNyX96AFc",
+        "servidor": "buzzheavier",
+        "descripcion": "Descend into the depths of an alien underwater world filled with wonder and peril. Subnautica es un juego de aventura submarina en un planeta oceánico alienígena. Tras estrellarte en tu cápsula de emergencia, deberás explorar un enorme mundo abierto lleno de peligros y maravillas. Reúne recursos, fabrica equipo, construye hábitats submarinos y descubre los misterios que esconde el océano mientras luchas por sobrevivir.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows Vista SP2 o superior (64 bits)<br><strong>Procesador:</strong> Intel Haswell 2 núcleos / 4 hilos @ 2.5Ghz o equivalente<br><strong>Memoria:</strong> 4 GB de RAM<br><strong>Gráficos:</strong> Intel HD 4600 o equivalente (puntuación 3DMark Fire Strike > 950)<br><strong>DirectX:</strong> Versión 11<br><strong>Almacenamiento:</strong> 20 GB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows Vista SP2 o superior (64 bits)<br><strong>Procesador:</strong> Intel Haswell 4 núcleos / 4 hilos @ 3.2Ghz o equivalente<br><strong>Memoria:</strong> 8 GB de RAM<br><strong>Gráficos:</strong> Nvidia GTX 550 Ti o equivalente, 2GB VRAM<br><strong>DirectX:</strong> Versión 11<br><strong>Almacenamiento:</strong> 20 GB de espacio disponible"
+        }
+    },
+    {
+        "id": 40,
+        "titulo": "Subnautica 2 (Early Access)",
+        "genero": "Supervivencia / Aventura",
+        "categoria": [
+            "supervivencia",
+            "aventura",
+            "multijugador"
+        ],
+        "plataforma": "pc",
+        "hot": true,
+        "links": {
+            "buzzheavier": "https://bzzhr.to/dg0w3gv2i7am"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962700/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962700/header.jpg?t=1780372044",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/823b102b09530bbf588f5e9752cb52f1681dc992/ss_823b102b09530bbf588f5e9752cb52f1681dc992.1920x1080.jpg?t=1780372044",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/e631ef3b91faacacb5a2c823d0b979083548d66f/ss_e631ef3b91faacacb5a2c823d0b979083548d66f.1920x1080.jpg?t=1780372044",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/16b68b0941ed9c5ac1eea74e478fa726d425bebf/ss_16b68b0941ed9c5ac1eea74e478fa726d425bebf.1920x1080.jpg?t=1780372044",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1962700/56159597a28edfb07c6dd27b4a00f2e06e571048/ss_56159597a28edfb07c6dd27b4a00f2e06e571048.1920x1080.jpg?t=1780372044"
+        ],
+        "trailer": "https://youtu.be/8EZhCzFaQuw",
+        "servidor": "buzzheavier",
+        "descripcion": "Subnautica 2 es un juego de aventura y supervivencia submarina ambientado en un nuevo mundo alienígena, desarrollado por Unknown Worlds. Juega solo o con hasta 4 amigos en cooperativo online. Adáptate para sobrevivir construyendo bases personalizadas y fabricando herramientas. Explora biomas vibrantes, estudia criaturas alienígenas y descubre los misterios que se esconden en las profundidades de esta nueva frontera.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 10/11 (64 bits)<br><strong>Procesador:</strong> Intel Core i5-8400 / AMD Ryzen 5 2600<br><strong>Memoria:</strong> 12 GB de RAM<br><strong>Gráficos:</strong> GeForce GTX 1660 6GB / RX 5500 XT 6GB<br><strong>DirectX:</strong> Versión 12<br><strong>Red:</strong> Conexión a Internet de banda ancha<br><strong>Almacenamiento:</strong> 50 GB de espacio disponible",
+            "recomendados": "<strong>SO:</strong> Windows 11 (64 bits)<br><strong>Procesador:</strong> Intel Core i7-13700 / AMD Ryzen 7 7700X<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> Geforce RTX 3070 8GB / RX 6700 XT 8GB<br><strong>DirectX:</strong> Versión 12<br><strong>Red:</strong> Conexión a Internet de banda ancha<br><strong>Almacenamiento:</strong> 50 GB de espacio disponible"
+        }
+    },
+    {
+        "id": 41,
+        "titulo": "Palworld",
+        "genero": "Supervivencia / Mundo Abierto",
+        "categoria": [
+            "supervivencia",
+            "aventura",
+            "multijugador"
+        ],
+        "plataforma": "pc",
+        "hot": true,
+        "links": {
+            "directo": "https://vik1ngfile.site/f/Acy7pjdja5"
+        },
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/capsule_616x353.jpg",
+        "banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/058bd87dc17a7179e07c446aa64d0574ca43ab9d/header.jpg?t=1780702171",
+        "galeria": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_f81b7c4f20be3b99f76a1415c4cdb9b444c99b97.1920x1080.jpg?t=1780702171",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_a9fa84f0c21bc536f00925ab4586e8c4f587c2b7.1920x1080.jpg?t=1780702171",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_b3cea7c9f04a67d784d4c6a0c157a11d6268b189.1920x1080.jpg?t=1780702171",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_06e27c15c7b4b10233c937b887cf6a6925c83009.1920x1080.jpg?t=1780702171"
+        ],
+        "trailer": "https://youtu.be/D9w97KSEAOo",
+        "servidor": "directo",
+        "descripcion": "En este juego, puedes vivir pacíficamente junto a criaturas misteriosas llamadas Pals o arriesgar tu vida para enfrentarte a un despiadado sindicato de cazadores furtivos. Los Pals pueden usarse para luchar, trabajar en granjas o fábricas, e incluso puedes venderlos o comértelos. Sobrevive en un duro entorno, construye estructuras, explora mazmorras, cría Pals y automatiza tu producción. Un mundo abierto de supervivencia con multijugador para hasta 4 jugadores en cooperativo o 32 en servidor dedicado.",
+        "requisitos": {
+            "minimos": "<strong>SO:</strong> Windows 10 o superior (64 bits)<br><strong>Procesador:</strong> i5-3570K 3.4 GHz 4 Núcleos<br><strong>Memoria:</strong> 16 GB de RAM<br><strong>Gráficos:</strong> GeForce GTX 1050 (2GB)<br><strong>DirectX:</strong> Versión 11<br><strong>Red:</strong> Conexión a Internet de banda ancha<br><strong>Almacenamiento:</strong> 40 GB de espacio disponible (SSD)",
+            "recomendados": "<strong>SO:</strong> Windows 10 o superior (64 bits)<br><strong>Procesador:</strong> i9-9900K 3.6 GHz 8 Núcleos<br><strong>Memoria:</strong> 32 GB de RAM<br><strong>Gráficos:</strong> GeForce RTX 2070<br><strong>DirectX:</strong> Versión 11<br><strong>Red:</strong> Conexión a Internet de banda ancha<br><strong>Almacenamiento:</strong> 40 GB de espacio disponible (SSD)"
+        }
     }
 ];

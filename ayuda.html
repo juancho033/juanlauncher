@@ -1,171 +1,441 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JuanLauncher - Ayuda y Consejos</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=8">
     <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* 1. Quitamos el comportamiento de "Fijo / Sticky" solo en esta página */
-        header {
-            position: relative !important;
-        }
-
-        /* 2. Le damos nivel "Dios" al Lightbox para que NADA lo pueda tapar */
-        .lightbox {
-            z-index: 99999 !important; 
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
-
-<body>
+<body class="launcher">
 
     <header>
-        <div class="social-links">
-            <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn" title="Mi GitHub">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-            </a>
-            <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn" title="Mi YouTube">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                </svg>
-            </a>
-        </div>
-
-        <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
-            <nav>
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="ayuda.html" class="nav-link" style="color: #00d2ff;">Ayuda</a>
-                <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
-                <a href="comunidad.html" class="nav-link">Comunidad</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
-            </nav>
+        <div class="logo"><a href="index.html">JuanLauncher</a></div>
+        <nav>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
+            <a href="ayuda.html" class="nav-link" style="color: var(--accent);">Ayuda</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="changelog.html" class="nav-link">Cambios</a>
+        </nav>
+        <div class="header-actions">
+            <div class="social-links">
+                <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn" title="Mi GitHub">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn" title="Mi YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+            </div>
             <div class="auth-buttons">
                 <a href="login.html" class="login-btn">Iniciar Sesión</a>
             </div>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
-    <main class="help-container">
-        <h1 style="text-align: center; margin-bottom: 40px; border-left: none;">Centro de Ayuda y Reglas</h1>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-        <div class="help-grid">
-            <!-- Preguntas Frecuentes -->
-            <div class="help-card highlight-card">
-                <div class="help-icon">🎮</div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Inicio
+        </a>
+        <a href="compatibilidad.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            ¿Corre en mi PC?
+        </a>
+        <a href="ayuda.html" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Ayuda
+        </a>
+        <a href="comunidad.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Comunidad
+        </a>
+        <a href="changelog.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Actualizaciones
+        </a>
+        <a href="contacto.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Contacto
+        </a>
+        <div class="menu-divider"></div>
+        <a href="login.html" class="menu-login">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Iniciar Sesión
+        </a>
+    </nav>
+
+    <main style="padding-bottom: calc(var(--bottom-nav-height) + 24px);">
+
+        <div class="help-hero">
+            <h1>Centro de Ayuda</h1>
+            <p>Todo lo que necesitas saber para usar JuanLauncher: guías, preguntas frecuentes y solución de problemas.</p>
+        </div>
+
+        <div class="help-index">
+            <a href="#faq" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                FAQ
+            </a>
+            <a href="#descarga" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Descarga
+            </a>
+            <a href="#extraccion" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                Extracción
+            </a>
+            <a href="#problemas" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Problemas
+            </a>
+            <a href="#navegacion" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Navegación
+            </a>
+            <a href="#seguridad" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Seguridad
+            </a>
+            <a href="#reportar" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                Reportar
+            </a>
+            <a href="#android" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                Android
+            </a>
+            <a href="#creditos" class="help-index-item">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Créditos
+            </a>
+        </div>
+
+        <div class="help-section" id="faq">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Preguntas Frecuentes
+            </h2>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Los juegos tienen virus? <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div class="faq-answer"><p>No, los juegos no tienen virus, son de confianza. Los créditos de los repackers están abajo. Si en VirusTotal aparece algo, lo más probable es que sea un falso positivo. Si tienes dudas, puedes <a href="contacto.html">contactarme</a> para revisarlo.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿La página tiene anuncios? <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div class="faq-answer"><p>No, la página no tiene anuncios ni acortadores de enlaces. Sin embargo, las plataformas de descarga como Mediafire y Terabox pueden tener su propia publicidad. Se recomienda usar un adblock de confianza.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Los enlaces son directos? <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div class="faq-answer"><p>Sí, los enlaces son directos a sus respectivas plataformas de descarga. Algunos servicios como Terabox pueden pedir registrarse para descargar el archivo.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Encontré un enlace caído / Quiero sugerir un juego <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div class="faq-answer"><p>Puedes reportar enlaces caídos o sugerir juegos nuevos a través de la <a href="contacto.html">página de contacto</a>.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Cada cuánto actualizan el catálogo? <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div class="faq-answer"><p>El catálogo se actualiza constantemente. Puedes revisar los cambios recientes en la <a href="changelog.html">página de cambios</a>.</p></div>
+            </div>
+
+            <div class="help-card highlight-card" style="margin-top: 20px;">
+                <div class="help-icon" style="margin-bottom: 8px;"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="1.5" fill="currentColor"/><circle cx="16" cy="12" r="1.5" fill="currentColor"/></svg></div>
                 <h3>Apoya a los Desarrolladores</h3>
-                <p>Mi meta es compartir estos juegos para que puedas probarlos. Sin embargo, <strong>si un juego
-                        realmente te gusta y tienes las posibilidades económicas</strong>, te invito encarecidamente
-                    a comprarlo de forma legal en plataformas como Steam, Epic Games o GOG. ¡Así apoyas a los creadores
-                    para que sigan haciendo Juegos!</p>
-
-                    <h3>Preguntas Frecuentes:</h3>
-
-                    <h4>La pagina tiene anuncios?</h4>
-                    <br>
-                    <p>No, la pagina no tiene anuncios ni acortadores de enlaces, pero las paginas como mediafire y terabox pueden tener publicidad se recomienda usar un adblock de confianza</p>
-                    <br>
-            
-                    <h4>Los enlace son directos?</h4>
-                    <br>
-                    <p>Si, los enlaces son directos a sus respectivas plataformas de descarga (Terabox puede pedir Registrarse para descargar el archivo)</p>
-                    <br>
-
-                    <h4>Si encuentro un enlace caido o quiero que añadan un juego?</h4>
-                    <br>
-                    <p>Puedes reportarme eso <a href="contacto.html" style="color: #00d2ff; text-decoration: underline;">aqui</a></p>
-                    <br>
-
-                    <h4>Los juegos no tienen virus?</h4>
-                    <br>
-                    <p>No, los juegos no tienen virus, los juegos son de confianza abajo dejo los creditos a los repackers (si en virus total sale que tiene virus lo mas probable es que sea un falso positivo, si tienes dudas puedes enviame en la seccion de contacto que juego es para revisarlo si tiene malware)</p>
-                    <br>
-
-                   <h4>Muchas gracias por leer</h4>
-            
-            
+                <p>Mi meta es compartir estos juegos para que puedas probarlos. Sin embargo, <strong>si un juego realmente te gusta y tienes las posibilidades económicas</strong>, te invito encarecidamente a comprarlo de forma legal en plataformas como Steam, Epic Games o GOG. ¡Así apoyas a los creadores para que sigan haciendo juegos!</p>
             </div>
+        </div>
 
-            <!--Descargas -->
+        <div class="help-section" id="descarga">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Guía de Descarga
+            </h2>
+
             <div class="help-card">
-                <div class="help-icon">⚡</div>
-                <h3>Consejo de Descarga</h3>
-                <p>Para evitar que la descarga se corte a la mitad o vaya lenta desde Mediafire, te recomiendo usar
-                    <strong>Free Download Manager (FDM)</strong>. Es un programa gratuito que acelera y asegura tus
-                    descargas al máximo.</p>
-                <a href="https://www.freedownloadmanager.org/es/" target="_blank" class="help-btn">Descargar FDM</a>
-            </div>
-
-            <!--Descomprimir -->
-            <div class="help-card">
-                <div class="help-icon">🗂️</div>
-                <h3>¿Cómo descomprimir?</h3>
-                <p>Los Juegos vienen en formato comprimido. Para evitar errores de "archivo dañado", te
-                    recomiendo encarecidamente usar <strong>7-Zip</strong> o WinRAR (actualizado a su última versión).
-                </p>
-                <a href="https://www.7-zip.org/" target="_blank" class="help-btn">Descargar 7-Zip</a>
-            </div>
-
-            <!--Créditos -->
-            <div class="help-card credits-card">
-                <div class="help-icon">🏆</div>
-                <h3>Créditos y Agradecimientos</h3>
-                <p>Este catálogo no sería posible sin el trabajo de la comunidad. Todo el crédito de las
-                    subidas y recopilaciones de los juegos va para:</p>
-                <div class="credits-names">
-                    <a href="https://www.youtube.com/@OptiProjects" target="_blank"><span style="color : #ffd700; text-decoration: none;">👑 optiproyects</span></a>
-                    <a href="https://www.youtube.com/@thefenix010" target="_blank"><span style="color: #ffd700; text-decoration: none;">👑 thefenix010</span></a>
-                    <span>👑 Y a todos los repackers de los Juegos</span>
-
+                <div class="help-steps">
+                    <div class="help-step">
+                        <span class="help-step-num">1</span>
+                        <div>
+                            <strong>Elige un juego</strong>
+                            <p>Navega por el catálogo en la página principal. Usa los filtros por categoría o servidor para encontrar lo que buscas.</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="help-step-num">2</span>
+                        <div>
+                            <strong>Selecciona servidor de descarga</strong>
+                            <p>En la página del juego, elige entre las opciones disponibles (Gofile, Buzzheavier, etc.).</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="help-step-num">3</span>
+                        <div>
+                            <strong>Usa un gestor de descargas</strong>
+                            <p>Recomiendo <strong>Free Download Manager (FDM)</strong> para evitar cortes y acelerar la descarga.</p>
+                            <a href="https://www.freedownloadmanager.org/es/" target="_blank" class="help-btn" style="color: white; text-decoration: none;">Descargar FDM</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="help-section" id="extraccion">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                Cómo Extraer los Juegos
+            </h2>
+
+            <div class="help-card">
+                <p>Los juegos vienen comprimidos en formatos como .zip, .rar o .7z. Para extraerlos correctamente:</p>
+                <div class="help-steps">
+                    <div class="help-step">
+                        <span class="help-step-num">1</span>
+                        <div>
+                            <strong>Descarga 7-Zip</strong>
+                            <p>Es gratuito, open-source y el más recomendado para evitar errores de "archivo dañado".</p>
+                            <a href="https://www.7-zip.org/" target="_blank" class="help-btn" style="color: white; text-decoration: none;">Descargar 7-Zip</a>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="help-step-num">2</span>
+                        <div>
+                            <strong>Extrae todo</strong>
+                            <p>Haz clic derecho > 7-Zip > "Extract here" o usa WinRAR actualizado. Extrae todos los archivos del juego en una carpeta.</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="help-step-num">3</span>
+                        <div>
+                            <strong>Ejecuta el juego</strong>
+                            <p>Busca el archivo .exe dentro de la carpeta extraída. Algunos juegos pueden requerir instalar componentes adicionales como DirectX o Visual C++ Redistributable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-section" id="problemas">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Solución de Problemas
+            </h2>
+
+            <div class="help-card">
+                <div class="faq-item">
+                    <div class="faq-question">El archivo está dañado o no se extrae <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Asegúrate de tener <strong>7-Zip</strong> o WinRAR en su última versión. A veces el antivirus puede bloquear la extracción — prueba desactivándolo temporalmente.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Falta una DLL o error de MSVCR <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Instala <strong>Visual C++ Redistributable</strong> y <strong>DirectX</strong> desde la página de Microsoft. También puedes usar la carpeta <em>_CommonRedist</em> que viene incluida en muchos juegos.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">El juego no abre o se cierra al iniciar <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Verifica que tu PC cumple los requisitos mínimos. Actualiza tus drivers de gráficos. Ejecuta el juego como administrador. Si usas antivirus, añade una excepción a la carpeta del juego.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">La descarga se corta o va muy lenta <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Usa <strong>Free Download Manager (FDM)</strong> para reanudar descargas cortadas y mejor velocidad. También prueba con otro navegador o desactiva temporalmente el antivirus.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-section" id="navegacion">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Navegación del Sitio
+            </h2>
+
+            <div class="help-card">
+                <ul class="help-list">
+                    <li><strong>Inicio:</strong> Catálogo completo con filtros por categoría, servidor y búsqueda.</li>
+                    <li><strong>¿Corre en mi PC?:</strong> Compara tu hardware con los requisitos de cualquier juego.</li>
+                    <li><strong>Ayuda:</strong> Esta página — guías y soporte.</li>
+                    <li><strong>Contacto:</strong> Para reportar problemas o sugerir juegos.</li>
+                    <li><strong>Cambios:</strong> Historial de actualizaciones del sitio.</li>
+                    <li><strong>Comunidad:</strong> Espacio para la comunidad (próximamente).</li>
+                </ul>
+                <div class="help-tip">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>Usa el botón <strong>"Sorpréndeme"</strong> para descubrir un juego aleatorio del catálogo.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-section" id="seguridad">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Seguridad y Recomendaciones
+            </h2>
+
+            <div class="help-card">
+                <div class="faq-item">
+                    <div class="faq-question">¿Es seguro descargar aquí? <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Sí, todos los juegos pasan por revisión. Los repackers listados en créditos son de confianza en la comunidad. Como buena práctica, escanea los archivos con Windows Defender o Malwarebytes después de descargar.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Recomendaciones de seguridad <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Usa un adblock (uBlock Origin recomendado). No descargues de enlaces sospechosos fuera de la página. Mantén tu sistema operativo y antivirus actualizados.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Falsos positivos del antivirus <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="faq-answer"><p>Es común que los cracks y parches usados en juegos piratas activen alertas del antivirus. Esto no significa necesariamente que sea malware. Si tienes dudas, <a href="contacto.html">contáctame</a> y lo revisamos.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-section" id="reportar">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                Cómo Reportar Problemas
+            </h2>
+
+            <div class="help-card">
+                <p>Si encuentras algún problema, puedes reportarlo de las siguientes formas:</p>
+                <div class="help-steps">
+                    <div class="help-step">
+                        <span class="help-step-num">1</span>
+                        <div>
+                            <strong>Página de contacto</strong>
+                            <p>Usa el formulario en la <a href="contacto.html">página de contacto</a> para reportar enlaces caídos o sugerir juegos nuevos.</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="help-step-num">2</span>
+                        <div>
+                            <strong>Incluye detalles</strong>
+                            <p>Al reportar, incluye el nombre del juego y el servidor de descarga que falló. Describe bien el problema para ayudar a resolverlo más rápido.</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="help-step-num">3</span>
+                        <div>
+                            <strong>Revisa el changelog</strong>
+                            <p>Antes de reportar, revisa la <a href="changelog.html">página de cambios</a> para ver si el problema ya fue solucionado o está en proceso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-section" id="android">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                Juegos en Android
+            </h2>
+
+            <div class="help-card">
+                <p>Algunos juegos del catálogo están disponibles para Android. Aquí algunos consejos:</p>
+                <ul class="help-list">
+                    <li><strong>Archivos APK + OBB:</strong> Muchos juegos vienen en formato APK + carpeta OBB. Instala el APK primero y luego copia la carpeta OBB a <em>Android/obb/</em> en tu almacenamiento interno.</li>
+                    <li><strong>Permisos:</strong> Activa "Instalar aplicaciones de orígenes desconocidos" en los ajustes de tu dispositivo.</li>
+                    <li><strong>Espacio:</strong> Los juegos Android pueden ocupar varios GB. Asegúrate de tener suficiente espacio libre antes de descargar.</li>
+                    <li><strong>Versiones:</strong> No todos los juegos funcionan en todos los dispositivos. Revisa los requisitos en la página del juego antes de descargar.</li>
+                </ul>
+                <div class="help-tip">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>Usa <strong>ZArchiver</strong> o <strong>RAR</strong> para extraer archivos comprimidos en Android.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-section" id="creditos">
+            <h2 class="help-section-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Créditos y Agradecimientos
+            </h2>
+
+            <div class="help-card credits-card">
+                <p>Este catálogo no sería posible sin el trabajo de la comunidad. Todo el crédito de las subidas y recopilaciones de los juegos va para:</p>
+                <div class="credits-names">
+                    <span>FitGirl</span>
+                    <span>DODI Repack</span>
+                    <span>ElAmigos</span>
+                    <span>KaOsKrew</span>
+                    <span>SteamRip</span>
+                    <span>Voice38</span>
+                    <span>CODEX</span>
+                    <span>OptiProyects</span>
+                    <span>Chovka</span>
+                    <span>TheFenix010</span>
+                    <span>MagiPack</span>
+                    <span>Y al resto de repackers</span>
+                </div>
+                <div class="help-tip" style="margin-top: 16px;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    <span>Si disfrutas el contenido, considera apoyar a los creadores originales comprando los juegos.</span>
+                </div>
+            </div>
+        </div>
+
     </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Inicio</span>
+        </a>
+        <a href="compatibilidad.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Compatibilidad</span>
+        </a>
+        <a href="ayuda.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>Ayuda</span>
+        </a>
+        <a href="contacto.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Contacto</span>
+        </a>
+    </nav>
 
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-logo">
                 <h3>JuanLauncher</h3>
-                <p>El mejor lugar para descubrir, probar y disfrutar tus juegos favoritos de PC y Android. Software libre de virus y descargas rápidas.</p>
+                <p>El mejor lugar para descubrir, probar y disfrutar tus juegos favoritos de PC y Android.</p>
             </div>
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="ayuda.html" style="color:#00d2ff">Ayuda y Soporte</a></li>
+                    <li><a href="ayuda.html">Ayuda y Soporte</a></li>
                     <li><a href="compatibilidad.html">¿Corre en mi PC?</a></li>
-                    <li><a href="comunidad.html">Comunidad</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="changelog.html">Cambios</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 JuanLauncher. Hecho con ❤️ para la comunidad gamer.</p>
+            <p>&copy; 2026 JuanLauncher. Hecho con <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> para la comunidad gamer.</p>
         </div>
     </footer>
 
-    <!-- Botón Subir Arriba -->
-    <button id="scrollTopBtn" class="scroll-top-btn" title="Ir arriba">▲</button>
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Ir arriba">▲</button>
+    
+
+    <script src="script.js"></script>
     <script>
-        const scrollBtn = document.getElementById("scrollTopBtn");
-        window.addEventListener("scroll", () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollBtn.classList.add("visible");
-            } else {
-                scrollBtn.classList.remove("visible");
-            }
-        });
-        scrollBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(function(o) {
+                    o.classList.remove('open');
+                });
+                if (!isOpen) item.classList.add('open');
+            });
         });
     </script>
 </body>
-
 </html>
