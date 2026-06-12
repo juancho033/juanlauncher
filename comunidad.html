@@ -1,210 +1,753 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad - JuanLauncher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>JuanLauncher - Comunidad</title>
     <meta name="description" content="Únete a la comunidad de JuanLauncher. Discusiones, foros y ayuda mutua.">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="shortcut icon" href="img/juanlauncher/logo-favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="img/juanlauncher/logo-favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para el Muro de Comunidad */
+        .feed-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Ocultar sidebars en móvil para limpiar el feed */
+        @media (max-width: 991px) {
+            .feed-sidebar-left, .feed-sidebar-right {
+                display: none;
+            }
+            .feed-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .feed-grid {
+                grid-template-columns: 280px 1fr 300px;
+            }
+        }
+
+        /* Tarjetas del muro */
+        .feed-card {
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-card);
+        }
+
+        /* Creador de posts */
+        .post-creator {
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .post-creator-header {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .post-creator textarea {
+            width: 100%;
+            background: var(--surface-2);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 12px;
+            color: var(--text-main);
+            resize: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .post-creator textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .post-creator-actions {
+            display: flex;
+            justify-content: flex-end;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 12px;
+        }
+
+        /* Estructura de los Posts */
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .post-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .post-user-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .post-user-info span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .post-content {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+
+        .post-footer {
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 12px;
+        }
+
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .post-action:hover {
+            color: var(--accent);
+        }
+
+        .post-action.liked {
+            color: #ff3355;
+        }
+
+        /* Estilos de Comentarios */
+        .comment-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .comment-item .avatar {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .comment-body {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 12px;
+            border-radius: 12px;
+            border-top-left-radius: 0;
+            flex: 1;
+            border: 1px solid var(--glass-border);
+        }
+
+        .comment-user {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .comment-user strong {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .comment-user span {
+            color: var(--text-dim);
+            font-size: 0.65rem;
+        }
+    </style>
     <script>
-        // Muro de seguridad (Auth Gate)
         if (!localStorage.getItem("isLoggedIn")) {
             window.location.href = "login.html";
         }
     </script>
 </head>
+<body class="launcher">
 
-<body>
-
+    <!-- HEADER -->
     <header>
-        <div class="social-links">
-            <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn" title="Mi GitHub">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-            </a>
-            <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn" title="Mi YouTube">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                </svg>
-            </a>
+        <div class="logo">
+            <a href="index.html">JuanLauncher</a>
         </div>
-
-        <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration:none; color:#00d2ff;">JuanLauncher</a></div>
-            <nav>
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="ayuda.html" class="nav-link">Ayuda</a>
-                <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
-                <a href="comunidad.html" class="nav-link" style="color: #00d2ff;">Comunidad</a>
-            </nav>
+        <nav>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="compatibilidad.html" class="nav-link">¿Corre en mi PC?</a>
+            <a href="ayuda.html" class="nav-link">Ayuda</a>
+            <a href="comunidad.html" class="nav-link" style="color: var(--accent);">Comunidad</a>
+            <a href="changelog.html" class="nav-link">Actualizaciones</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+        </nav>
+        <div class="header-actions">
+            <div class="social-links">
+                <a href="https://github.com/juancho033/juanlauncher" target="_blank" class="social-btn github-btn" title="Mi GitHub">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.youtube.com/@JUANCHODEV22" target="_blank" class="social-btn youtube-btn" title="Mi YouTube">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+            </div>
             <div class="auth-buttons">
-                <a href="login.html" class="login-btn">Iniciar Sesión</a>
+                <a href="#" class="login-btn" onclick="logout()">Cerrar Sesión</a>
             </div>
         </div>
-        
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar discusiones...">
-        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     </header>
 
-    <main class="chat-main">
-        <div class="chat-wrapper">
-            <!-- Sidebar: Usuarios y Grupos -->
-            <aside class="chat-sidebar">
-                <div class="sidebar-header">
-                    <h3>Chat Global <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></h3>
-                    <p id="user-count">Activos: 128</p>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- MOBILE MENU -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Inicio</a>
+        <a href="compatibilidad.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> ¿Corre en mi PC?</a>
+        <a href="ayuda.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Ayuda</a>
+        <a href="comunidad.html" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Comunidad
+        </a>
+        <a href="changelog.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Actualizaciones</a>
+        <a href="contacto.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Contacto</a>
+        <div class="menu-divider"></div>
+        <a href="#" onclick="logout()" class="menu-login">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Cerrar Sesión
+        </a>
+    </nav>
+
+    <!-- MAIN COMMUNITY FEED -->
+    <main style="padding-bottom: calc(var(--bottom-nav-height) + 24px); max-width: 1300px; margin: 0 auto; padding-top: 24px;">
+        <div class="feed-grid">
+            
+            <!-- Sidebar Izquierda (Perfil y Atajos) -->
+            <aside class="feed-sidebar-left">
+                <div class="sidebar-card">
+                    <div class="post-user" style="margin-bottom: 15px;">
+                        <img src="" id="user-avatar-side" class="avatar" style="width: 50px; height: 50px; border: 2px solid var(--accent);">
+                        <div class="post-user-info">
+                            <h4 id="user-name-side" style="color: var(--text-main);">Cargando...</h4>
+                            <span id="user-rank-side" style="font-size: 0.7rem; background: rgba(41, 182, 246, 0.1); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-weight: 600; transition: all 0.3s ease;">Miembro Bronce</span>
+                        </div>
+                    </div>
+                    <div style="height: 1px; background: var(--glass-border); margin: 15px 0;"></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: center;">
+                        <div style="background: var(--surface-2); padding: 10px; border-radius: 8px;">
+                            <span style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--accent);" id="stat-posts">0</span>
+                            <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase;">Posts</span>
+                        </div>
+                        <div style="background: var(--surface-2); padding: 10px; border-radius: 8px;">
+                            <span style="display: block; font-size: 1.1rem; font-weight: 700; color: #ff3355;" id="stat-likes">0</span>
+                            <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase;">Likes</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="user-list">
-                    <div class="user-item active">
-                        <div class="avatar online"></div>
-                        <span>General</span>
-                    </div>
-                    <div class="user-item">
-                        <div class="avatar online"></div>
-                        <span>Admin Juan</span>
-                    </div>
-                    <div class="user-item">
-                        <div class="avatar online"></div>
-                        <span>Moderador_X</span>
-                    </div>
-                    <!-- Simulación de más usuarios -->
-                    <div class="user-item offline">
-                        <div class="avatar"></div>
-                        <span>ZeroKnight</span>
-                    </div>
+
+                <div class="sidebar-card" style="margin-top: 20px;">
+                    <h3 style="font-size: 0.85rem; margin-bottom: 12px; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px;">Reglas</h3>
+                    <ul class="help-list" style="gap: 8px; list-style: none; padding: 0;">
+                        <li style="font-size: 0.75rem; color: var(--text-muted);">• Sé respetuoso con otros gamers.</li>
+                        <li style="font-size: 0.75rem; color: var(--text-muted);">• No publiques spam.</li>
+                        <li style="font-size: 0.75rem; color: var(--text-muted);">• Reporta bugs en Contacto.</li>
+                    </ul>
                 </div>
             </aside>
 
-            <!-- Área de Chat -->
-            <section class="chat-area">
-                <div class="chat-header">
-                    <div class="header-info">
-                        <h2># Sala-General</h2>
-                        <span>Bienvenido al chat oficial de JuanLauncher.</span>
+            <!-- Centro: El Muro -->
+            <section class="feed-content">
+                <!-- Creador de Posts -->
+                <div class="post-creator">
+                    <div class="post-creator-header">
+                        <img src="" id="user-avatar-post" class="avatar" style="width: 40px; height: 40px; border: 2px solid var(--accent);">
+                        <textarea id="post-input" rows="2" placeholder="¿Qué estás jugando hoy...?"></textarea>
                     </div>
-                    <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
-                </div>
-
-                <div class="messages-container" id="chat-messages">
-                    <!-- Mensaje del sistema -->
-                    <div class="msg-system">Te has unido a la sala #General. Bienvenido, <span id="current-username-display"></span>!</div>
-                    
-                    <!-- Simulación de mensajes previos -->
-                    <div class="msg-box">
-                        <img src="https://ui-avatars.com/api/?name=Admin&background=f44336&color=fff" alt="Admin" class="msg-avatar">
-                        <div class="msg-content">
-                            <span class="msg-author">Admin Juan</span>
-                            <p>¡Bienvenidos a la nueva zona de chat! Recuerden seguir las reglas y disfrutar de la comunidad.</p>
-                            <span class="msg-time">Hace 10m</span>
-                        </div>
-                    </div>
-
-                    <div class="msg-box">
-                        <img src="https://ui-avatars.com/api/?name=Zero&background=333&color=fff" alt="Zero" class="msg-avatar">
-                        <div class="msg-content">
-                            <span class="msg-author">ZeroKnight</span>
-                            <p>¡Esto se ve increíble! ¿Alguien sabe cuándo sale la nueva versión de JuanLauncher?</p>
-                            <span class="msg-time">Hace 2m</span>
-                        </div>
+                    <div class="post-creator-actions">
+                        <button class="login-btn" style="width: auto; padding: 8px 24px; font-size: 0.85rem;" onclick="publishPost()">Publicar</button>
                     </div>
                 </div>
 
-                <div class="chat-input-area">
-                    <form id="chat-form">
-                        <input type="text" id="chat-input" placeholder="Escribe un mensaje aquí..." autocomplete="off">
-                        <button type="submit" id="send-btn">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polyline points="22 2 15 22 11 13 2 9 22 2"></polyline>
-                            </svg>
-                        </button>
-                    </form>
+                <!-- Feed -->
+                <div id="posts-feed">
+                    <!-- Las publicaciones se cargan aquí -->
                 </div>
             </section>
+
+            <!-- Sidebar Derecha (Tendencias) -->
+            <aside class="feed-sidebar-right">
+                <div class="sidebar-card">
+                    <h3 style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-main);">Tendencias</h3>
+                    <div id="trending-list">
+                        <!-- Dinámico -->
+                    </div>
+                </div>
+                <div class="sidebar-card" style="margin-top: 20px;">
+                    <button class="logout-btn" style="width: 100%;" onclick="clearCommunity()">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:4px;"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                        Limpiar Muro
+                    </button>
+                </div>
+            </aside>
         </div>
     </main>
 
-    <script>
-        const chatForm = document.getElementById("chat-form");
-        const chatInput = document.getElementById("chat-input");
-        const messagesContainer = document.getElementById("chat-messages");
-        const userName = localStorage.getItem("userName") || "GamerPro";
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Inicio</span></a>
+        <a href="compatibilidad.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>Compatibilidad</span></a>
+        <a href="ayuda.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>Ayuda</span></a>
+        <a href="comunidad.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg><span>Comunidad</span></a>
+        <a href="login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Perfil</span></a>
+    </nav>
 
-        // Mostrar nombre actual
-        document.getElementById('current-username-display').textContent = userName;
-
-        function scrollBottom() {
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        function createMessage(text, author = "Tú", isSelf = true) {
-            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            const msgHtml = `
-                <div class="msg-box ${isSelf ? 'msg-self' : ''}">
-                    <img src="https://ui-avatars.com/api/?name=${author}&background=${isSelf ? '00f0ff' : '444'}&color=fff" class="msg-avatar">
-                    <div class="msg-content">
-                        <span class="msg-author">${author}</span>
-                        <p>${text}</p>
-                        <span class="msg-time">${time}</span>
-                    </div>
-                </div>
-            `;
-            messagesContainer.insertAdjacentHTML('beforeend', msgHtml);
-            scrollBottom();
-        }
-
-        chatForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const text = chatInput.value.trim();
-            if (text) {
-                createMessage(text, userName, true);
-                chatInput.value = "";
-                
-                // Simulación de respuesta bot
-                setTimeout(() => {
-                    const replies = ["<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"/><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"/><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"/></svg>", "F", "Opino lo mismo gamer.", "Interesante!", "Mira el catálogo de juegos, hay novedades."];
-                    const randomReply = replies[Math.floor(Math.random() * replies.length)];
-                    createMessage(randomReply, "System-Bot", false);
-                }, 1500);
-            }
-        });
-
-        function logout() {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("userName");
-            window.location.href = "login.html";
-        }
-        
-        scrollBottom();
-    </script>
-
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-content">
-            <div class="footer-logo">
-                <h3>JuanLauncher</h3>
-                <p>El mejor lugar para descubrir, probar y disfrutar tus juegos favoritos de PC y Android. Software libre de virus y descargas rápidas.</p>
-            </div>
+            <div class="footer-logo"><h3>JuanLauncher</h3><p>El mejor lugar para disfrutar tus juegos favoritos de PC y Android.</p></div>
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="ayuda.html">Ayuda y Soporte</a></li>
-                    <li><a href="compatibilidad.html">¿Corre en mi PC?</a></li>
-                    <li><a href="comunidad.html">Comunidad</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
+                <ul><li><a href="index.html">Inicio</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="compatibilidad.html">¿Corre en mi PC?</a></li><li><a href="contacto.html">Contacto</a></li></ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 JuanLauncher. Hecho con <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> para la comunidad gamer.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 JuanLauncher. Hecho con ❤️ para la comunidad gamer.</p></div>
     </footer>
 
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Ir arriba">▲</button>
+    <button id="btn-sorprendeme" class="surprise-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Sorpréndeme</button>
+
+    <script src="script.js"></script>
+    <script src="juegos.js"></script>
+    <script>
+        const postInput = document.getElementById("post-input");
+        const postsFeed = document.getElementById("posts-feed");
+        const userName = localStorage.getItem("userName") || "GamerPro";
+        let editingPostId = null;
+        let editingCommentId = null;
+
+        // Helper para formatear el tiempo transcurrido
+        function formatTime(timestamp) {
+            if (!timestamp) return "Recientemente";
+            const seconds = Math.floor((Date.now() - timestamp) / 1000);
+            if (seconds < 60) return "Ahora mismo";
+            const minutes = Math.floor(seconds / 60);
+            if (minutes < 60) return `Hace ${minutes}m`;
+            const hours = Math.floor(minutes / 60);
+            if (hours < 24) return `Hace ${hours}h`;
+            return `Hace ${Math.floor(hours / 24)}d`;
+        }
+
+        const defaultPosts = [
+            { id: 1, author: "Admin Juan", text: "¡Bienvenidos al nuevo muro de JuanLauncher! Aquí pueden compartir sus hazañas, pedir juegos o reportar errores.", timestamp: Date.now() - 7200000, likes: 12, isLiked: false, staff: true, comments: [{id: 99, author: "Admin Juan", text: "Recuerden portarse bien.", timestamp: Date.now() - 3600000}] },
+            { id: 2, author: "OptiProyects", text: "Acabo de subir una optimización para Project Zomboid, ¡va volando ahora!", timestamp: Date.now() - 18000000, likes: 45, isLiked: false, staff: false, comments: [] }
+        ];
+
+        let communityPosts = JSON.parse(localStorage.getItem("communityPosts")) || defaultPosts;
+
+        function init() {
+            document.getElementById('user-name-side').textContent = userName;
+            const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=29b6f6&color=fff`;
+            document.getElementById('user-avatar-side').src = avatarUrl;
+            document.getElementById('user-avatar-post').src = avatarUrl;
+            
+            updateStats();
+            loadTrending();
+            renderFeed();
+        }
+
+        function updateStats() {
+            const myPosts = communityPosts.filter(p => p.author === userName).length;
+            const myLikes = communityPosts.filter(p => p.author === userName).reduce((acc, p) => acc + (p.likes || 0), 0);
+            document.getElementById('stat-posts').textContent = myPosts;
+            document.getElementById('stat-likes').textContent = myLikes;
+
+            // Lógica de Niveles
+            const rankEl = document.getElementById('user-rank-side');
+            if (rankEl) {
+                let rankName = "Miembro Bronce";
+                let rankColor = "#29b6f6"; // var(--accent)
+
+                if (myPosts >= 15) {
+                    rankName = "Miembro Oro";
+                    rankColor = "#FFD700"; // Gold
+                } else if (myPosts >= 5) {
+                    rankName = "Miembro Plata";
+                    rankColor = "#C0C0C0"; // Silver
+                }
+
+                rankEl.textContent = rankName;
+                rankEl.style.color = rankColor;
+                rankEl.style.backgroundColor = `${rankColor}1A`; // 10% opacidad
+                rankEl.style.border = `1px solid ${rankColor}33`; // 20% opacidad
+                
+                // Si es Oro, añadimos un pequeño efecto de brillo
+                if (myPosts >= 15) {
+                    rankEl.style.boxShadow = `0 0 10px ${rankColor}33`;
+                } else {
+                    rankEl.style.boxShadow = "none";
+                }
+            }
+        }
+
+        function renderFeed() {
+            postsFeed.innerHTML = "";
+            communityPosts.slice().reverse().forEach(post => {
+                const isPostOwner = post.author === userName;
+                const isEditing = editingPostId === post.id;
+
+                if (!post.comments) post.comments = [];
+                const staffBadge = post.staff ? `<small style="color:var(--accent); font-size: 10px; margin-left:5px;">[STAFF]</small>` : "";
+                
+                const commentsHtml = post.comments.map(c => {
+                    const isCommentOwner = c.author === userName;
+                    const isEditingComment = editingCommentId === c.id;
+
+                    let commentContent = `<p style="font-size: 0.8rem; margin: 0; color: var(--text-main);">${c.text}</p>`;
+                    let commentActions = '';
+
+                    if (isCommentOwner) {
+                        if (isEditingComment) {
+                            commentContent = `
+                                <textarea id="edit-comment-input-${c.id}" rows="2" style="width:100%; background:var(--surface); color:var(--text-main); border:1px solid var(--accent); border-radius:8px; padding:5px; margin:5px 0; font-size:0.8rem; resize:none; outline:none; font-family:inherit;">${c.text}</textarea>
+                                <div style="display:flex; gap:5px; justify-content:flex-end;">
+                                    <button class="post-action" style="font-size:0.7rem;" onclick="cancelCommentEdit(${post.id})">Cancelar</button>
+                                    <button class="login-btn" style="width:auto; padding:2px 10px; font-size:0.7rem;" onclick="saveComment(${post.id}, ${c.id})">Guardar</button>
+                                </div>`;
+                        } else {
+                            commentActions = `
+                                <div style="display:flex; gap:5px;">
+                                    <button class="post-action" onclick="editComment(${c.id}, ${post.id})" style="padding:2px; color:var(--text-dim);" title="Editar"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                                    <button class="post-action" onclick="deleteComment(${post.id}, ${c.id})" style="padding:2px; color:var(--text-dim);" title="Borrar"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>
+                                </div>`;
+                        }
+                    }
+
+                    return `
+                        <div class="comment-item">
+                            <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(c.author)}&background=444&color=fff" class="avatar">
+                            <div class="comment-body">
+                                <div class="comment-user">
+                                    <strong>${c.author}</strong>
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <span>${formatTime(c.timestamp)}</span>
+                                        ${commentActions}
+                                    </div>
+                                </div>
+                                ${commentContent}
+                            </div>
+                        </div>`;
+                }).join('');
+
+                const editButton = isPostOwner && !isEditing ? `
+                    <button class="post-action" onclick="editPost(${post.id})" title="Editar publicación" style="color: var(--text-dim); padding: 4px; border-radius: 4px; background: rgba(255,255,255,0.02);">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </button>
+                ` : "";
+
+                const deleteButton = isPostOwner ? `
+                    <button class="post-action" onclick="deletePost(${post.id})" title="Borrar publicación" style="color: var(--text-dim); padding: 4px; border-radius: 4px; background: rgba(255,255,255,0.02);">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                    </button>
+                ` : "";
+
+                const contentHtml = isEditing ? `
+                    <textarea id="edit-input-${post.id}" rows="3" style="width:100%; background:var(--surface-2); color:var(--text-main); border:1px solid var(--accent); border-radius:var(--radius); padding:10px; margin-bottom:10px; resize:none; font-family:inherit; outline:none;">${post.text}</textarea>
+                    <div style="display:flex; gap:10px; justify-content:flex-end; margin-bottom:15px;">
+                        <button class="post-action" onclick="cancelEdit()">Cancelar</button>
+                        <button class="login-btn" style="width:auto; padding:5px 15px; font-size:0.8rem;" onclick="savePost(${post.id})">Guardar</button>
+                    </div>
+                ` : `<div class="post-content">${post.text}</div>`;
+
+                const postHtml = `
+                    <div class="feed-card">
+                        <div class="post-header">
+                            <div class="post-user">
+                                <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(post.author)}&background=${post.staff ? 'f44336' : '444'}&color=fff" class="avatar" style="width: 40px; height: 40px;">
+                                <div class="post-user-info">
+                                    <h4 style="color:var(--text-main);">${post.author} ${staffBadge}</h4>
+                                    <span>${formatTime(post.timestamp)}</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:5px;">
+                                ${editButton}
+                                ${deleteButton}
+                            </div>
+                        </div>
+                        ${contentHtml}
+                        <div class="post-footer">
+                            <button class="post-action ${post.isLiked ? 'liked' : ''}" onclick="toggleLike(${post.id})">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="${post.isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                ${post.likes}
+                            </button>
+                            <button class="post-action" onclick="toggleCommentsSection(${post.id})">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                Comentar (${post.comments.length})
+                            </button>
+                        </div>
+                        <div class="comments-section" id="comments-${post.id}" style="display:none; margin-top:15px; padding-top:15px; border-top: 1px solid var(--glass-border);">
+                            <div class="comment-list">
+                                ${commentsHtml || '<p style="text-align:center; color:var(--text-dim); font-size:0.75rem;">Aún no hay comentarios...</p>'}
+                            </div>
+                            <div class="emoji-selector" style="display:flex; gap:8px; margin-top:12px; padding: 6px; background: rgba(0,0,0,0.15); border-radius: 8px; flex-wrap: wrap; border: 1px solid var(--glass-border);">
+                                ${['🔥', '🎮', '❤️', '😂', '💀', '💯', '👾', '🚀', '⭐'].map(e => `<span onclick="insertEmoji(${post.id}, '${e}')" style="cursor:pointer; font-size:1.1rem; transition: transform 0.1s;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'">${e}</span>`).join('')}
+                            </div>
+                            <div class="comment-form" style="display:flex; gap:10px; margin-top:15px;">
+                                <input type="text" id="comment-input-${post.id}" placeholder="Escribe un comentario..." 
+                                    onkeydown="if(event.key==='Enter') addComment(${post.id})"
+                                    style="flex:1; background:var(--surface-2); border:1px solid var(--glass-border); border-radius:var(--radius); padding:8px 12px; color:var(--text-main); font-size:0.85rem; outline:none;">
+                                <button class="login-btn" style="width:auto; padding:0 16px; font-size:0.8rem;" onclick="addComment(${post.id})">Enviar</button>
+                            </div>
+                        </div>
+                    </div>`;
+                postsFeed.insertAdjacentHTML('beforeend', postHtml);
+            });
+        }
+
+        function publishPost() {
+            const text = postInput.value.trim();
+            if (text) {
+                const newPost = {
+                    id: Date.now(),
+                    author: userName,
+                    text: text,
+                    timestamp: Date.now(),
+                    likes: 0,
+                    isLiked: false,
+                    staff: false,
+                    comments: []
+                };
+                communityPosts.push(newPost);
+                localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                postInput.value = "";
+                renderFeed(); 
+                updateStats();
+
+                // Reacción simulada
+                setTimeout(() => {
+                    const botPost = {
+                        id: Date.now() + 1,
+                        author: "GamerAnonimo",
+                        text: `¡Interesante post @${userName}! Justo estaba pensando lo mismo sobre el catálogo actual.`,
+                        timestamp: Date.now(),
+                        likes: 1,
+                        isLiked: false,
+                        staff: false,
+                        comments: []
+                    };
+                    communityPosts.push(botPost);
+                    localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                    renderFeed();
+                }, 5000);
+            }
+        }
+
+        function editComment(commentId, postId) {
+            editingCommentId = commentId;
+            renderFeed();
+            const section = document.getElementById(`comments-${postId}`);
+            if (section) section.style.display = "block";
+            const input = document.getElementById(`edit-comment-input-${commentId}`);
+            if (input) input.focus();
+        }
+
+        function cancelCommentEdit(postId) {
+            editingCommentId = null;
+            renderFeed();
+            const section = document.getElementById(`comments-${postId}`);
+            if (section) section.style.display = "block";
+        }
+
+        function saveComment(postId, commentId) {
+            const input = document.getElementById(`edit-comment-input-${commentId}`);
+            const newText = input.value.trim();
+            if (newText) {
+                const post = communityPosts.find(p => p.id === postId);
+                if (post) {
+                    const comment = post.comments.find(c => c.id === commentId);
+                    if (comment) {
+                        comment.text = newText;
+                        localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                        editingCommentId = null;
+                        renderFeed();
+                        const section = document.getElementById(`comments-${postId}`);
+                        if (section) section.style.display = "block";
+                    }
+                }
+            }
+        }
+
+        function deleteComment(postId, commentId) {
+            if (confirm("¿Borrar este comentario?")) {
+                const post = communityPosts.find(p => p.id === postId);
+                if (post) {
+                    post.comments = post.comments.filter(c => c.id !== commentId);
+                    localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                    renderFeed();
+                    const section = document.getElementById(`comments-${postId}`);
+                    if (section) section.style.display = "block";
+                }
+            }
+        }
+
+        function editPost(id) {
+            editingPostId = id;
+            renderFeed();
+            const input = document.getElementById(`edit-input-${id}`);
+            if (input) input.focus();
+        }
+
+        function cancelEdit() {
+            editingPostId = null;
+            renderFeed();
+        }
+
+        function savePost(id) {
+            const newText = document.getElementById(`edit-input-${id}`).value.trim();
+            if (newText) {
+                const postIndex = communityPosts.findIndex(p => p.id === id);
+                if (postIndex !== -1) {
+                    communityPosts[postIndex].text = newText;
+                    localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                    editingPostId = null;
+                    renderFeed();
+                }
+            }
+        }
+
+        function deletePost(id) {
+            if (confirm("¿Estás seguro de que quieres eliminar esta publicación?")) {
+                communityPosts = communityPosts.filter(p => p.id !== id);
+                localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                renderFeed();
+                updateStats();
+            }
+        }
+
+        function insertEmoji(postId, emoji) {
+            const input = document.getElementById(`comment-input-${postId}`);
+            if (input) {
+                input.value += emoji;
+                input.focus();
+            }
+        }
+
+        function toggleCommentsSection(id) {
+            const section = document.getElementById(`comments-${id}`);
+            if (section) {
+                section.style.display = section.style.display === "none" ? "block" : "none";
+            }
+        }
+
+        function addComment(postId) {
+            const input = document.getElementById(`comment-input-${postId}`);
+            const text = input.value.trim();
+            if (text) {
+                const postIndex = communityPosts.findIndex(p => p.id === postId);
+                if (postIndex !== -1) {
+                    if (!communityPosts[postIndex].comments) communityPosts[postIndex].comments = [];
+                    
+                    communityPosts[postIndex].comments.push({
+                        id: Date.now(),
+                        author: userName,
+                        text: text,
+                        timestamp: Date.now()
+                    });
+                    
+                    localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+                    input.value = "";
+                    renderFeed();
+                    
+                    // Mantener la sección de comentarios abierta después del render
+                    const section = document.getElementById(`comments-${postId}`);
+                    if (section) section.style.display = "block";
+                }
+            }
+        }
+
+        function toggleLike(id) {
+            communityPosts = communityPosts.map(p => {
+                if (p.id === id) {
+                    p.isLiked = !p.isLiked;
+                    p.likes += p.isLiked ? 1 : -1;
+                }
+                return p;
+            });
+            localStorage.setItem("communityPosts", JSON.stringify(communityPosts));
+            renderFeed();
+            updateStats();
+        }
+
+        function loadTrending() {
+            const trendingList = document.getElementById("trending-list");
+            if (!trendingList) return;
+            const games = (typeof listaJuegos !== 'undefined') ? listaJuegos.slice(0, 4) : [];
+            trendingList.innerHTML = "";
+            games.forEach(game => {
+                const item = `
+                    <div class="user-item" onclick="window.location.href='juego.html?id=${game.id}'" style="border-radius:8px; margin-bottom:8px; padding:8px; background:rgba(255,255,255,0.02); display:flex; gap:10px; cursor:pointer;">
+                        <img src="${game.imagen}" style="width:40px; height:40px; border-radius:4px; object-fit:cover;">
+                        <div class="post-user-info">
+                            <h4 style="font-size: 0.75rem; color:var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">${game.titulo}</h4>
+                            <span style="color: var(--accent); font-size: 0.65rem;">🔥 Tendencia</span>
+                        </div>
+                    </div>`;
+                trendingList.insertAdjacentHTML('beforeend', item);
+            });
+        }
+
+        function clearCommunity() {
+            if(confirm("¿Seguro que quieres reiniciar el muro? Esto borrará tus posts locales.")) {
+                localStorage.removeItem("communityPosts");
+                location.reload();
+            }
+        }
+
+        function logout() { 
+            localStorage.removeItem("isLoggedIn"); 
+            localStorage.removeItem("userName"); 
+            window.location.href = "login.html"; 
+        }
+            
+        init();
+
+        const btnSorprendeme = document.getElementById('btn-sorprendeme');
+        if (btnSorprendeme) { 
+            btnSorprendeme.addEventListener('click', function() { 
+                btnSorprendeme.classList.add('loading'); 
+                btnSorprendeme.innerHTML = 'Buscando...'; 
+                setTimeout(function() { 
+                    if (typeof listaJuegos !== 'undefined') { 
+                        var idx = Math.floor(Math.random() * listaJuegos.length); 
+                        window.location.href = 'juego.html?id=' + listaJuegos[idx].id; 
+                    } else { window.location.href = 'index.html'; } 
+                }, 1500); 
+            }); 
+        }
+    </script>
 </body>
 </html>
